@@ -1,0 +1,378 @@
+/****** board_trade_board_ing.css *********************/
+@charset "utf-8";
+
+
+/************ section 공통 *******************/
+section {
+	width:80%;
+	max-width:1280px;
+	
+	margin: 0 auto;
+	margin-bottom: 200px;
+	
+/**	padding-top: 1280px; 이놈 높이가 1280px로 설정됨**/
+	
+}
+
+section h2 {
+	margin-right: 60px;
+	margin-bottom: 30px;
+	font-size: 2rem;
+	color: black;
+}
+
+section h2 span{
+	font-size: 1.4rem;
+	color: lightgray;
+	padding-left: 10px;
+	box-sizing: border-box;
+	margin-bottom: 40px
+}
+
+/************ 상단 검색 박스 **********************/
+section .searchBox {
+	display:flex;
+	width: 1280px;
+    height: 60px;
+    background-color: lightgray;
+    text-align: right;
+    padding-right: 20px;
+    box-sizing: border-box;
+    margin-top: 120px;
+}
+
+section .searchBox .keyword {
+	display:inline-block
+}
+section .searchBox h2 {
+	font-weight: bold;
+	font-color: black;
+}
+
+/** 서치박스에 있는 모든 특성?**/
+section .searchBox .keyword input {
+    display: inline-block;
+    height: 30px;
+    width: 320px;
+    margin-top: 15px;
+    margin-right: 10px;
+    padding-left: 10px;  
+}
+
+/** 검색 버튼 **/
+section .board-title-wrapper button {
+    height: 30px;
+    padding: 0 20px;
+    display: inline-block;
+    vertical-align: middle;
+    background: #777;
+    border: 0;
+    color: #eee;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius:8px;
+}
+section .searchBox button:hover {
+    text-decoration: underline;
+}
+
+
+/**************** 게시판목록 위의 중고거래 박스 모음 ****************/
+section .community-menu{
+	display:flex;
+	width: 1280px;
+    height: 60px;
+    background-color: white;
+    text-align: right;
+    padding-right: 20px;
+    box-sizing: border-box;
+    margin-top: 120px;
+    border:1px solid #d7d7d7;
+
+}
+
+.board-title-wrapper{
+	justify-content: space-around;
+	display:flex;
+	width: 98%;
+	height: 50px;
+	background-color:white;	
+	
+}
+.board-title{
+	width:450px;
+	height: 50px;
+	
+}
+.dropdown{ /****카테고리 역할.****/
+	width:30px;
+	height: 50px;
+	margin-top:10px;
+}
+
+.inner-community-left{
+	display:flex;
+	width:580px;
+	margin-top:5px;
+	justify-content: space-between
+}
+.inner-community-right{
+	display:flex;
+	width:620px;
+
+	margin-top:10px;
+	align-items: center
+}
+.searchline{
+	width:800px;
+	margin-right:100px;
+}
+
+input[type=text]{
+	width:300px;
+	height:30px;
+	outline: 1px solid #d7d7d7;
+}
+
+
+input[type=button]{
+	height:30px;
+    padding: 0 30px;
+    display: inline-block;
+    vertical-align: middle;
+    background: white;
+    border: 0;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border:1px solid #d7d7d7;
+}
+div > select {
+	height:30px;
+    padding: 0 20px;
+    display: inline-block;
+
+    background: white;
+    border: 0;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border:1px solid #d7d7d7;	
+}
+
+
+
+
+/**************** 게시판 리스트 *******************************/
+
+/*
+section .community-list{
+	display:flex;
+	width: 1280px;
+    height: 60px;
+    background-color: white;
+    text-align: right;
+    padding-right: 20px;
+    box-sizing: border-box;
+    margin-top: 200px;
+    border:1px solid #d7d7d7;
+    justify-content: center;
+    align-items: center;
+}
+*/
+
+
+section .community-list {
+
+	position: relative;
+	
+	
+}
+.community-list table {
+	width:100%;
+	border-top:2px;
+	border-bottom:1px;
+	padding: 10px 0;
+/*	border-collapse: collapse; */
+	line-height:30px;
+	margin-bottom:20px;
+}
+.community-list table td {
+	text-align: center;
+}
+
+.community-list .wirteBtn {
+	display: inline-block;
+	padding: 20px 50px;
+	background:lightgray;
+	color:white;
+	font-weight:bold;
+}
+.community-list .writeBtn button {
+    /*display: inline-block;*/
+    padding: 10px 40px;
+    background: #007042;
+    border: 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+.community-list{
+	display:flex;
+	width:1280px;
+	height:70px;
+	border:1px solid #d7d7d7;
+}
+
+
+.post-num{
+	margin-left: 10px;
+	align-items: center;
+	display:flex;
+	width:80px;
+	font-size:8pt;	
+}
+.post-category{
+	font-size: 12pt;
+}
+
+.all{
+	width:36px;
+	text-align:center;
+	margin: 0 auto;
+	background-color: #D5D5D5 !important;
+	color: white;
+	border: 1px solid #C3C3C3 !important;
+}
+.sell{
+	width:36px;
+	text-align:center;
+	margin: 0 auto;
+	background-color: #de2513 !important;
+    color: #fff !important;
+    border: 1px solid #b74236 !important;	
+}
+.buy{
+	width:36px;
+	text-align:center;
+	margin: 0 auto;
+	background-color: #1f6cde !important;
+    color: #fff !important;
+    border: 1px solid #486577 !important;	
+}
+.exchange{
+	width:36px;
+	text-align:center;
+	margin: 0 auto;
+	background-color: #008000 !important;
+    color: #fff !important;
+    border: 1px solid #006E00 !important;	
+}
+.share{
+	width:36px;
+	text-align:center;
+	margin: 0 auto;
+	background-color: #FFE400 !important;
+    color: #fff !important;
+    border: 1px solid #EDD200 !important;	
+}
+
+.post-title{
+	font-size: 14pt;
+	margin-left:30px;
+}
+.post-writer{
+	font-size:10pt;
+}
+.post-hits{
+	font-size:10pt;
+	margin-left:30px;
+}
+
+.post-price{
+
+	display:flex;
+	font-size: 14pt;
+	
+}
+.post-date{
+	margin-right: 10px;
+	font-size:8pt;	
+}
+
+
+.post-topbottom{
+	width:800px;
+	flex-direction: column;
+	justify-content: space-evenly;
+	display:flex;
+	
+}
+.post-top{
+	display:flex;
+	
+}
+.post-bottom{
+	display:flex;
+}
+
+.post-left{
+	display:flex;
+	width:900px;
+}
+.post-middle{
+	align-items: center;
+	justify-content: flex-end;
+	display:flex;
+	width:200px;
+}
+.post-right{
+justify-content: flex-end;
+	align-items: center;
+	display:flex;
+	width:180px;
+}
+
+
+.page {
+    margin-top: 80px;
+    text-align: center;
+}
+.page>a {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 18px;
+    border: 1px solid #777;
+    border-radius: 4px;
+    color: #777;
+ }
+.page .left {
+    margin-right: 20px;
+}
+.page .right {
+    margin-left: 20px;
+}
+
+.page ol {
+    display: inline-block;
+}
+.page ol li {
+    display: inline-block;
+    font-size: 18px;
+}
+.page ol li~li {
+    margin-left: 10px;
+}
+.page ol li a {
+    color: #333;
+}
+.page ol li.active a {
+    font-weight: bold;
+    color: #007042;
+}
+.page ol li a:hover {
+    text-decoration: underline;
+    color: #007042;
+}
+
+
