@@ -1,0 +1,175 @@
+
+.detail_gameleft{
+	width:200px;
+	height: 400px;
+	margin-right: 25px;
+	float: left;
+	text-align: center;
+	float: left;
+}
+.detail_gameright{
+	width: 1125px;
+	height: 100%;
+	float: left;
+}
+.detail_main{
+	margin: 0 auto;
+	width: 1360px;
+	height: 430px;
+	background-image: linear-gradient(90deg,#0a090f 50%,rgba(0,0,0,.45));
+	color: #fff;
+	font-size: 15px;
+}
+.detail_gameinfo{
+	width: 1130px;
+	height: 400px;
+	float: left;
+}
+.detail_gameimg img{
+	width: 170px;
+	height: 170px;
+	margin: 10px 0;
+}
+.detail_title{
+	float: none;
+	margin-top: 16px;
+}
+.detail_title_eng{
+	color: #777;
+    font-size: 14px;
+    margin-top: 5px;
+    float: left;
+}
+.detail_rating{
+	width: 56px;
+	height: 56px;
+	border-radius: 100px;
+	font-family: 'nanumgothic';
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	background-color: green;
+	font-size: 23px;
+	float: left;
+	margin-right: 15px;
+}
+.detail_top{
+	margin-top: 15px;
+	font-size: 12px;
+}
+.detail_top img{
+	width: 17px;
+	height: 17px;
+}
+.detail_year{
+	margin-top: -15px;
+	margin-left: 10px;
+	float: none;
+	font-size: 16px;
+}
+.detail_rank{
+	float: left;
+	margin-right: 90px;
+}
+.detail_gameinfo2{
+	color: #fff;
+	float: left;
+	padding: 3px 30px 3px 10px;
+	font-size: 15px;
+    font-family: 'nanumgothic';
+    font-weight: bold;
+}
+.detail_gameinfo3{
+	color: #aaa;
+	float: left;
+	font-weight: normal;
+	font-size: 13px;
+	
+}
+.detail_right_title{
+	width: 100%;
+	float: left
+}
+.detail_detail div{
+	font-size: 13px;
+	display: inline;
+	padding: 5px 5px 5px 0;
+	margin: 5px 5px 5px 0;
+}
+.detail_other img{
+	width: 17px;
+	height: 17px;
+}
+.detail_other{
+	margin-top: 60px;
+}
+.detail_other div{
+	display: inline;
+	padding-right: 20px;
+}
+
+@font-face {
+  font-family: "Seurat";
+  src: url("https://assets.codepen.io/4175254/FOT-Seurat+Pro+DB.otf") format("opentype");
+}
+.button {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5em;
+  position: relative;
+  border-radius: 50px;
+  padding: 5px 12px;
+  background-color: #282828;
+  /*box-shadow: inset 0 -4px 8px #aaa, 0 4px 6px rgba(0, 0, 0, 0.2);*/
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.4s cubic-bezier(0.55, 1, 0.15, 1);
+  will-change: transform;
+  float: left;
+  margin-right: 80px;
+}
+.button:active {
+  transform: scale(0.92);
+}
+.button:active::after {
+  opacity: 1;
+}
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: scale(1.04, 1.08);
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.55, 1, 0.15, 1);
+  will-change: transform;
+}
+.button:focus-visible::after {
+  opacity: 1;
+  animation: pulsate 1s infinite;
+}
+
+.button-image {
+  width: 1.75em;
+  height: 1.75em;
+  object-fit: contain;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1.04, 1.08);
+  }
+  50% {
+    transform: scale(1.08, 1.12);
+  }
+  100% {
+    transform: scale(1.04, 1.08);
+  }
+}
+.detail_backgroundimg{
+	
+}

@@ -68,10 +68,10 @@
                 <div class="gnb_wrap">
                     <ul class="gnb clearfix">
                         <li class="home_btn" id="home"><a href="index.jsp">HOME</a></li>
-                        <li id="bd_info"><a href="#">Board Game Info</a></li>
+                        <li id="bd_info"><a href="boardgameinfo_main.jsp">Board Game Info</a></li>
                         <li id="bd_club"><a href="boardgameclub_main.jsp">Board Game Club</a></li>
                         <li id="bd_shop"><a href="#">Board Game Shop</a></li>
-                        <li id="bd_comm"><a href="#">Community</a></li>
+                        <li id="bd_comm"><a href="community_list.jsp">Community</a></li>
                     </ul>
                 </div>
 
@@ -86,9 +86,9 @@
                 <div class="sub_wrap clearfix">
                     <ul class="bd_info none">
                         <li class="menu_title">보드게임 정보</li>
-                        <li><a href="">게임 정보</a></li>
-                        <li><a href="#">게임 테마</a></li>
-                        <li><a href="#">커스텀</a></li>
+                        <li><a href="best50.in">베스트 50</a></li>
+                        <li><a href="boardgameinfo_theme.jsp">게임 테마</a></li>
+                        <li><a href="boardgameinfo_custom.in">커스텀</a></li>
                     </ul>
 
                     <ul class="bd_club none">

@@ -1,0 +1,86 @@
+/*header*/
+@font-face {
+    font-family: 'OAGothic-ExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/OAGothic-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+header {
+    width: 1280px;
+    height: 120px;
+    margin: 0 auto;
+    background-color: black;
+/*    border-bottom: solid;*/
+}
+
+
+/* navigation menu */
+
+h1 {
+    line-height: 140px;
+    width: 300px;
+    float: left;
+}
+
+h1 img {
+    width: 200px;
+    height: 150px;
+    background-size: cover;
+    margin-top: -10px;
+    margin-left: 60PX;
+}
+
+.menu {
+  width: 480px;
+  overflow: hidden;
+  margin: 40px 0;
+  position: relative;
+}
+
+.menu > li {
+  width: 160px; /*20*5=100%*/
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  background: linear-gradient(#3B4974, #0C0C0C);
+}
+
+.menu a {
+  color: #fff;
+  font-family: 'NeoDunggeunmoPro-Regular';
+}
+
+.submenu > li {
+  line-height: 50px;
+  background: linear-gradient(#0C0C0C);
+  width: 100%;
+}
+
+.submenu {
+  height: 0; /*ul의 높이를 안보이게 처리*/
+  overflow: hidden;
+}
+
+.menu > li:hover {
+  background-color: #94a9ff;
+  transition-duration: 0.5s;
+}
+
+.menu > li:hover .submenu {
+  height: 250px; /*서브메뉴 li한개의 높이 50*5*/
+  transition-duration: 1s;
+}
+#rightmenu{
+    width: 300px;
+    height: 50px;
+    float: right;
+    margin-top: 50px;
+}
+#rightmenu li a{
+    margin-left: 30px;
+    color: white;
+}
+#rightmenu img{
+    width: 30px;
+    height: 30px;
+}
