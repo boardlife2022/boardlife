@@ -1,0 +1,609 @@
+@charset "utf-8";
+/* boardgame club CSS */
+
+/******************************** boardgame_club_list ********************************/
+
+/* #club_slider */
+body {
+    background-color: #f2f5f7;
+}
+
+#club_slider {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 120px;
+}
+
+#club_slider .inner_slider {
+    width: 1280px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    /*    overflow: hidden;*/
+}
+
+#club_slider .inner_slider .slide-btn {
+    width: 80px;
+    height: 200px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    opacity: .3;
+    cursor: pointer;
+    z-index: 20;
+    top: 45px;
+    transition: .3s;
+}
+
+#club_slider .inner_slider .left {
+    position: absolute;
+    left: 0;
+}
+
+#club_slider .inner_slider .right {
+    position: absolute;
+    right: 0;
+}
+
+#club_slider .inner_slider .slide-btn img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 75px;
+    left: 15px;
+}
+
+#club_slider .inner_slider .slide-btn:hover {
+    opacity: 1;
+}
+
+#club_slider .sclub_wrap {
+    /*    width: 3876px;*/
+    width: 3200px;
+    height: 100%;
+    position: absolute;
+    left: -960px;
+}
+
+/* Slider Clubs */
+
+#club_slider .sclub_wrap .sclub {
+    width: 640px;
+    height: 280px;
+    /*    background-color: #cbb5e2;*/
+    border: 1px solid #fff;
+    color: #fff;
+    /*    color: #333;*/
+    float: left;
+    padding: 10px 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#club_slider .sclub_wrap .sclub .off {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#club_slider .sclub_wrap .active .off {
+    display: none;
+}
+
+#club_slider .sclub_wrap .sclub .sclub_cover {
+    width: 40%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+#club_slider .sclub_wrap .sclub .sclub_cover img {
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: ease-out .3s;
+    top: 20px;
+    left: 20px;
+}
+
+#club_slider .sclub_wrap .sclub .sclub_cover img:hover {
+    transform: scale(1.05);
+
+}
+
+#club_slider .sclub_wrap .sclub .sclub_info {
+    width: 55%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+#club_slider .sclub_wrap .sclub .sclub_info .sclub_title {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#club_slider .sclub_wrap .sclub .sclub_info .sclub_moder {
+    font-size: 13px;
+    margin: 2px 0;
+}
+
+#club_slider .sclub_wrap .sclub .sclub_info .hashtag {
+    font-size: 12px;
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+#club_slider .sclub_wrap .sclub .sclub_info .hashtag span {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 2px 6px;
+    margin-right: 10px;
+    border-radius: 10px;
+
+}
+
+#club_slider .sclub_wrap .sclub .sclub_info .sclub_detail {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+
+#club_slider .sclub_wrap .sclub .sclub_info a {
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: #fff;
+    /*    color: #cbb5e2;*/
+    font-size: 14px;
+    font-weight: 700;
+    position: absolute;
+    bottom: 15px;
+}
+
+#club_slider .sclub_wrap .sclub .sclub_info a:hover {
+    /*    color: #a764ec;*/
+}
+
+/* color type of slide club */
+
+/* type1 */
+.type1 {
+    background-color: #edb9d6;
+}
+
+.type1 a {
+    color: #edb9d6;
+}
+
+.type1 a:hover {
+    color: #ff6dbe;
+}
+
+/* type2 */
+.type2 {
+    background-color: #fdca95;
+}
+
+.type2 a {
+    color: #fdca95;
+}
+
+.type2 a:hover {
+    color: #fb9124;
+}
+
+
+/* type3 */
+.type3 {
+    background-color: #cbb5e2;
+}
+
+.type3 a {
+    color: #cbb5e2;
+}
+
+.type3 a:hover {
+    color: #a764ec;
+}
+
+
+/* type4 */
+.type4 {
+    background-color: #fbadaf;
+}
+
+.type4 a {
+    color: #fbadaf;
+}
+
+.type4 a:hover {
+    color: #ff6e72;
+}
+
+
+/* type5 */
+.type5 {
+    background-color: #a4e0eb;
+}
+
+.type5 a {
+    color: #a4e0eb;
+}
+
+.type5 a:hover {
+    color: #22cdec;
+}
+
+
+/* club-list */
+
+#boardgame_club_list {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+#boardgame_club_list h3 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 50px 0;
+    color: #333;
+}
+
+#boardgame_club_list .club_index .searchBox {
+    width: 100%;
+    height: 60px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#boardgame_club_list .club_index .searchBox .keyword {
+    display: inline-block;
+}
+
+#boardgame_club_list .club_index .searchBox .keyword img {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+}
+
+#boardgame_club_list .club_index .searchBox .keyword input {
+    display: inline-block;
+    height: 40px;
+    width: 600px;
+    margin-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#boardgame_club_list .club_index .searchBox button {
+    height: 40px;
+    padding: 0 30px;
+    display: inline-block;
+    vertical-align: middle;
+    background: #76cc1e;
+    border: 0;
+    color: #eee;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: ease-out .1s;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#boardgame_club_list .club_index .searchBox button:hover {
+    transform: scale(0.95);
+}
+
+#boardgame_club_list .club_index .index_wrap {
+    margin: 0 auto;
+    width: 588px;
+    padding: 20px 0;
+}
+
+#boardgame_club_list .club_index .index_wrap li {
+    float: left;
+    margin-right: 20px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    font-weight: 700;
+    color: #333;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: ease-out .2s;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#boardgame_club_list .club_index .index_wrap li:last-child {
+    margin-right: 0;
+}
+
+#boardgame_club_list .club_index .index_wrap li.active {
+    background-color: #76cc1e;
+    color: #fff;
+}
+
+#boardgame_club_list .club_index .index_wrap li:hover {
+    background-color: #76cc1e;
+    color: #fff;
+    transform: scale(0.98)
+}
+
+#boardgame_club_list .club_index .index_wrap li:hover a {
+    color: #fff;
+}
+
+#boardgame_club_list .club_wraps {
+    padding-top: 30px;
+    margin-left: 10px;
+}
+
+#boardgame_club_list .club {
+    display: block;
+    width: 320px;
+    height: 200px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 30px;
+    padding: 20px;
+    background-color: #fff;
+    position: relative;
+    transition: ease-out .3s;
+    float: left;
+}
+
+#boardgame_club_list .club:hover {
+    transform: translateY(-5px)
+}
+
+.club .club_info {
+    width: 75%;
+    margin-left: 25%;
+}
+
+.club img.boardgame {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: -27px;
+    left: -27px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: ease-out .2s;
+}
+
+.club img:hover {
+    transform: scale(1.05);
+}
+
+.club .club_info .club_title {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.club .club_info .club_moder {
+    margin: 10px 0;
+    font-size: 12px;
+    color: #888;
+}
+
+.club .club_info .hashtag {
+    margin: 10px 0;
+}
+
+.club .club_info .hashtag span {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-size: 10px;
+    margin-right: 10px;
+    color: #666;
+}
+
+.club .club_info .club_detail {
+    font-size: 12px;
+    line-height: 14px;
+    color: #888;
+    text-indent: 5px;
+}
+
+.club .lower {
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.club .lower .participate img {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    float: left;
+    margin-top: 5px;
+}
+
+.club .lower .participate p {
+    float: right;
+    margin-top: 5px;
+    color: #555;
+    font-size: 11px;
+    line-height: 30px;
+}
+
+.club .lower img {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+}
+
+/* pagination */
+
+.page {
+    margin: 30px 0 60px 0;
+    text-align: center;
+    height: 22px;
+}
+.page>a {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 700;
+    border-radius: 20px;
+    background-color: #76cc1e;
+    color: #fff;
+    transition: ease-out .2s;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+ }
+
+ .page>a:hover {
+transform: scale(0.95);
+font-size: 20px;
+ }
+
+.page .left {
+    margin-right: 20px;
+}
+.page .right {
+    margin-left: 20px;
+}
+
+.page ol {
+    display: inline-block;
+}
+.page ol li {
+    display: inline-block;
+    font-size: 18px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background-color: #fff;
+    transition: ease-out, .2s;
+}
+.page ol li~li {
+    margin-left: 10px;
+}
+.page ol li a {
+    color: #333;
+}
+
+.page ol li.active {
+	background-color : #76cc1e;
+}
+
+.page ol li.active a {
+    font-weight: bold;
+    color: #fff;
+}
+
+.page ol li:hover {
+	transform: scale(0.9);
+	background-color: #76cc1e;
+}
+
+.page ol li:hover a {
+	color: #fff;
+}
+
+/* review tab */
+
+#reviews {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+#reviews h3 {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 26px;
+}
+
+#reviews .review_tab {
+    width: 1280px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.review_tab p.review_title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+
+.review_tab .review_wrap {
+    margin-top: 30px;
+}
+
+.review_tab .review_wrap .review {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    transition: ease-out .2s;
+}
+
+.review_tab .review_wrap .review:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.review_tab .review_wrap .review .img_wrap {
+    width: 50px;
+    height: 100%;
+    float: left;
+}
+
+.review_tab .review_wrap .review .img_wrap img {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+}
+
+.review_tab .review_wrap .review .txt_wrap {
+    width: 1200px;
+    height: 100%;
+    margin-left: 10px;
+    float: left;
+    position: relative;
+}
+
+.review_tab .review_wrap .review .txt_wrap .nickname {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.review_tab .review_wrap .review .txt_wrap .sentence {
+    font-size: 14px;
+    line-height: 16px;
+    color: #555;
+}
+
+.review_tab .review_wrap .review .txt_wrap .r_date {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+}
+
+.review_tab .review_wrap .review .txt_wrap .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

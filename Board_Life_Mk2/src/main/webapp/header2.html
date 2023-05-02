@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Board Life</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+
+    <!-- javascript and jQuery ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!--구글웹폰트-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        haeder {
+			background-color : #333;
+        }
+
+        .inner-header {
+            width: 1280px;
+            height: 60px;
+            margin: 0 auto;
+            position: relative;
+
+        }
+
+        .inner-header .menu-btn {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: 0;
+            top: 10px;
+
+        }
+
+        .inner-header .menu-btn .bar {
+            display: block;
+            width: 30px;
+            height: 5px;
+            background-color: #fff;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+
+        .inner-header h1 {
+            width: 200px;
+            height: 60px;
+            margin: 0 auto;
+        }
+
+        .inner-header h1 img {
+            margin-top: 10px;
+            width: 200px;
+        }
+
+        .inner-header .membership {
+            position: absolute;
+            top: 22px;
+            right: 0;
+        }
+
+        .inner-header .membership li {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .inner-header .membership li a {
+/*            color: #fff;*/
+            color: #fff;
+        }
+
+        .inner-header .membership li:hover a {
+            text-decoration: underline;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <header class="he">
+
+       <div class="inner-header clearfix">
+            <a href="#" class="menu-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </a>
+
+
+            <h1><a href="#"><img src="img/board_life_logo2.png" alt="보드라이프 로고"></a></h1>
+
+            <ul class="membership">
+                <li><a href="#">login</a></li>
+                <li><a href="#">Sign In</a></li>
+            </ul>
+
+        </div>
+        
+    </header>
+
+
+</body>
+
+</html>

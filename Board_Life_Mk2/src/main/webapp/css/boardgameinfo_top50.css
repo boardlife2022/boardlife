@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+body{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+.b_list_title{
+	font-family: 'TheJamsil5Bold';
+}
+a img{
+	width: 80px;
+	height: 80px;
+}
+
+thead td{
+	padding: 15px 0;
+}
+
+.boardgamelist{
+	margin-bottom: 500px;
+}
+.boardgamelist div{
+	margin-top:50px;
+	border-bottom: 1px solid;
+}
+.boardgame_list td{
+	text-align: center;
+	height: 80px;
+	padding: 5px	0;
+}
+h2{
+	text-align: center;
+	padding: 30px 0;
+}
+th{
+	padding: 30px 0;
+}
+#b_t h3{
+	font-size: 4pt;
+	color: #aaa;
+	text-align: left;
+}
+#b_t h2{
+	font-family: 'TheJamsil5Bold';
+	font-size: 13pt;
+	padding: 0;
+	text-align: left;
+}
+.hashtag {
+}
+
+.hashtag span {
+
+display: inline-block;
+margin-right: 5px;
+padding: 5px 8px;
+background-color : rgba(0,0,0,0.1);
+border-radius : 10px;
+color: #555;
+font-weight: 500;
+font-size : 12pt;
+
+}

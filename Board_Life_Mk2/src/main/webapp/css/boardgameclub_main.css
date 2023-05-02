@@ -1,0 +1,621 @@
+/* Boardgameclub_main */
+
+@charset "utf-8";
+
+/* font set */
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
+
+/* Boardgameclub_main */
+
+/*main*/
+
+main {
+    padding-top: 120px;
+    width: 100%;
+    height: 600px;
+    /*    background-color: azure;*/
+    background-image: url(../img/club_main_bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*    background-attachment: fixed;*/
+
+    /*    font-family: 'Nanum Myeongjo', serif; */
+    /*    font-family: 'Noto Sans KR', sans-serif;*/
+}
+
+.inner_main {
+    width: 1280px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.inner_main .main_wrap {
+    width: 600px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    margin-left: -300px;
+}
+
+.inner_main .main_wrap p {
+    font-size: 40px;
+    color: #fff;
+    font-family: 'Nanum Myeongjo', serif;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.inner_main .main_wrap a {
+    display: block;
+    width: 200px;
+    height: 40px;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 20px;
+    line-height: 40px;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 25px;
+    padding: 5px 0;
+    margin: 0 auto;
+}
+
+.inner_main .main_wrap a:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/*title*/
+
+.title {
+    /*    color: #fff;*/
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 25px;
+}
+
+.title span {
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+.bar {
+    width: 40px;
+    height: 30px;
+}
+
+
+/* about */
+
+.about {
+    width: 100%;
+    height: 600px;
+
+    background-image: url(../img/club_main_bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.inner_about {
+    width: 1280px;
+    margin: 0 auto;
+    opacity: 0;
+}
+
+.inner_about .a_left {
+    float: left;
+    /*    background-color: bisque;*/
+    width: 50%;
+    height: 100%;
+    /*    position: relative;*/
+}
+
+.inner_about .a_left .a_left_wrap {
+    width: 480px;
+    height: 300px;
+    position: relative;
+    left: 20%;
+    top: 150px;
+}
+
+.inner_about .a_left .a_left_wrap .title {
+    color: #fff;
+}
+
+.inner_about .a_left .a_left_wrap p {
+    color: #fff;
+    font-family: 'Nanum Myeongjo', serif;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+.inner_about .a_right {
+    float: left;
+    width: 50%;
+    height: 100%;
+    /*    background-color: beige;*/
+}
+
+.inner_about .a_right .a_img {
+    width: 500px;
+    height: 300px;
+    margin: 150px auto;
+}
+
+
+.inner_about .a_right .a_img img {
+    width: 100%;
+    height: 100%;
+    /*    background-color: darkolivegreen;*/
+}
+
+/* peoples_title */
+
+.peoples_title {
+    width: 100%;
+    height: 400px;
+}
+
+.img_box {
+    float: left;
+    width: 60%;
+    height: 100%;
+    /*    background-color: antiquewhite;*/
+    background: #333 url(../img/peoples.jpeg) no-repeat;
+    background-size: cover;
+
+}
+
+.img_box .cover {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.img_box .cover:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.right_box {
+    float: right;
+    width: 40%;
+    height: 100%;
+    background-color: #24180D;
+}
+
+.right_box .title {
+    color: #fff;
+    position: relative;
+    top: 50px;
+    left: 20px;
+
+}
+
+.right_box .title p {
+    font-size: 20px;
+}
+
+/* statistics */
+
+.statistics {
+    width: 1280px;
+    height: 200px;
+    margin: 0 auto;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 700;
+}
+
+.statistics .s_wrap {
+    width: 1280px;
+    height: 500px;
+}
+
+.statistics .s_wrap .s_left {
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-color: beige;
+}
+
+.statistics .s_wrap .s_right {
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-color: azure;
+}
+
+.statistics .s_right .title {
+    padding: 150px 0 0 80px;
+}
+
+.statistics .s_values {
+
+    width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+
+}
+
+.statistics .s_values .v_title {
+    width: 400px;
+    height: 100%;
+    float: left;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.statistics .s_values .v_title .txt {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.statistics .s_values .v_title .num {
+    padding-top: 30px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.r_title {
+    width: 1280px;
+    margin: 0 auto;
+
+    font-size: 40px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 700;
+    text-indent: 46px;
+    color: #555;
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+
+.reasons {
+    width: 100%;
+    height: 500px;
+    background-color: #f6f5ef;
+}
+
+
+.reasons .inner-reasons {
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.reasons .r_wrap > p {
+    font-family: 'Nanum Myeongjo', serif;
+    text-indent: 46px;
+    padding: 30px 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #555;
+}
+
+
+.reasons .r_wrap .r_box {
+    width: 400px;
+    float: left;
+    opacity: 0;
+}
+
+.reasons .r_wrap .r_box .r_img {
+    width: 300px;
+    height: 300px;
+    background-color: silver;
+    position: relative;
+    left: 50%;
+    margin-left: -150px;
+}
+
+.r1 {
+    background-image: url(../img/reason01.jpg);
+    background-size: cover;
+}
+
+.r2 {
+    background-image: url(../img/reason02.jpg);
+    background-size: cover;
+}
+
+.r3 {
+    background-image: url(../img/reason03.jpg);
+    background-size: cover;
+}
+
+.reasons .r_wrap .r_box .rbar {
+    padding-top: 20px;
+    width: 60px;
+    margin-left: 46px;
+}
+
+.reasons .r_wrap .r_box p {
+    text-indent: 46px;
+    font-size: 20px;
+    padding-top: 10px;
+    font-family: 'Nanum Myeongjo', serif;
+    color: #555;
+}
+
+
+/* guide */
+
+.guide_wrap {
+    width: 1280px;
+    margin: 100px auto;
+}
+
+.guide_wrap .title {
+    padding-bottom: 50px;
+}
+
+.guide_txt {
+    width: 640px;
+    height: 400px;
+    float: left;
+    text-align: center;
+    font-family: 'Nanum Myeongjo', serif;
+    color: #333;
+}
+
+.guide_txt .guide_title_kor {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Nanum Myeongjo', serif;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.guide_txt .guide_title_eng {
+    font-size: 20px;
+    color: #555;
+    padding-bottom: 20px;
+}
+
+.guide_txt span {
+    padding-top: 10px;
+    display: block;
+}
+
+.guide_odd {
+    padding-bottom: 100px;
+    height: 400px;
+    opacity: 0;
+}
+
+.guide_even {
+    padding-bottom: 100px;
+    height: 400px;
+    opacity: 0;
+}
+
+
+.guide_img {
+    width: 640px;
+    height: 400px;
+    background-color: lightgray;
+    border-radius: 0 80px;
+    float: left;
+}
+
+.cl_offline {
+    background-image: url(../img/cl_offline.jpg);
+    background-size: cover;
+}
+
+.cl_cafe {
+    background-image: url(../img/cl_cafe.jpeg);
+    background-size: cover;
+}
+
+.cl_online {
+    background-image: url(../img/cl_online02.jpg);
+    background-size: cover;
+}
+
+.cl_theme {
+    background-image: url(../img/cl_themes.jpg);
+    background-size: cover;
+}
+
+/* club */
+
+.clubs {
+    width: 100%;
+    height: 480px;
+    /*    background-color: lightgray;*/
+    background-image: url(../img/club_bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.inner_clubs {
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.inner_clubs .title {
+    color: #fff;
+    padding: 20px 0;
+    margin-left: 20px;
+}
+
+.club_wrap {
+    /*    width: 1280px;*/
+    width: 2000px;
+    height: 350px;
+    position: absolute;
+    left: -640px;
+}
+
+.club_wrap .club {
+    width: 320px;
+    height: 100%;
+    float: left;
+    padding-top: 10px;
+}
+
+.club .inner_club {
+    display: block;
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #333;
+}
+
+.club .inner_club:hover {
+    box-shadow: 5px 10px rgba(0,0,0, 0.25);
+    transform: translateY(-10px);
+}
+
+
+.club .inner_club .game_title {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px 0 5px 20px;
+
+}
+
+.club .inner_club .hashtag {
+    font-size: 15px;
+    color: #555;
+    padding: 0 0 20px 20px;
+}
+
+.club .inner_club img {
+    width: 150px;
+    height: 150px;
+    margin-left: 20px;
+/*    background-color: dimgrey;*/
+}
+
+.club .inner_club .c_info {
+    position: absolute;
+    width: 80px;
+    right: 5px;
+    bottom: 0;
+}
+
+.club .inner_club span {
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    background-color: lightgrey;
+    display: block;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.club .inner_club .c_info span:first-child {
+    background-color: darkgray;
+    color: #fff;
+}
+
+.club .inner_club .c_info span:nth-child(2) {
+    background-color: dimgray;
+    color: #fff;
+}
+
+.club .inner_club .c_info span:nth-child(3) {}
+
+.club .club_title {
+    text-indent: 22px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    padding-top: 5px;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.find {
+    width: 100%;
+    background-color: #eeecea;
+    padding: 50px 0;
+}
+
+.find_cafe {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.find_cafe .title {
+    padding: 30px 0;
+    margin-left: 20px;
+}
+
+.find_wrap {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.find_wrap .find_img {
+
+    width: 50%;
+    height: 100%;
+    /*    background-color: lightgray;*/
+    float: left;
+
+}
+
+.find_wrap .find_img img {
+    position: relative;
+    left: 50%;
+    margin-left: -30%;
+}
+
+.find_wrap .find_txt {
+
+    width: 50%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    font-family: 'Nanum Myeongjo', serif;
+    color: #555;
+
+}
+
+.find_wrap .find_txt .find_title {
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 30px;
+}
+
+.find_wrap .find_txt .find_content {
+    padding-bottom: 60px;
+
+}
+
+.find_wrap .find_txt a {
+    display: block;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    /*    background-color: lightgray;*/
+    background-color: #D61414;
+    color: #fff;
+    font-weight: 700;
+    border: 1px solid #D61414;
+    border-radius: 10px;
+}
+
+.find_wrap .find_txt a:hover {
+    background-color: #fff;
+    color: #D61414;
+}

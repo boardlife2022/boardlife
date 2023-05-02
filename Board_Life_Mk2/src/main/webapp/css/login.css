@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+/**login.css************************************************/
+ 
+section#login {
+    width: 100%;
+/*    height: 850px;*/
+    background: #0a0807 url(../img/bg.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 15px 0 20px;
+}
+section#login .inner-section {
+    width: 600px;
+    margin: 0 auto;
+    padding: 130px 0 60px;
+}
+
+section#login .inner-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: 40px;
+    color: #fff; /*여기 추가된 거 확인~*/
+}
+section#login .inner-section .loginBox {
+    width: 100%;
+    height: 470px;
+    background-color: #fff;
+    padding: 30px 0;
+}
+
+.loginBox .welcome {
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    font-weight: 100;
+    padding-bottom: 30px;
+    border-bottom: 0.6px solid #eee;
+}
+.loginBox .welcome span {
+    color: #007042;
+}
+
+.loginBox form {
+    padding: 20px 20px 0;
+}
+/*이부분 때문에 체크박스가 커진거라 선택자 수정했으니 참고하세요~*/
+.loginBox form .id input, .loginBox form .password input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+/*placeholder 색상변경*/
+input::placeholder {
+    color: #999;
+}
+
+.loginBox form label {
+    display: block;
+    color: #777;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+.loginBox form label input {
+    margin-right: 10px;
+}
+
+.loginBox form .btngrp {
+    width: 100%;
+    overflow: hidden;
+}
+.loginBox form .btn {
+    width: 49%;
+    display: block;
+    border: 0;
+    line-height: 60px;
+    background-color: #76cc1e;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 400;
+    cursor: pointer;
+}
+.loginBox form .login {
+    float: left;
+}
+.loginBox form .join {
+    float: right;
+}
+.loginBox .notice {
+    width: 100%;
+    color: #f00;
+    height: 50px;
+    box-sizing: border-box;
+    line-height: 50px;
+    font-size: 0.8rem;
+    font-weight: 100;
+}
+
+.loginBox .notice p {
+    text-align: center;
+}
+
+.sns_login {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.sns_login > a {
+	display: block;
+	width: 100%;
+	height: 50px;
+	position: relative;
+}
+
+.sns_login > a span {
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	border-right: 1px solid #fff;
+	position: relative;
+}
+
+.sns_login > a p {
+	position: absolute;
+	left: 180px;
+	font-size: 20px;
+	font-weight: 500;
+	color: #fff;
+	display: inline;
+	line-height: 50px;
+	height: 50px;
+	
+}
+
+.sns_login > a span img {
+	position: absolute;
+}
+
+.sns_login .kakao {
+	background-color: #F5E901;
+	margin-bottom: 10px;
+}
+
+.sns_login .kakao p {
+	color: #333;
+}
+
+.sns_login .naver {
+	background-color: #1EC800;
+}
+
+.sns_login .kakao img {
+	top: 10px;
+    left: 8px;
+}
+
+.sns_login .naver img {
+	left: 11px;
+    top: 13px;
+}
+
+
+

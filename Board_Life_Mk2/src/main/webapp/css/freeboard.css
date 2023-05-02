@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+#f_title{
+	border-bottom: none;
+	float: left;
+	font-size: 20pt;
+	margin-bottom: 10px;
+}
+thead img{
+	width: 100px;
+	height: 100px;
+}
+thead td{
+	padding: 5px 0;
+}
+.content textarea{
+	margin-left: 8.2%;
+	margin-top: -30px;
+	
+}
+.category select{
+	width:110px;
+	height: 30px;
+}
+.categorylist{
+	font-size: 10pt;
+}
+tbody img{
+	width: 50px;
+	height: 50px;
+}
+.free{
+	width:70px;
+	margin: 0 auto;
+	background-color: #8080c0 !important;
+    color: #fff !important;
+}
+.archive{
+	width:70px;
+	margin: 0 auto;
+	background-color: #1f6cde !important;
+    color: #fff !important;
+}
+.tip{
+	width:70px;
+	margin: 0 auto;
+	background-color: #ffc000 !important;
+    color: #fff !important;
+}
+.survey{
+	width:70px;
+	margin: 0 auto;
+	background-color: #2b3768 !important;
+    color: #fff !important;
+}
+.review{
+	width:70px;
+	margin: 0 auto;
+	background-color: #008080 !important;
+    color: #fff !important;
+}
+.tline{
+	font-family: 'TheJamsil5Bold';
+	font-size: 10pt;
+	display: inline-block;
+}
+.listm td{
+	height: 30px;
+}
+.clike{
+	color: rgb(222,0,0);
+}
+.clike span{
+	color:#333;
+}
+.b_insert input{
+	height: 20px;
+	margin-bottom: 10px;
+}
+.b_insert{
+	margin-bottom: 500px;
+	position: relative;
+}
+.boardgamelist{
+	margin-bottom: 500px;
+}
+.boardgamelist div{
+	margin-top:50px;
+	border-bottom: 1px solid;
+}
+.btngrp .btn{
+	cursor:pointer;
+	font-weight: bold;
+	font-size: 80%;
+}
+.freeboardtitle{
+	height:50px;
+	font-size: 20pt;
+}
+.viewBox table td.content {
+    padding: 20px 0 200px 10px;
+    color: #333;
+    line-height: 1.6;
+    font-size: 12pt;
+}
+.freeboardbgimg{
+	width:100px;
+	height: 100px;
+	text-align: center;
+}
+#freeboard2 td{
+	border-bottom-style: none;
+}
+.freeboarddate{
+	width:150px;
+}

@@ -1,0 +1,229 @@
+@charset "utf-8";
+
+/* 웹폰트 CSS */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+/* join*/
+
+section#join {
+    width: 100%;
+    height: 100%;
+    /*    margin-top: 115px;*/
+    background: #0a0807 url(../img/bg.jpg) no-repeat;
+    padding: 120px 0;
+}
+
+section#join .inner-section {
+    width: 800px;
+    margin: 0 auto;
+    padding: 70px 0 60px;
+}
+
+section#join .inner-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+section#join .inner-section .joinbox {
+    width: 100%;
+    background-color: #fff;
+    padding: 30px 0;
+    border-radius: 30px;
+}
+
+.joinbox .welcome {
+    width: 100%;
+    height: 220px;
+    margin-bottom: 30px;
+    border-bottom: 0.6px solid #eee;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.joinbox .welcome img {
+    position: absolute;
+    left: 200px;
+    top: 50px;
+    width: 400px;
+}
+
+.joinbox .welcome p {
+    font-size: 18px;
+    color: #666;
+    font-weight: 100;
+    line-height: 1.6;
+    position: absolute;
+    left: 265px;
+    bottom: 40px;
+    text-align: center;
+}
+
+.joinbox .welcome p span.title {
+    color: #007042;
+}
+
+.joinbox .welcome p span.small {
+    font-size: 14px;
+    color: #999;
+}
+
+
+/* form */
+
+.joinbox form {
+    padding: 0 30px;
+    color: #666;
+}
+
+.joinbox form fieldset {
+    border: 0;
+    padding: 30px 0;
+    margin-bottom: 40px;
+}
+
+.joinbox form fieldset legend {
+    color: #554538;
+    text-align: center;
+}
+
+.joinbox table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 2px solid #554538;
+    border-bottom: 2px solid #252525;
+}
+
+.joinbox tr {
+    border-bottom: 1px solid #eee;
+    height: 50px;
+    line-height: 50px;
+}
+
+.joinbox table th,
+.joinbox table td {
+    padding: 10px 0;
+}
+
+.joinbox table th {
+    width: 20%;
+    text-align: left;
+    background-color: #f4f4f2;
+    text-indent: 10px;
+}
+
+.joinbox table td {
+    width: 80%;
+    text-indent: 10px;
+    font-weight: 100;
+}
+
+.joinbox table td span {
+    font-size: 14px;
+}
+
+.joinbox input {
+    display: inline-block;
+    height: 30px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    padding-left: 6px;
+    line-height: 34px;
+}
+
+.joinbox input[type=email] {
+    width: 300px;
+}
+
+.joinbox input[type=radio] {
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+.joinbox .gender_btn {
+    line-height: 40px;
+    /*    background: red;*/
+    margin-right: 30px;
+}
+
+.joinbox .optional input {
+    width: 300px;
+}
+
+select {
+    height: 30px;
+    line-height: 30px;
+}
+
+
+.img_guide {
+    display: block;
+
+}
+
+.guide {
+    display: block;
+    font-size: 8px;
+    line-height: 20px;
+}
+
+/* warning && confirm */
+
+.warning {
+    color: #c00;
+}
+
+.confirm {
+    color : #0c0;
+}
+
+/* placeholder 색상 변경 */
+
+input::placeholder {
+    color: #999;
+}
+
+.joinbox .optional > p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #777;
+}
+
+.joinbox form .btn {
+    width: 100%;
+    height: 60px;
+    display: block;
+    border: 0;
+    line-height: 60px;
+    /*    background-color: #007042; */
+    background-color: #76cc1e;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.joinbox form .min_btn {
+    border: 0;
+    line-height: 30px;
+    /*    background-color: #007042;*/
+    background-color: #76cc1e;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+
+.joinbox form .min_btn:hover {
+    background-color: #007042;
+}
+
+.joinbox form .btn:hover {
+    background-color: #007042;
+}

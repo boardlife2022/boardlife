@@ -1,0 +1,947 @@
+/* index.css  */
+
+/* font-family */
+/*    font-family: 'Nanum Myeongjo', serif; */
+/*    font-family: 'Noto Sans KR', sans-serif;*/
+
+@charset "utf-8";
+
+
+.disableselect {
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+.disabledrag {
+            user-drag: none;
+        }
+
+        
+section {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+main {
+    width: 100%;
+    height: 660px;
+    background-image: url(../img/celestia_bg01.jpg);
+    background-size: cover;
+    background-position: center;
+    /*    background-attachment: fixed;*/
+}
+
+.inner-main {
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.main-pkg {
+    width: 400px;
+    position: absolute;
+    top: 25%;
+    left: 3%;
+}
+
+.inner-main .main-info {
+    box-shadow: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    position: absolute;
+    left: 60%;
+    top: 35%;
+}
+
+.inner-main .main-info .main-title {
+    width: 400px;
+    padding-left: 20px;
+}
+
+.inner-main .main-info .main-des {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.inner-main .main-info .main-btn {
+    display: block;
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    border: 1px solid #fff;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    margin: 50px auto 0 auto;
+}
+
+.inner-main .main-info .main-btn:hover {
+    background-color: #fff;
+    color: #333;
+    font-weight: 700;
+}
+
+
+.promotion {
+    width: 100%;
+    height: 60px;
+    position: relative;
+}
+
+.promotion .p-left {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #222;
+    z-index: -100;
+}
+
+.promotion .p-right {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    background-color: #f6f5ef;
+    z-index: -100;
+}
+
+
+.promotion .inner-promotion {
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    color: #f6f5ef;
+    /*    overflow: hidden;*/
+}
+
+.best-game {
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-color: #222;
+}
+
+.event-banner {
+    width: 50%;
+    float: right;
+    height: 100%;
+    background-color: #f6f5ef;
+    /*    background-color: blue;*/
+}
+
+.best-game .best-title {
+    font-size: 18px;
+    line-height: 60px;
+    height: 60px;
+    width: 150px;
+    float: left;
+}
+
+.best-game .best-position {
+    display: block;
+    width: 400px;
+    height: 60px;
+    float: left;
+    position: relative;
+}
+
+.best-game .best-wrap {
+    position: absolute;
+    /*    background-color: red;*/
+}
+
+.best-game .best-wrap li {
+    width: 450px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.best-game .best-btn {
+    display: block;
+    float: left;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 35px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 35px;
+    margin-top: 10px;
+}
+
+.event-banner .event-title {
+    width: 80%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: #333;
+    float: left;
+}
+
+.event-banner .event-btn {
+    float: left;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.events {
+    width: 100%;
+    height: 368px;
+    /*    background-color: #1e3932;*/
+    background-color: #f6f5ef;
+    overflow: hidden;
+}
+
+.inner-events {
+    width: 1280px;
+    height: 100%;
+    margin: 20px auto;
+    position: relative;
+    /*    left: -640px;*/
+}
+
+.evt-show {
+    position: absolute;
+    left: -540px;
+}
+
+.event-wrap {
+    /*    max-width: 100%;*/
+    width: 3200px;
+    position: absolute;
+    /*    left: -1280px;*/
+}
+
+.event {
+    width: 800px;
+    float: left;
+    position: relative;
+    /*    background-color: black;*/
+}
+
+li.event span {
+    display: block;
+    width: 750px;
+    left: 25px;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.event a {
+    /*    display: block;*/
+    padding: 0 25px;
+}
+
+.inner-events .event-btn-grp {
+    width: 300px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -50px;
+}
+
+.inner-events .event-btn-grp li {
+    float: left;
+    padding-left: 10px;
+}
+
+.inner-events .event-btn-grp li {
+    color: #666;
+    font-size: 20px;
+    line-height: 22px;
+    /*    cursor: pointer;*/
+}
+
+.inner-events .event-btn-grp li.play-btn {
+    cursor: pointer;
+}
+
+.inner-events .event-btn-grp li.on {
+    color: #76cc1e;
+}
+
+li.on span {
+    display: none;
+}
+
+/* 로그인 이전 섹션 */
+.login-reward {
+    width: 100%;
+    height: 220px;
+    background-color: #222;
+    overflow: hidden;
+    /*    border-bottom: 1px solid #fff;*/
+}
+
+.login-reward .inner-reward {
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.login-reward .inner-reward .logo {
+    width: 40%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.login-reward .inner-reward .logo img {
+    width: 100px;
+    position: absolute;
+    right: 50px;
+    top: 42px;
+}
+
+.login-reward .inner-reward .field-wrap {
+    width: 60%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.login-reward .inner-reward .field-wrap .explain {
+    width: 100%;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.login-reward .inner-reward .field-wrap .explain .e-title {
+    font-size: 20px;
+    line-height: 22px;
+    text-align: left;
+    font-weight: 400;
+    padding: 20px 0;
+}
+
+.login-reward .inner-reward .field-wrap .explain .e-txt {
+    text-align: left;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.login-reward .inner-reward .btn-field .btn-wrap {
+    margin-top: 10px;
+}
+
+.login-reward .inner-reward .btn-field .btn-wrap a {
+    color: #fff;
+    display: block;
+    width: 120px;
+    height: 26px;
+    line-height: 26px;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 14px;
+    margin: 10px 0 0 20px;
+    float: left;
+}
+
+.login-reward .inner-reward .btn-field a:hover {
+    background-color: #fff;
+    color: #222;
+    font-weight: 700;
+}
+
+/* 로그인했을 경우에 달라지는 화면 */
+
+.login-reward .inner-login {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.login-reward .inner-login .rank {
+    width: 50%;
+    height: 220px;
+    float: left;
+    position: relative;
+}
+
+.login-reward .inner-login .rank img {
+    width: 150px;
+    position: absolute;
+    right: 30px;
+    top: 40px;
+}
+
+.login-reward .inner-login .field-wrap {
+    width: 50%;
+    height: 220px;
+    float: left;
+}
+
+.login-reward .inner-login .field-wrap .explain {
+    width: 100%;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.login-reward .inner-login .field-wrap .explain .e-title {
+    font-size: 20px;
+    line-height: 22px;
+    text-align: left;
+    font-weight: 400;
+    padding: 20px 0;
+}
+
+.login-reward .inner-login .field-wrap .explain .e-txt {
+    text-align: left;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.login-reward .inner-login .field-wrap a {
+    color: #fff;
+    display: block;
+    width: 120px;
+    height: 26px;
+    line-height: 26px;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.login-reward .inner-login .field-wrap a:hover {
+    background-color: #fff;
+    color: #222;
+    font-weight: 700;
+}
+
+
+/* game-info */
+
+.game-info {
+    width: 100%;
+    height: 780px;
+    /*    background-color: #222;*/
+    /*    overflow: hidden;*/
+    /*    background-color: rgba(0, 0, 0, 0.8);*/
+    background-image: url(../img/card_bg.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+/*    background-attachment: fixed;*/
+}
+
+.inner-info {
+    width: 1280px;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    /*    overflow: hidden;*/
+}
+
+/* section-menu */
+
+.section-menu {
+    width: 100%;
+    height: 20px;
+    padding: 30px 0 10px;
+    border-bottom: 1px solid #fff;
+}
+
+.section-menu p {
+    margin-right: 30px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* game-info tab wrap */
+
+.tab-wrap .tab-best {
+    width: 1280px;
+    height: 700px;
+}
+
+.tab-wrap .tab-best .main-best img {
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+}
+
+.tab-wrap .tab-best .main-best {
+    width: 40%;
+    height: 100%;
+    margin-top: 20px;
+    float: right;
+}
+
+.tab-wrap .tab-best .main-best .best-captions {
+    width: 500px;
+    height: 160px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/*  game-list  */
+
+.tab-wrap .tab-best .game-list {
+    width: 60%;
+    margin-top: 20px;
+    float: left;
+}
+
+.tab-wrap .tab-best .game-list .best-boardgame {
+    height: 120px;
+    width: 740px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: ease-out .3s;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.tab-wrap .tab-best .game-list .best-boardgame img {
+    width: 120px;
+    border-radius: 10px;
+    float: left;
+}
+
+.tab-wrap .tab-best .game-list .best-boardgame .game-detail {
+    color: #fff;
+    float: left;
+}
+
+.tab-wrap .tab-best .game-list .best-boardgame .game-detail .game-title {
+    padding: 10px;
+    font-size: 20px;
+    /*    color: #000;*/
+    font-weight: 700;
+}
+
+.tab-wrap .tab-best .game-list .best-boardgame .game-detail .game-desc {
+    padding: 10px 0 0 10px;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+/* main-best */
+
+.main-best .best-captions .maingame-title {
+    padding: 20px 0;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
+
+.main-best .best-captions .maingame-desc {
+    color: #fff;
+    font-size: 16px;
+    padding: 0 20px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.tab-wrap .tab-best .game-list .best-boardgame:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tab-wrap .tab-best .game-list .best-boardgame:hover .game-detail {
+    color: #111;
+}
+
+.tab-wrap .tab-best .game-list .best-boardgame:hover img {
+    opacity: 0.8;
+}
+
+/* if, click this element turn on On! */
+
+.tab-wrap .tab-best .game-list .on {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tab-wrap .tab-best .game-list .on .game-detail {
+    color: #111;
+}
+
+.tab-wrap .tab-best .game-list .on img {
+    opacity: 0.8;
+}
+
+/* custom */
+.custom {
+    width: 100%;
+    height: 500px;
+    padding: 30px 0;
+    background-color: #222;
+    /*    background-image: url(../img/8270289.jpg);*/
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+
+    background-image: -moz-linear-gradient(90deg, rgb(66, 66, 66) 0%, rgb(0, 0, 0) 100%);
+    background-image: -webkit-linear-gradient(90deg, rgb(66, 66, 66) 0%, rgb(0, 0, 0) 100%);
+    background-image: -ms-linear-gradient(90deg, rgb(66, 66, 66) 0%, rgb(0, 0, 0) 100%);
+    /*    */
+    /*        background: url(https://d3j730xi5ph1dq.cloudfront.net/dream/homepage/homepage-background.png) 0% 0% / cover rgb(250, 250, 250);*/
+
+    /*    background-color: #555;*/
+
+
+}
+
+.inner-custom {
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.inner-custom .card-ex1 {
+    width: 200px;
+    height: 350px;
+    border-radius: 10px;
+    position: absolute;
+    left: 90px;
+    top: 69px;
+    transform: rotate(1deg);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+        0 2px 2px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1),
+        0 8px 8px rgba(0, 0, 0, 0.1),
+        0 16px 16px rgba(0, 0, 0, 0.1);
+}
+
+.inner-custom .card-ex2 {
+    width: 200px;
+    height: 350px;
+    border-radius: 10px;
+    position: absolute;
+    left: 108px;
+    top: 69px;
+    transform: rotate(350deg);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+        0 2px 2px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1),
+        0 8px 8px rgba(0, 0, 0, 0.1),
+        0 16px 16px rgba(0, 0, 0, 0.1);
+}
+
+.inner-custom .card {
+    position: relative;
+    top: 130px;
+    left: 20%;
+    transform: rotate(6deg);
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+        0 2px 2px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1),
+        0 8px 8px rgba(0, 0, 0, 0.1),
+        0 16px 16px rgba(0, 0, 0, 0.1);
+
+}
+
+.inner-custom .card img {
+    width: 200px;
+    height: 350px;
+    border-radius: 10px;
+    transition: all 1s ease;
+    position: absolute;
+}
+
+.inner-custom .card img.card-front {
+    transform: rotateY(-180deg);
+}
+
+.inner-custom .custom-wrap {
+    position: absolute;
+    top: 45px;
+    right: 130px;
+}
+
+.inner-custom .custom-wrap .c-title {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    padding-bottom: 30px;
+}
+
+.inner-custom .custom-wrap .c-title p {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.inner-custom .custom-wrap .custom-option {
+    width: 360px;
+    height: 250px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+.inner-custom .custom-wrap .custom-option .front-custom {
+    margin: 6px 0 20px;
+    margin-left: 12.5px;
+}
+
+.inner-custom .custom-wrap .custom-option .back-custom {
+    margin: 6px 0 30px 12.5px;
+}
+
+.inner-custom .custom-wrap .custom-option .option {
+    display: block;
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    float: left;
+    margin: 0 8px;
+    opacity: 0.7;
+    transition: ease-out .1s;
+    cursor: pointer;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.inner-custom .custom-wrap .custom-option .active {
+    border: 4px solid rgb(133, 89, 255);
+    opacity: 1;
+}
+
+.inner-custom .custom-wrap .custom-option p {
+    color: #fff;
+    opacity: 0.7;
+    text-indent: 25px;
+}
+
+.inner-custom .custom-wrap .custom-option .fr01 {
+    background-image: url(../img/fr01.jpg);
+}
+
+.inner-custom .custom-wrap .custom-option .fr02 {
+    background-image: url(../img/fr02.jpg);
+}
+
+.inner-custom .custom-wrap .custom-option .fr03 {
+    background-image: url(../img/fr03.jpg);
+}
+
+.inner-custom .custom-wrap .custom-option .fr04 {
+    background-image: url(../img/fr04.jpg);
+}
+
+.inner-custom .custom-wrap .custom-option .fr05 {
+    background-image: url(../img/fr05.jpg);
+}
+
+.inner-custom .custom-wrap .custom-option .bk01 {
+    background-image: url(../img/bk01.png);
+}
+
+.inner-custom .custom-wrap .custom-option .bk02 {
+    background-image: url(../img/bk02.png);
+}
+
+.inner-custom .custom-wrap .custom-option .bk03 {
+    background-image: url(../img/bk03.png);
+}
+
+.inner-custom .custom-wrap .custom-option .bk04 {
+    background-image: url(../img/bk04.png);
+}
+
+.inner-custom .custom-wrap .custom-option .bk05 {
+    background-image: url(../img/bk05.png);
+}
+
+.inner-custom .custom-wrap .custom-option .option:hover {
+    opacity: 1;
+}
+
+.inner-custom .custom-wrap .custom-option a {
+    display: block;
+    width: 360px;
+    height: 50px;
+    color: #fff;
+    font-size: 16px;
+    list-style: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-weight: 700;
+    border-radius: 20px;
+    background-color: rgb(133, 89, 255);
+    transition: ease-out .1s;
+}
+
+.inner-custom .custom-wrap .custom-option a:hover {
+    opacity: 0.8;
+}
+
+
+/* clubs */
+
+.clubs {
+    width: 100%;
+    height: 500px;
+    background-image: url(../img/Boardgames-lead.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.clubs .inner-clubs {
+    width: 1280px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.clubs .inner-clubs .arrow-btn div {
+	width: 80px;
+	height: 160px;
+	border-radius: 10px;
+	background-color: rgba(255,255,255,0.3);
+	opacity: 0.5;
+	position: absolute;
+	top: 160px;
+	z-index: 20;
+	transition: ease-out .2s;
+	cursor: pointer;
+}
+
+.clubs .inner-clubs .arrow-btn div img {
+	width : 60px;
+	margin: 42px 0  0 10px;
+}
+
+.clubs .inner-clubs .arrow-btn div.left {
+	left: 0;
+}
+
+.clubs .inner-clubs .arrow-btn div.right {
+	right: 0;
+}
+
+.clubs .inner-clubs .arrow-btn div:hover {
+	opacity: 1;
+}
+
+
+.clubs .inner-clubs .club-wrap .club img {
+    width: 600px;
+}
+
+.clubs .inner-clubs .club-wrap {
+    width: 1950px;
+    position: absolute;
+    top: 100px;
+    left: -330px;
+}
+
+.clubs .inner-clubs .club-wrap li {
+    float: left;
+    margin: 0 25px;
+    position: relative;
+}
+
+.clubs .inner-clubs .club-wrap li p {
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+    padding-top: 10px;
+}
+
+
+.clubs .inner-clubs .club-wrap li span {
+    width: 600px;
+    height: 318px;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+}
+
+.clubs .inner-clubs .club-wrap li.on span {
+    display: none;
+}
+
+
+.shopping {
+    width: 100%;
+    height: 550px;
+    background-color: #f6f5ef;
+    overflow: hidden;
+}
+
+.inner-shopping {
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* section title */
+
+.inner-shopping .section-menu {
+    border-bottom: 1px solid #333;
+}
+
+.inner-shopping .section-menu p {
+    margin-right: 30px;
+    color: #333;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+
+}
+
+.inner-shopping .products-wrap {
+    width: 3200px;
+    position: absolute;
+    top: 20%;
+    left: -1600px;
+}
+
+.inner-shopping .products-wrap .product {
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    margin-right: 20px;
+    border-radius: 18px;
+    box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+    float: left;
+}
+
+.inner-shopping .products-wrap .product span {
+    color: red;
+    margin-left: 62px;
+    padding-bottom: 10px;
+    display: block;
+}
+
+.inner-shopping .products-wrap .product .name {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 700;
+    color: #555;
+    font-family: sans-serif;
+}
+
+.inner-shopping .products-wrap .product .price {
+    padding: 10px 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+.inner-shopping .products-wrap .product img {
+    width: 250px;
+    margin: 25px;
+}
