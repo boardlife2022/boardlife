@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.sql.DataSource;
 
+import vo.Boardgames;
 import vo.Boardgames2;
 import vo.Offerclub;
 
@@ -326,13 +327,13 @@ public class Club_Function_DAO {
 		Offerclub Club = null;
 		
 		String club_list_sql=
-				"SELECT oc.club_num, oc.club_title, oc.user_id, oc.club_place, oc.club_day, oc.club_time, oc.club_intro, oc.start_date, oc.finish_date, oc.club_reps, oc.capacity, oc.membership_fee," 
+				"SELECT oc.club_num, oc.club_title, oc.user_id, oc.club_place, oc.club_day, oc.club_detail, oc.club_time, oc.club_intro, oc.start_date, oc.finish_date, oc.club_reps, oc.capacity, oc.membership_fee," 
 				+"bg.b_img, bg.b_theme, bg.proceed"
 				+ " FROM offer_club oc, board_game bg"
 				+ " WHERE SUBSTRING_INDEX(oc.b_id,',', 1) = bg.b_id"
 				+ " AND oc.club_num =" + ClubNum + ";";
 		
-		System.out.println(club_list_sql);
+		//System.out.println(club_list_sql);
 		
 		try {
 			pstmt = con.prepareStatement(club_list_sql);
@@ -346,6 +347,7 @@ public class Club_Function_DAO {
 				Club.setClub_num(rs.getInt("club_num"));
 				Club.setClub_title(rs.getString("club_title"));
 				Club.setClub_intro(rs.getString("club_intro"));
+				Club.setClub_detail(rs.getString("club_detail"));
 				Club.setUser_id(rs.getString("user_id"));
 				Club.setClub_day(rs.getString("club_day"));
 				Club.setClub_place(rs.getString("club_place"));
@@ -373,6 +375,67 @@ public class Club_Function_DAO {
 		
 		return Club;
 	} // selectClub
+	
+	
+	public ArrayList<Boardgames> selectClubBoardgames(int clubNum){
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String club_list_sql=
+				"SELECT bg.*"
+				+ " FROM board_game bg" 
+				+ " JOIN ("
+				+ " SELECT"
+				+ " SUBSTRING_INDEX(SUBSTRING_INDEX(oc.b_id, ',', 1), ',', -1) as first_id,"
+				+ " SUBSTRING_INDEX(SUBSTRING_INDEX(oc.b_id, ',', 2), ',', -1) as second_id,"
+				+ " SUBSTRING_INDEX(SUBSTRING_INDEX(oc.b_id, ',', 3), ',', -1) as third_id"
+				+ " FROM offer_club oc"
+				+ " WHERE oc.club_num = " + clubNum
+				+ " ) AS extracted_ids"
+				+ " ON bg.b_id = extracted_ids.first_id OR bg.b_id = extracted_ids.second_id OR bg.b_id ="
+				+ " extracted_ids.third_id;";
+				
+		ArrayList<Boardgames> ClubBoardgame = new ArrayList<Boardgames>();
+		
+		try {
+			pstmt = con.prepareStatement(club_list_sql);
+			//System.out.println("실행");
+			rs = pstmt.executeQuery();
+			
+			// System.out.println(rs);
+			
+			if(rs.next()) {
+				Boardgames Bgame = new Boardgames();
+				Bgame.setB_id(rs.getString("b_id"));
+				Bgame.setB_title(rs.getString("b_title"));
+				Bgame.setYearof(rs.getString("yearof"));
+				Bgame.setPrice(rs.getInt("price"));
+				Bgame.setPnum(rs.getString("pnum"));
+				Bgame.setRunning_time(rs.getString("running_time"));
+				Bgame.setAge(rs.getString("age"));
+				Bgame.setB_img(rs.getString("b_img"));
+				Bgame.setGame_level(rs.getInt("game_level"));
+				Bgame.setDesigner(rs.getString("designer"));
+				Bgame.setSub_lang(rs.getString("sub_lang"));
+				Bgame.setB_theme(rs.getString("b_theme"));
+				Bgame.setProceed(rs.getString("proceed"));
+				Bgame.setB_detail(rs.getString("b_detail"));
+				Bgame.setPublisher(rs.getString("publisher"));
+				ClubBoardgame.add(Bgame);
+			}
+			
+		} catch(Exception ex) {
+			
+			System.out.println("problem");
+			ex.printStackTrace();
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return ClubBoardgame;
+	} // selectClubBoardgames
 	
 
 } // Function_DAO.class

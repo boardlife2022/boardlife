@@ -1,12 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="vo.Offerclub" %> 
+<%@ page import="vo.Boardgames"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.text.NumberFormat" %>
+<%@ page import="java.util.Locale" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
+
 <jsp:include page="header.jsp"/>
 <link rel="stylesheet" href="css/boardgameclub_view.css">
 
 <%
 	Offerclub club = (Offerclub)request.getAttribute("club");
     String nowPage = (String)request.getAttribute("page");
+    ArrayList<Boardgames> ClubBgames = (ArrayList<Boardgames>)request.getAttribute("ClubBgames");
+    
+    // 가격 정보 원화로 전환하기
+    NumberFormat nf = NumberFormat.getCurrencyInstance(Locale.KOREA);
+    String clubFee = nf.format(club.getMembership_fee());
+    
+    // 날짜정보 가져와서 년, 월, 일 값으로 반환하기
+    SimpleDateFormat inputFormat = new SimpleDateFormat("yyMMdd");
+    Date date = inputFormat.parse(club.getStart_date());
+    SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy년 M월 d일");
+    String formattedDate = outputFormat.format(date);
+   
 %>
 
     <!--  CSS  -->
@@ -38,8 +57,13 @@
 
                 <div class="club_detail">
 
-                    <p class="club_title">톰 셸비와 함께하는 보드게임 여행</p>
-                    <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
+                    <p class="club_title"><%= club.getClub_title() %></p>
+                    <p class="hashtag">
+                    <span>#<%= club.getClub_reps() %>회차</span>
+                    <span>#<%= club.getB_theme() %> </span>
+                    <span>#<%= club.getProceed() %> </span>
+                    <span>#<% if(club.getClub_place().equals("online")){ out.print("online"); } else {out.print("offline");} %></span>
+                    </p>
 
                     <div class="user_info clearfix">
                         <div class="user_img">
@@ -47,27 +71,27 @@
                         </div>
 
                         <div class="user_detail">
-                            <p class="nickname">Moderator : nickname</p>
+                            <p class="nickname">Moderator : <%= club.getUser_id() %></p>
                             <p class="career">- 제 1회 버밍엄 보드게임 클럽 모임 진행(2022.12.12)</p>
                         </div>
                     </div>
 
                     <p class="detail">
                         <span class="item">날짜</span>
-                        <span class="info">23. 04. 12-13(수,목)</span>
+                        <span class="info"><%= formattedDate %>(<%= club.getClub_day() %>)</span>
                     </p>
 
                     <p class="detail">
                         <span class="item">장소</span>
-                        <span class="info">서울특별시 강남구 강남대로96길 16 5층 501호</span>
+                        <span class="info"><%= club.getClub_place() %></span>
                     </p>
 
                     <p class="detail">
                         <span class="item">시간</span>
-                        <span class="info">오후 18-19시</span>
+                        <span class="info"><%= club.getClub_time() %>시</span>
                     </p>
 
-                    <p class="club_fee">&#8361; 20,000원</p>
+                    <p class="club_fee"><%= clubFee %></p>
 
 
                     <div class="btn_wrap clearfix">
@@ -110,18 +134,12 @@
             <div class="tab active" id="tab1Detail">
 
                 <pre class="detail">
- 🎉 톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며,보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.
+ 🎉 <%= club.getClub_intro() %>
  
 <b>🎲 보드게임 클럽 소개</b>
  
- "톰 셸비의 보드게임 여행"은 대한민국의 보드게임 클럽 중 하나로, 킬리언 머피가 출연한 드라마 'Peaky Blinders'를 주제로 한 보드게임 'Peaky Blinders: Under New Management'을 함께 즐기는 클럽입니다.
-
- 이 클럽은 매월 정기적으로 모임을 갖으며, Peaky Blinders: Under New Management을 비롯한 다양한 보드게임을 즐길 수 있습니다. 또한, 새로운 게임을 경험하고 공유하며 보드게임에 대한 정보를 교환할 수 있는 다양한 이벤트를 진행합니다.
-
- Peaky Blinders: Under New Management은 Peaky Blinders 드라마의 스토리와 캐릭터를 기반으로 한 전략적인 보드게임입니다. 이 게임에서는 플레이어들이 폭력과 승부욕으로 도시를 지배하려는 집단인 "피키 블라인더스"의 일원으로서, 경제적인 목표를 달성하면서 도시를 통제하고 적을 격파하는 전략적인 게임을 즐길 수 있습니다.
-
- "톰 셸비의 보드게임 여행" 클럽은 이 게임을 비롯한 다양한 보드게임을 즐기는 분들과 함께 새로운 게임을 경험하고, 즐겁게 게임을 즐길 수 있는 공간을 제공합니다. 클럽 활동을 통해 보드게임에 대한 관심과 지식을 공유하고, 새로운 친구들을 만날 수 있는 기회도 제공합니다.
-               
+<%= club.getClub_detail() %>
+              
                
 <b style="color: red">🛑 주의해주세요!!</b>
                   
