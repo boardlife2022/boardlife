@@ -12,7 +12,7 @@
 
     try {
         Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "root", "0407");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "root", "rhkddml");
         if(conn == null)
             throw new Exception("Unable to connect database.");
         stmt = conn.createStatement();

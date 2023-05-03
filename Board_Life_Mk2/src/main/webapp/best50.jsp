@@ -34,7 +34,7 @@
     	<col width="15%"><!--보드게임 타이틀이미지-->
         <col width="400px"><!--제목(한글)-->
         <col width="20%"><!--출시년도-->
-	 	<col width="30%"><!--유저 평점-->
+	 	<col width="40%"><!--유저 평점-->
         <col width="10%"><!---->
 	</colgroup>
 
@@ -52,9 +52,9 @@
 			for(int i = 0; i < articleList.size(); i++){
 		%>
 		<tr class="boardgame_list">
-		<td style="margin-left: 10px;border-left: 2px solid #aaa"><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>"><%=i+1%></a></td>
+		<td style="margin-left: 10px;border-left: 2px solid #aaa"><a href="boardgameinfo_detail.in?<%=articleList.get(i).getB_id()%>"><%=i+1%></a></td>
 		<td><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>"><img src="img/<%=articleList.get(i).getB_img()%>"></a></td>
-   		<td id="b_t"><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>">
+   		<td id="b_t"><a href="boardgameinfo_detail.in?<%=articleList.get(i).getB_id()%>">
    		<h2><%= articleList.get(i).getB_title_kor()%></h2><br>
    		<h3><%= articleList.get(i).getB_title_eng()%></h3>
    		</a></td>

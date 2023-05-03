@@ -68,7 +68,6 @@ public class Info_Function_DAO {
 
 			while(rs.next()){
 				board = new Boardgames2();
-        		
 
         		board.setB_id(rs.getString("b_id"));
         		board.setB_img(rs.getString("b_img"));
@@ -99,5 +98,70 @@ public class Info_Function_DAO {
 		return articleList;
 
 	}
-
+	
+	public Boardgames2 oneselectArticleList(int bid) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Boardgames2 board = null;
+		
+		try{
+			pstmt = con.prepareStatement(
+					"select * from board where BOARD_NUM = ?");
+			pstmt.setInt(1, bid);
+			rs= pstmt.executeQuery();
+			
+			if(rs.next()){
+				board = new Boardgames2();
+				
+				board.setB_id(rs.getString("b_id"));
+        		board.setB_img(rs.getString("b_img"));
+        		board.setB_title_kor(rs.getString("b_title_kor"));
+        		board.setB_title_eng(rs.getString("b_title_eng"));
+        		board.setYearof(rs.getString("yearof"));
+        		board.setPnum(rs.getString("pnum"));
+        		board.setRunning_time(rs.getString("running_time"));
+        		board.setAge(rs.getString("age"));
+        		board.setGame_level(rs.getInt("game_level"));
+        		board.setSub_lang(rs.getString("sub_lang"));
+        		board.setB_detail(rs.getString("b_detail"));
+        		board.setPublisher(rs.getString("publisher"));
+        		board.setGeeklink(rs.getString("geeklink"));
+        		board.setDesigner(rs.getString("designer"));
+        		board.setB_theme(rs.getString("b_theme"));
+        		board.setProceed(rs.getString("proceed"));
+        		
+			}
+		}catch(Exception ex){
+			System.out.println("한개 셀렉안됨");
+		}finally{
+			close(rs);
+			close(pstmt);
+		}
+		
+		return board;
+	}
+	public ArrayList<Boardgames2> proceedselect(){
+		ArrayList<Boardgames2> articleList = new ArrayList<Boardgames2>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Boardgames2 board = null;
+		String board_list_sql="";
+	try {
+		pstmt = con.prepareStatement(board_list_sql);
+		rs = pstmt.executeQuery();
+		
+		while(rs.next()){
+			board = new Boardgames2();
+			
+			articleList.add(board);
+		}
+		
+	} catch (Exception e) {
+		
+	}finally{
+		close(rs);
+		close(pstmt);
+	}
+		return articleList;
+	}
 }

@@ -3,6 +3,12 @@
 <%@ page import="vo.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
 
+<%
+	Boardgames2 articleList = (Boardgames2)request.getAttribute("articleList");
+	Club_PageInfo pageInfo = (Club_PageInfo)request.getAttribute("pageInfo");
+ %>
+
+
 <link rel="stylesheet" type="text/css" href="css/boardgameinfo_detail.css">
 
 <jsp:include page="header.jsp"/>

@@ -70,7 +70,7 @@
                         <li class="home_btn" id="home"><a href="index.jsp">HOME</a></li>
                         <li id="bd_info"><a href="boardgameinfo_main.jsp">Board Game Info</a></li>
                         <li id="bd_club"><a href="boardgameclub_main.jsp">Board Game Club</a></li>
-                        <li id="bd_shop"><a href="#">Board Game Shop</a></li>
+                        <li id="bd_shop"><a href="Product_list.jsp">Board Game Shop</a></li>
                         <li id="bd_comm"><a href="community_list.jsp">Community</a></li>
                     </ul>
                 </div>

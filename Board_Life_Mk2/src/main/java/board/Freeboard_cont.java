@@ -173,7 +173,6 @@ public Boardgames bgselectone(int g){
         	int cnt;
         	while(rs.next()){
         		
-        		
         		bg.setB_id(rs.getString("b_id"));
         		bg.setB_title(rs.getString("b_title"));
         		bg.setYearof(rs.getString("yearof"));

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import action.Action;
 import action.Info_BoardListAction;
 import action.Info_CustomAction;
+import action.Info_DetailAction;
 import vo.ActionForward;
 
 @WebServlet("*.in")
@@ -37,7 +38,7 @@ public class Info_BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 			
 		}
-		if(command.equals("/boardgameinfo_custom.in")){
+		else if(command.equals("/boardgameinfo_custom.in")){
 			action = new Info_CustomAction();
 			try{
 				forward = action.execute(request, response);
@@ -45,7 +46,14 @@ public class Info_BoardFrontController extends javax.servlet.http.HttpServlet
 				System.out.println("커스텀.in안됨");
 			}
 		}
-		
+		else if(command.equals("/boardgameinfo_detail.in")){
+			action = new Info_DetailAction();
+			try{
+				forward=action.execute(request, response);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
 		
 		if(forward != null){
 			
