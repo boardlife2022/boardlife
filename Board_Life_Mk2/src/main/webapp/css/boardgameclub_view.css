@@ -15,16 +15,18 @@ body {
     margin-bottom: 30px;
 }
 
+/*
 .club_apply .club_img {
     width: 730px;
     height: 730px;
     float: left;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    background-image: url("../img/peakyblinders.png");
+    background-image: url("../img/peakyblinders.png"); 
     background-size: cover;
     position: relative;
 }
+*/
 
 .club_apply .club_img .cover {
     display: block;
@@ -219,6 +221,8 @@ body {
 }
 
 .club_apply .club_info .club_boardgame div img {
+	display: block;
+	float: left;
     width: 130px;
     height: 130px;
     border-radius: 5px;

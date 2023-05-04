@@ -25,6 +25,13 @@ public class Club_DetailAction implements Action {
 		// club내에 있는 보드게임 정보(최대 3개) 가져오기
 		ArrayList<Boardgames> boardgame = ClubDetailService.getBoardgames(Club_num);
 		
+		// 보드게임 정보 반환하기
+		for(int k = 0; k < boardgame.size(); k++) {
+		System.out.println(boardgame.get(k).getB_title());
+		}
+		
+		System.out.println("클럽 넘버 : " + Club_num + " boardgame index 값 : " + boardgame.size());
+		
 		// ActionForward 객체 생성
 		ActionForward forward = new ActionForward();
 		

@@ -404,7 +404,7 @@ public class Club_Function_DAO {
 			
 			// System.out.println(rs);
 			
-			if(rs.next()) {
+			while(rs.next()) {
 				Boardgames Bgame = new Boardgames();
 				Bgame.setB_id(rs.getString("b_id"));
 				Bgame.setB_title(rs.getString("b_title"));

@@ -35,6 +35,19 @@
     <!--  JS  -->
     <script src="js/boardgame_club_View.js"></script>
     
+    <style>
+    .club_apply .club_img {
+    width: 730px;
+    height: 730px;
+    float: left;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    position: relative;
+    background-image: url("img/<%= ClubBgames.get(0).getB_img() %>");
+	}
+    </style>
+    
 </head>
 
 <body>
@@ -45,11 +58,11 @@
 
             <div class="club_img">
                 <span class="cover"></span>
-                <img src="img/peakyblinders.png" alt="peakyblinders">
+                <img src="img/<%= ClubBgames.get(0).getB_img() %>" alt="peakyblinders">
                 <p class="boardgame_detail">
-                    <span class="title">Peaky Blinders: Under New Management (2019)</span>
+                    <span class="title"><%= ClubBgames.get(0).getB_title() %></span>
                     <br>
-                    <span class="description">Create and manage your criminal network in a gang war set in 1920's England.</span>
+                    <span class="description"><%= ClubBgames.get(0).getB_detail() %></span>
                 </p>
             </div>
 
@@ -109,8 +122,8 @@
 
                     <p>Board Games</p>
 
-                    <div class="boardgame_wrap">
-                        <img src="img/peakyblinders.png" alt="Peaky Blinders: Under New Management (2019)" data-value="Create and manage your criminal network in a gang war set in 1920's England." class="choice" id="boardgame1">
+                    <div class="boardgame_wrap clearfix">
+                        <img src="img/<%= ClubBgames.get(0).getB_img() %>" alt="Peaky Blinders: Under New Management (2019)" data-value="Create and manage your criminal network in a gang war set in 1920's England." class="choice" id="boardgame1">
                         <img src="img/7wonders.png" alt="7 Wonders Duel (2015)" data-value="Science Military What will you draft to win this head-to-head version of 7 Wonders" id="boardgame2">
                         <img src="img/sleeping_gods.png" alt="Sleeping Gods (2021)" data-value="Voyages of the steamship 'Manticore'' and her crew on the Wandering Sea." id="boardgame3">
                     </div>
