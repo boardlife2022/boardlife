@@ -52,7 +52,7 @@
 			for(int i = 0; i < articleList.size(); i++){
 		%>
 		<tr class="boardgame_list">
-		<td style="margin-left: 10px;border-left: 2px solid #aaa"><a href="boardgameinfo_detail.in?<%=articleList.get(i).getB_id()%>"><%=i+1%></a></td>
+		<td style="margin-left: 10px;border-left: 1px solid #aaa"><a href="boardgameinfo_detail.in?bid=<%=articleList.get(i).getB_id()%>"><%=i+1%></a></td>
 		<td><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>"><img src="img/<%=articleList.get(i).getB_img()%>"></a></td>
    		<td id="b_t"><a href="boardgameinfo_detail.in?<%=articleList.get(i).getB_id()%>">
    		<h2><%= articleList.get(i).getB_title_kor()%></h2><br>
@@ -64,7 +64,14 @@
    		<span><a herf="boardgameinfo_theme.jsp"><%=articleList.get(i).getB_theme()%></a></span>
    		</p>
    		<p class="best_proceed">
-   		<span>#<%=articleList.get(i).getProceed()%></span>
+   		<span>#<%=articleList.get(i).getFirst_proceed()%></span>
+   		<%if(articleList.get(i).getSecond_proceed().equals(null)){ %>
+   		<span>#<%=articleList.get(i).getSecond_proceed() %></span>
+   		
+   		<span>#<%=articleList.get(i).getThird_proceed() %></span>
+   		
+   		<span>#<%=articleList.get(i).getFourth_proceed() %></span>
+   		<%} %>
    		</p>
    		</td>
 		<td class="best_rating"><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>">0</a></td>

@@ -10,7 +10,7 @@ public class Info_DetailAction implements Action {
 	
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{ 
 	   	
-		int bid=Integer.parseInt(request.getParameter("b_id"));
+		int bid=Integer.parseInt(request.getParameter("bid"));
 		String page = request.getParameter("page");
 		Info_DetailService infodetailsvc = new Info_DetailService();
 		Boardgames2 article = infodetailsvc.getArticle(bid);

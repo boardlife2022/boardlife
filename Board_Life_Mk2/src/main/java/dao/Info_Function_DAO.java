@@ -56,7 +56,13 @@ public class Info_Function_DAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Boardgames2 board = null;
-		String board_list_sql="select * from board_game2 order by b_id desc limit ?,50";
+		String board_list_sql="select *,"
+		+" substring_index(substring_index(proceed,',',1),',',-1) as first_proceed,"
+		+" substring_index(substring_index(proceed,',',2),',',-1) as second_proceed,"
+		+" substring_index(substring_index(proceed,',',3),',',-1) as third_proceed,"
+		+" substring_index(substring_index(proceed,',',4),',',-1) as fourth_proceed"
+		+" from board_game2 order by b_id desc limit ?,50;";
+		
 		ArrayList<Boardgames2> articleList = new ArrayList<Boardgames2>();
 		
 		int startrow=(page-1)*10; 
@@ -85,11 +91,19 @@ public class Info_Function_DAO {
         		board.setDesigner(rs.getString("designer"));
         		board.setB_theme(rs.getString("b_theme"));
         		board.setProceed(rs.getString("proceed"));
+        		board.setFirst_proceed(rs.getString("first_proceed"));
+        		if(!rs.getString("first_proceed").equals(rs.getString("second_proceed"))) {
+        		board.setSecond_proceed(rs.getString("second_proceed"));
+        		}else if(!rs.getString("second_proceed").equals(rs.getString("third_proceed"))) {
+        		board.setThird_proceed(rs.getString("third_proceed"));
+        		}else if(!rs.getString("third_proceed").equals(rs.getString("fourth_proceed"))) {
+        		board.setFourth_proceed(rs.getString("fourth_proceed"));
+        		}
 				articleList.add(board);
 			}
 
 		}catch(Exception ex){
-			System.out.println(ex);
+			
 		}finally{
 			close(rs);
 			close(pstmt);
@@ -106,7 +120,7 @@ public class Info_Function_DAO {
 		
 		try{
 			pstmt = con.prepareStatement(
-					"select * from board where BOARD_NUM = ?");
+					"select * from board where "+bid+" = ?");
 			pstmt.setInt(1, bid);
 			rs= pstmt.executeQuery();
 			
@@ -132,7 +146,7 @@ public class Info_Function_DAO {
         		
 			}
 		}catch(Exception ex){
-			System.out.println("한개 셀렉안됨");
+			System.out.println(ex);
 		}finally{
 			close(rs);
 			close(pstmt);

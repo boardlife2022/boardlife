@@ -17,8 +17,36 @@ public class Boardgames2 {
     private String b_theme;
     private String proceed;
     private String b_img;
+    private String first_proceed;
+    private String second_proceed;
+    private String third_proceed;
+    private String fourth_proceed;
     
     
+	public String getFourth_proceed() {
+		return fourth_proceed;
+	}
+	public void setFourth_proceed(String fourth_proceed) {
+		this.fourth_proceed = fourth_proceed;
+	}
+	public String getFirst_proceed() {
+		return first_proceed;
+	}
+	public void setFirst_proceed(String first_proceed) {
+		this.first_proceed = first_proceed;
+	}
+	public String getSecond_proceed() {
+		return second_proceed;
+	}
+	public void setSecond_proceed(String second_proceed) {
+		this.second_proceed = second_proceed;
+	}
+	public String getThird_proceed() {
+		return third_proceed;
+	}
+	public void setThird_proceed(String third_proceed) {
+		this.third_proceed = third_proceed;
+	}
 	public String getB_id() {
 		return b_id;
 	}
