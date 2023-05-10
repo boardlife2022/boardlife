@@ -81,9 +81,13 @@ font-size : 12pt;
 .blist_year{
 	font-size: 10pt;
 }
-.best_theme{
+.best_theme span a{
 	padding: 2 8px;
 	margin-bottom: 10px;
+    font-size: 13pt;
+    font-weight: 600;
+    letter-spacing: 2px;
+    
 }
 .best_proceed{
 	

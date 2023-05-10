@@ -33,6 +33,8 @@
 .detail_title{
 	float: none;
 	margin-top: 16px;
+	font-size: 17pt;
+	height: 30px;
 }
 .detail_title_eng{
 	color: #777;
@@ -63,10 +65,7 @@
 	height: 17px;
 }
 .detail_year{
-	margin-top: -15px;
-	margin-left: 10px;
-	float: none;
-	font-size: 16px;
+	font-size: 14px;
 }
 .detail_rank{
 	float: left;
@@ -75,8 +74,8 @@
 .detail_gameinfo2{
 	color: #fff;
 	float: left;
-	padding: 3px 30px 3px 10px;
-	font-size: 15px;
+	padding: 5px 30px 5px 1px;
+	font-size: 16px;
     font-family: 'nanumgothic';
     font-weight: bold;
 }
@@ -84,12 +83,14 @@
 	color: #aaa;
 	float: left;
 	font-weight: normal;
-	font-size: 13px;
+	font-size: 12px;
+	margin-top: 5px;
 	
 }
 .detail_right_title{
 	width: 100%;
-	float: left
+	float: left;
+	
 }
 .detail_detail div{
 	font-size: 13px;
@@ -170,6 +171,74 @@
     transform: scale(1.04, 1.08);
   }
 }
-.detail_backgroundimg{
+
+.detail_evaluation{
+	margin-left: 70px;
+}
+.boardgame_detail0{
+	width: 1350px;
+	margin: 0 auto;
+}
+.boardgame_geeklink{
+	float:right;
+	display:inline;
+	border: 1px solid #d7d7d7;
+	border-radius: 5px;
+	padding: 5px 20px;
+	font-weight: 600;
+	color: #000 !important;
+	margin-top: -25;
+}
+.boardgame_geeklink:hover {
+	background-color: #eee;
+}
+
+.detail_photo{
+	width: 1350px;
+	height: 100px;
+}
+.detail_bottom_title{
+	display:block;
+	width: 1170px;
+	margin-right: 0px;
+	border-bottom: 1px solid #333;
+	padding: 6px 0;
+}
+.detail_bottom_title span{
+	display: inline;
+	font-size:13pt;
+	font-weight:600;
+	margin-left: 100px;
+	color: green;
+}
+.detail_bottom_title span:hover{
+	background-color: #c0c0c0;
+	cursor: pointer;
+}
+.detail_rating1{
+	width: 56px;
+    height: 56px;
+    border-radius: 100px;
+    font-family: 'nanumgothic';
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    background-color: green;
+    font-size: 23px;
+    float: left;
+    margin-right: 15px;
+    color: white;
+}
+.detail_bottomrating{
+	margin-top: 50px;
 	
+}
+.detail_bottomrating div{
+	display: inline;
+	margin-bottom: 10px;
+}
+.detail_bottom_layout{
+	width: 1300px;
+	height: 687px;
 }

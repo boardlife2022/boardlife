@@ -52,29 +52,30 @@
 			for(int i = 0; i < articleList.size(); i++){
 		%>
 		<tr class="boardgame_list">
-		<td style="margin-left: 10px;border-left: 1px solid #aaa"><a href="boardgameinfo_detail.in?bid=<%=articleList.get(i).getB_id()%>"><%=i+1%></a></td>
-		<td><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>"><img src="img/<%=articleList.get(i).getB_img()%>"></a></td>
-   		<td id="b_t"><a href="boardgameinfo_detail.in?<%=articleList.get(i).getB_id()%>">
+		<td style="margin-left: 10px;border-left: 1px solid #aaa"><a href="boardgameinfo_detail.in?bid=<%=articleList.get(i).getB_id()%>&page=<%=nowPage%>"><%=i+1%></a></td>
+		<td><a href="boardgameinfo_detail.in?bid=<%=articleList.get(i).getB_id()%>&page=<%=nowPage%>"><img src="img/<%=articleList.get(i).getB_img()%>"></a></td>
+   		<td id="b_t"><a href="boardgameinfo_detail.in?bid=<%=articleList.get(i).getB_id()%>&page=<%=nowPage%>">
    		<h2><%= articleList.get(i).getB_title_kor()%></h2><br>
    		<h3><%= articleList.get(i).getB_title_eng()%></h3>
    		</a></td>
-   		<td class="blist_year" style="text-align: left;"><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>">(<%=articleList.get(i).getYearof()%>)</a></td>
+   		<td class="blist_year" style="text-align: left;"><a href="boardgameinfo_detail.in?bid=<%=articleList.get(i).getB_id()%>&page=<%=nowPage%>">
+   		(<%=articleList.get(i).getYearof()%>)</a></td>
    		<td class="hashtag">
    		<p class="best_theme">
-   		<span><a herf="boardgameinfo_theme.jsp"><%=articleList.get(i).getB_theme()%></a></span>
-   		</p>
+   		<span><a href="boardgameinfo_theme.jsp"> <%=articleList.get(i).getB_theme()%></a></span>
+   		</p><br/>
    		<p class="best_proceed">
    		<span>#<%=articleList.get(i).getFirst_proceed()%></span>
-   		<%if(articleList.get(i).getSecond_proceed().equals(null)){ %>
+   		<%if(articleList.get(i).getSecond_proceed() != null){ %>
    		<span>#<%=articleList.get(i).getSecond_proceed() %></span>
-   		
+   		<%}else if(articleList.get(i).getThird_proceed() != null){ %>
    		<span>#<%=articleList.get(i).getThird_proceed() %></span>
-   		
+   		<%}else if(articleList.get(i).getFourth_proceed() != null){ %>
    		<span>#<%=articleList.get(i).getFourth_proceed() %></span>
    		<%} %>
    		</p>
    		</td>
-		<td class="best_rating"><a href="boardgameinfo_detail.jsp?<%=articleList.get(i).getB_id()%>">0</a></td>
+		<td class="best_rating"><a href="boardgameinfo_detail.in?bid=<%=articleList.get(i).getB_id()%>&page=<%=nowPage%>">0</a></td>
 		<%} %>
 		</tr>
 </table>

@@ -4,16 +4,34 @@
 <% request.setCharacterEncoding("utf-8"); %>
 
 <%
-	Boardgames2 articleList = (Boardgames2)request.getAttribute("articleList");
+	Boardgames2 articleList = (Boardgames2)request.getAttribute("article");
 	Club_PageInfo pageInfo = (Club_PageInfo)request.getAttribute("pageInfo");
  %>
+<%
+	int rating = 0;
 
+%>
 
 <link rel="stylesheet" type="text/css" href="css/boardgameinfo_detail.css">
 
+<style>
+
+.detail_backgroundimg {
+    
+    width: 1360px;
+    margin: 0 auto;
+    background-image: url(img/<%=articleList.getB_img()%>);
+    background-size: 660px;
+    background-repeat: no-repeat;
+    background-position: right;
+    	
+}
+
+</style>
+
 <jsp:include page="header.jsp"/>
 		
-        <section style="width: 100%; height: 800px; padding-top: 120px">
+        <section style="width: 100%; height: 1200px; padding-top: 120px">
         
         <jsp:useBean id="user" class="board.Freeboard_cont" />
         <div class="detail_backgroundimg">
@@ -21,7 +39,7 @@
 				<div class="detail_gameleft">
 					<div class="detail_headertitle">
 						<div class="detail_gameimg">
-							<img alt="보드게임이미지" src="img/Pandemic_Legacy.png" title="BoardGame">
+							<img alt="보드게임이미지" src="img/<%=articleList.getB_img() %>" title="BoardGame">	
 						</div>
 					</div>
 					<div class="detail_info">
@@ -43,13 +61,11 @@
 							7.3
 						</div>
 						<div>
-							<h1 class="detail_title">카탄의 개척자</h1>
-							<h2 class="detail_title_eng"> The Settlers of Catan</h2>
+							<p class="detail_title"><%=articleList.getB_title_kor() %><span class="detail_year"> (<%=articleList.getYearof()%>)</span></p> 
+							<p class="detail_title_eng"><%=articleList.getB_title_eng() %></p><br><br>
 						</div>
-						<div class="detail_year">
-							(1995)
-						</div><br><br>
-						<div>
+						
+						<div class="detail_evaluation">
 							평가 0건
 						</div><br><br>
 					 </div>
@@ -57,27 +73,27 @@
 					<div class="detail_right_info">
 					&nbsp;
 						<div class="detail_gameinfo2">
-							3~4명<br>
+							<%=articleList.getPnum() %>명<br>
 						<div class="detail_gameinfo3">
 							인원
 						</div>
 						</div>
 						
 						<div class="detail_gameinfo2">
-							6-120분<br>
+							<%=articleList.getRunning_time() %>분<br>
 						<div class="detail_gameinfo3">
 							플레이 시간
 						</div>
 						</div>
 						
 						<div class="detail_gameinfo2">
-							10세 이상<br>
+							<%=articleList.getAge() %><br>
 						<div class="detail_gameinfo3">
 							사용 연령
 						</div><br>
 						</div>
 						<div class="detail_gameinfo2">
-							2.30 / 5<br>
+							<%=articleList.getGame_level() %> / 5<br>
 						<div class="detail_gameinfo3">
 							난이도
 						</div>
@@ -85,13 +101,13 @@
 					</div>
 					<div class="detail_detail">
 						<div>
-							<div>디자이너: </div> <div>Klaus Teuber</div><br>
+							<div>디자이너: </div> <div><%=articleList.getDesigner() %></div><br>
 						</div><br>
 						<div>
-							<div>출판사: </div> <div>999 Games</div><br>
+							<div>출판사: </div> <div><%=articleList.getPublisher() %></div><br>
 						</div><br>
 						<div>
-							<div>한글화: </div> <div>일부 간단한 텍스트 존재 (84%)</div><br>
+							<div>한글화: </div> <div><%=articleList.getSub_lang() %></div><br>
 						</div><br>
 					</div>
 					<div class="detail_other">
@@ -112,6 +128,35 @@
 					</div>
 					</div>
 				</div>
+			</div><br/>
+			<section class="boardgame_detail0" >
+				<div>
+					<div class="detail_bottom_title">
+						<span>게임평</span><span>커뮤니티</span>
+					</div>
+					<div class="boardgame_geeklink">
+						<a href="<%=articleList.getGeeklink() %>">BoardGameGeek</a>
+					</div>
+				</div>
+			
+			
+			
+			<div class="detail_bottom_layout">
+				<div class="detail_rating1">
+						7.0
+				</div>
+				<div class="detail_bottomrating">
+					<div>
+						아이디
+					</div>
+					<div>
+						날짜
+					</div><br/><br/>
+					<div>
+						재미있습니다.
+					</div>
+				</div>
 			</div>
+			</section>
         </section>
 <jsp:include page="footer.jsp"/>

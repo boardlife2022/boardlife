@@ -120,7 +120,7 @@ public class Info_Function_DAO {
 		
 		try{
 			pstmt = con.prepareStatement(
-					"select * from board where "+bid+" = ?");
+					"select * from board_game2 where b_id = ?");
 			pstmt.setInt(1, bid);
 			rs= pstmt.executeQuery();
 			

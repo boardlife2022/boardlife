@@ -51,7 +51,7 @@ public class Info_BoardFrontController extends javax.servlet.http.HttpServlet
 			try{
 				forward=action.execute(request, response);
 			}catch(Exception e){
-				e.printStackTrace();
+				System.out.println("디테일.in안됨");
 			}
 		}
 		
