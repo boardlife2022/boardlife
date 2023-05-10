@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="utf-8" %>
 <%@ page import="board.*" %>
 <%@ page import="vo.Community" %>
-<%@ page import="vo.Boardgames" %>
+<%@ page import="vo.*" %>
 <%@page import="java.sql.*"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <link rel="stylesheet" type="text/css" href="css/board.css">
@@ -14,9 +14,9 @@
 	%>
 	<jsp:useBean id="userd" class="board.Freeboard_cont">
 	<%
-  			Boardgames bg = new Boardgames();
-  			ArrayList<Boardgames> bga = new ArrayList<Boardgames>();
-  			bga = userd.bgselect();
+  			Boardgames2 bg = new Boardgames2();
+  			ArrayList<Boardgames2> bga = new ArrayList<Boardgames2>();
+  			bga = userd.bgselect2();
 	%>
 	<section>
         <h2>자유게시판 <span>FREEBOARD</span></h2>
@@ -55,8 +55,8 @@
                     	<select name="post_bgcategory" required>
                     	<option disabled selected value=0>보드게임 선택</option>
                     	<% for(int i=0;i<bga.size();i++){%>
-                    	<%= bga.get(i).getB_title() %>
-                    	<option value="<%= bga.get(i).getB_id()%>"><%= bga.get(i).getB_title()%></option>
+                    	<%= bga.get(i).getB_title_kor() %>
+                    	<option value="<%= bga.get(i).getB_id()%>"><%= bga.get(i).getB_title_kor()%></option>
                     	<%} %>
 						</select>
                     </div>

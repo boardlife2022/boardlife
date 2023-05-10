@@ -119,3 +119,6 @@ tbody img{
 .freeboarddate{
 	width:150px;
 }
+.writebt{
+	cursor: pointer;
+}

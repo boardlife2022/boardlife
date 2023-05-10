@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="css/boardgameinfo_custom.css">
 <script src="js/custom.js"></script>
 
-        <section style="width: 100%; height: 800px; padding-top: 120px;">
+        <section style="width: 100%; height: 800px;">
         
         <section class="custom">
 

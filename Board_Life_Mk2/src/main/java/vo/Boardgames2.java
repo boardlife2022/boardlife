@@ -21,8 +21,15 @@ public class Boardgames2 {
     private String second_proceed;
     private String third_proceed;
     private String fourth_proceed;
+    private int b_cnt;
     
     
+	public int getB_cnt() {
+		return b_cnt;
+	}
+	public void setB_cnt(int b_cnt) {
+		this.b_cnt = b_cnt;
+	}
 	public String getFourth_proceed() {
 		return fourth_proceed;
 	}

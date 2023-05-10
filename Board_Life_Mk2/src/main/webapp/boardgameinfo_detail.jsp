@@ -134,9 +134,10 @@
 					<div class="detail_bottom_title">
 						<span>게임평</span><span>커뮤니티</span>
 					</div>
-					<div class="boardgame_geeklink">
-						<a href="<%=articleList.getGeeklink() %>">BoardGameGeek</a>
-					</div>
+					<a href="<%=articleList.getGeeklink() %>">
+						<div class="boardgame_geeklink">
+							<img alt="linkimg" src="img/link2.png"> BoardGameGeek
+						</div></a>
 				</div>
 			
 			

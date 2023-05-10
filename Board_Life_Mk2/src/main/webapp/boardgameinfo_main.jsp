@@ -95,7 +95,7 @@
         <div class="shadow"></div>
         <div class="label">
             <div class="icon">
-                <i><img src="img/Negotiation_logo1.png"></i>
+                <i><img src="img/negotiation_logo.png"></i>
             </div>
             <div class="info">
                 <div class="main">Negotiation</div>
@@ -107,7 +107,7 @@
         <div class="shadow"></div>
         <div class="label">
             <div class="icon">
-                <i><img src="img/reasoning_logo.jpg"></i>
+                <i><img src="img/Reasoning_logo.png"></i>
             </div>
             <div class="info">
                 <div class="main">Reasoning</div>
@@ -274,7 +274,7 @@
             </figcaption>
         </figure>
         <figure class="article">
-            <img src="img/catan_3d.png" />
+            <img src="img/CATAN-3D.png" />
             <figcaption>
                 <h3>Update</h3><br>
                 <p>
@@ -314,17 +314,17 @@
         <div id="customstart" align="center">
             <table>
                 <tr>
-                    <td><img src="img/커스텀 보드게임 이미지/build-game-box.jpg">
+                    <td><img src="img/build-game-box.jpg">
                     </td>
-                    <td><img src="img/커스텀 보드게임 이미지/build-game-mats.jpg"></td>
-                    <td><img src="img/커스텀 보드게임 이미지/custom-board-games_board.jpg">
+                    <td><img src="img/build-game-mats.jpg"></td>
+                    <td><img src="img/custom-board-games_board.jpg">
                     </td>
                 </tr>
                 <tr>
-                    <td><img src="img/커스텀 보드게임 이미지/custom-dices.jpg">
+                    <td><img src="img/custom-dices.jpg">
                     </td>
-                    <td><img src="img/커스텀 보드게임 이미지/game-cards-customization.jpg"></td>
-                    <td><img src="img/커스텀 보드게임 이미지/game-pieces.jpg">
+                    <td><img src="img/game-cards-customization.jpg"></td>
+                    <td><img src="img/game-pieces.jpg">
                     </td>
                 </tr>
             </table>
@@ -336,7 +336,7 @@
     <section class="custommainimg">
         <img src="img/tiles-170814.jpg">
         <div class="custombottomimg">
-            <img src="img/폰.png">
+            <img src="img/Pawn.png">
         </div>
     </section>
     <section class="custommainimg">

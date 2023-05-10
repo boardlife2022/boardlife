@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="utf-8" %>
 <%@ page import="board.*" %>
 <%@ page import="vo.Community" %>
-<%@ page import="vo.Boardgames" %>
+<%@ page import="vo.*" %>
 <%@page import="java.sql.*"%>
 <%
 request.setCharacterEncoding("utf-8");
@@ -64,7 +64,7 @@ String login = (String)session.getAttribute("LOGIN");
                     
    					<%
     					Community std = new Community();
-   						Boardgames bg = new Boardgames();
+   						Boardgames2 bg = new Boardgames2();
     					ArrayList<Community> stt = new ArrayList<Community>();
    						stt = userd.selec();
    						
@@ -101,7 +101,7 @@ String login = (String)session.getAttribute("LOGIN");
    								<td class="clike">♥ <span>0</span></td>
    								<%
    								int se1 = Integer.parseInt(stt.get(i).getB_id());
-   								bg = userd.bgselectone(se1);
+   								bg = userd.bgselectone2(se1);
    								%>
    								<td><img src="img/<%= bg.getB_img() %>"></td>
    							</tr>

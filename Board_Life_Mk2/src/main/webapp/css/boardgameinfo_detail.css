@@ -184,10 +184,14 @@
 	display:inline;
 	border: 1px solid #d7d7d7;
 	border-radius: 5px;
-	padding: 5px 20px;
+	padding: 5px 10px 5px 7px;
 	font-weight: 600;
 	color: #000 !important;
 	margin-top: -25;
+}
+.boardgame_geeklink img{
+	width: 15px;
+	padding-top: 2px;
 }
 .boardgame_geeklink:hover {
 	background-color: #eee;
@@ -216,27 +220,27 @@
 	cursor: pointer;
 }
 .detail_rating1{
-	width: 56px;
-    height: 56px;
+	width: 46px;
+    height: 46px;
     border-radius: 100px;
     font-family: 'nanumgothic';
     justify-content: center;
     display: flex;
     align-items: center;
     font-weight: bold;
-    background-color: green;
-    font-size: 23px;
+    background-color: darkorange;
+    font-size: 20px;
     float: left;
     margin-right: 15px;
     color: white;
 }
 .detail_bottomrating{
 	margin-top: 50px;
-	
+	font-size: 10pt;
 }
 .detail_bottomrating div{
 	display: inline;
-	margin-bottom: 10px;
+	padding: 5px;
 }
 .detail_bottom_layout{
 	width: 1300px;

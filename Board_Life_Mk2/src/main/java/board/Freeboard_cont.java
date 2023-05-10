@@ -4,6 +4,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import vo.Community;
 import vo.Boardgames;
+import vo.Boardgames2;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -159,6 +161,54 @@ public ArrayList<Boardgames> bgselect(){
 	    	return arr1;
 		}
 
+public ArrayList<Boardgames2> bgselect2(){
+	
+    ArrayList<Boardgames2> arr1 = new ArrayList<Boardgames2>();
+    try{
+    	Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","rhkddml");
+    	stmt = conn.createStatement();
+        if(conn == null)
+            throw new Exception("데이터베이스에 연결할 수 없습니다.");
+        	ResultSet rs = stmt.executeQuery("select * from board_game2;");
+        	
+        	while(rs.next()){
+        		Boardgames2 bg = new Boardgames2();
+        		
+        		bg.setB_id(rs.getString("b_id"));
+        		bg.setB_img(rs.getString("b_img"));
+        		bg.setB_title_kor(rs.getString("b_title_kor"));
+        		bg.setB_title_eng(rs.getString("b_title_eng"));
+        		bg.setYearof(rs.getString("yearof"));
+        		bg.setPnum(rs.getString("pnum"));
+        		bg.setRunning_time(rs.getString("running_time"));
+        		bg.setAge(rs.getString("age"));
+        		bg.setGame_level(rs.getInt("game_level"));
+        		bg.setSub_lang(rs.getString("sub_lang"));
+        		bg.setB_detail(rs.getString("b_detail"));
+        		bg.setPublisher(rs.getString("publisher"));
+        		bg.setGeeklink(rs.getString("geeklink"));
+        		bg.setDesigner(rs.getString("designer"));
+        		bg.setB_theme(rs.getString("b_theme"));
+        		bg.setProceed(rs.getString("proceed"));
+        		
+        		arr1.add(bg);
+        	}
+    	} catch(Exception e){
+    		System.out.println("보드게임 전체출력 안됨");
+    	} finally{
+    		try{
+    			stmt.close();
+    		}catch (Exception ignored){
+    		}
+    		try{
+    			conn.close();
+    		} catch(Exception ignored){
+    		}
+    	}
+    	return arr1;
+	}
+
 public Boardgames bgselectone(int g){
 	
     ArrayList<Boardgames> arrbg = new ArrayList<Boardgames>();
@@ -188,6 +238,55 @@ public Boardgames bgselectone(int g){
         		bg.setProceed(rs.getString("proceed"));
         		bg.setB_detail(rs.getString("b_detail"));
         		bg.setPublisher(rs.getString("publisher"));
+        		cnt = rs.getInt("b_cnt");
+        		cnt ++;
+        		bg.setB_cnt(cnt);
+        		
+        		arrbg.add(bg);
+        	}
+    	} catch(Exception e){
+    	} finally{
+    		try{
+    			stmt.close();
+    		}catch (Exception ignored){
+    		}
+    		try{
+    			conn.close();
+    		} catch(Exception ignored){
+    		}
+    	}
+    	return bg;
+	}
+public Boardgames2 bgselectone2(int g){
+	
+    ArrayList<Boardgames2> arrbg = new ArrayList<Boardgames2>();
+    Boardgames2 bg = new Boardgames2();
+    try{
+    	Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","rhkddml");
+    	stmt = conn.createStatement();
+        if(conn == null)
+            throw new Exception("데이터베이스에 연결할 수 없습니다.");
+        ResultSet rs = stmt.executeQuery("select * from board_game2 where b_id = '"+ g +"';");
+        	int cnt;
+        	while(rs.next()){
+        		
+        		bg.setB_id(rs.getString("b_id"));
+        		bg.setB_img(rs.getString("b_img"));
+        		bg.setB_title_kor(rs.getString("b_title_kor"));
+        		bg.setB_title_eng(rs.getString("b_title_eng"));
+        		bg.setYearof(rs.getString("yearof"));
+        		bg.setPnum(rs.getString("pnum"));
+        		bg.setRunning_time(rs.getString("running_time"));
+        		bg.setAge(rs.getString("age"));
+        		bg.setGame_level(rs.getInt("game_level"));
+        		bg.setSub_lang(rs.getString("sub_lang"));
+        		bg.setB_detail(rs.getString("b_detail"));
+        		bg.setPublisher(rs.getString("publisher"));
+        		bg.setGeeklink(rs.getString("geeklink"));
+        		bg.setDesigner(rs.getString("designer"));
+        		bg.setB_theme(rs.getString("b_theme"));
+        		bg.setProceed(rs.getString("proceed"));
         		cnt = rs.getInt("b_cnt");
         		cnt ++;
         		bg.setB_cnt(cnt);
