@@ -6,53 +6,53 @@ request.setCharacterEncoding("utf-8");
 <%@ page import="vo.*" %>
 <%@ page import="board.Product_cont" %>
 <%@ page import="java.util.ArrayList" %>
-<link rel="stylesheet" type="text/css" href="css/Product_list.css">
-<!DOCTYPE html>
-<html>
-<jsp:include page="header.jsp"/>
-
-<head>
-<meta charset="UTF-8">
-<title>상품 목록</title>
-</head>
-
-<style>
-.warp{
-margin:0 auto;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="css/Product_list2.css">
 
 
 <body>
-<div class="main-layout-wrapper">
+<jsp:include page="header.jsp"/>
 
+<section>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>검색된 상품 목록</title>
+</head>
+
+
+<div class="main-layout-wrapper">
 
 	<div class="layout-wrapper">
 
-		<div class="enter">입점신청</div>
-		<div class="basket">장바구니(퀵메뉴 fixed)</div>
-		<div class="product-menu">
-			<div class="product-menu123">
-				<div class="product-menu1"><input type="checkbox">단독상품</checkbox>	</div>
-				<div class="product-menu2"><input type="checkbox">세일상품</div>
-				<div class="product-menu3"><input type="checkbox">품절제외</div>		
+		<div class="moving">	
+			<div class="enter"><a href="Product_post.jsp"><p>입점신청</p><img src="img/shop_enter1.png"></a></div>
+			<div class="basket"><a href=""><p>장바구니</p><img src="img/shop_basket.png"></a></div>		
+		</div>
+		
+		<div class="top-menu-line">
+			<div class="top-menus">
+				<div class="top-menu"><input type="checkbox"><span style="padding-left:10px;">품절제외</span></div>		
 			</div>
 		<jsp:useBean id="user" class="board.Product_cont">
 		<form action="Product_list_search.jsp" method="post"> <!-- 이 경로를 타고 들어가라 -->
+		
 			<div class="searchline">
 			
-				<select name="tag">
+				<div style="padding:0 0 0 5px; border-bottom:3px solid #76cc1e;">			
+				<select class="selec" name="tag" style="border:0;">
 					<option value="all">전체</option>
 					<option value="product">상품별</option>
 					<option value="pubname">출판사별</option>
 					<option value="designer">디자이너별</option>
 				</select>
-				<input type="text" name="search" placeholder="상품을 검색해주세요.">
-				<input type="submit" value="검색">
+				<input type="text" name="search" class="search" style="border:0;">
+				<input class="dotbogi" type="image" src="img/shop_search_btn.png" value="검색" style="">
+
+				</div>
 			</div>
 		</form>
-	</div>
-
 
 
 <%
@@ -102,46 +102,36 @@ arru = user.search(search_product,search_pubname,search_pdesigner); //출판사,
 
 %>
 
-			<div class="product-menu4">검색된 제품 수:<%=arru.size()%>개
+			<div class="count-all">검색된 제품 수:<%=arru.size()%>개
  <!-- arraylist size +1 -->
-					<select>
-						<option value="">신상품순</option>
-						<option value="">높은가격순</option>
-						<option value="">낮은가격순</option>
-						<option value="">인기도순</option>
-						<option value="">리뷰많은순</option>
-						<option value="">평가높은순</option>
-					</select>
-				</div>
-			
-			
-		<div class="product-new">		
-			<div class="pntt">
-				<div class="product-new-menu">
-					<div class="product-new-title">신규 상품</div>
-					<div class="product-new-view-all">전체보기+</div>
-				</div>
-				<div class="product-new-text">신규 상품란에 대한 설명입니다.</div>
 			</div>
+		</div>
+			
+	
+			
 
-	<div class="rank-new-wrapper">
+
+	<div class="product-wrapper2">
 <% 	
 	if(arru.size() > 0){	
 	for(int i=0 ; i<arru.size() ; i++) { 
 	%>		
 				<table>
-				<td>
-				<div class="new-product1">
-					<p><%=arru.get(i).getProduct_num()%></p>
+				<tr>
+				<td class="productB">
+				<span class="green-number"><%=i+1 %></span>
+				<div class="product-box">
+					<p hidden><%=arru.get(i).getProduct_num()%></p>
 					<a href="Product_view.jsp?Product_num=<%=arru.get(i).getProduct_num() %>">
-						<div class="np-img1" name="product_img"><img class="prod" src="img/<%=arru.get(i).getProduct_img()%>"></div></a>
+						<div class="prod-img" name="product_img"><img class="prod" src="img/<%=arru.get(i).getProduct_img()%>"></div></a>
 					<p><%=arru.get(i).getProduct_pub()%></p>
 					<a href="Product_view.jsp?Product_num=<%=arru.get(i).getProduct_num() %>">
-						<p><%=arru.get(i).getProduct_name()%></p></a>
-					<p><%=arru.get(i).getProduct_price()%></p>
-					<p>리뷰</p>
+						<p class="game-name"><%=arru.get(i).getProduct_name()%></p></a>
+					<div class="price-container"><span class="price"><span class="won">₩</span><%=arru.get(i).getProduct_price()%></span></div>
+					<p class="review">리뷰</p>
 				</div>
 				</td>
+				</tr>
 				</table>
 	
 	<% 
@@ -158,17 +148,13 @@ arru = user.search(search_product,search_pubname,search_pdesigner); //출판사,
 	
 	</div>
 </jsp:useBean>
-	</div>
-</div>
-</div>
-
-
-
-
-
-
 
 </div>
+</div>
+
+</div>
+
+</section>
 </body>
 </html>
 <jsp:include page="footer.jsp"/>

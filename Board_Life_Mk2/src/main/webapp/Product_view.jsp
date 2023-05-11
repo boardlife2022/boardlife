@@ -5,8 +5,12 @@ request.setCharacterEncoding("utf-8");
 <%@ page import="board.*" %>
 <%@ page import="vo.*" %>
 <%@ page import="board.Product_cont" %>
+<%@ page import="java.util.ArrayList" %>
 
 <link rel="stylesheet" type="text/css" href="css/Product_view.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/product_view.js"></script>
 
 <body>
 <jsp:include page="header.jsp"/>
@@ -46,45 +50,49 @@ request.setCharacterEncoding("utf-8");
 </head>
 
 
-
 <div class="main-layout-wrapper">
 	<div class="top-menu">홈 > 보드게임 > 한글판 게임</div>
 	<div class="main-layout">
+	
+	<table style="width:100%;position:relative;" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr></tr>
+		<td></td>
+		</tbody>
+	</table>
+	
 		<div class="product-num">상품번호: <%=product_num%></div>
-		<div class="product-info">
-			<div class="product-info-rl">		
-				<div class="product-info-left">
-					<div class="product-info-left-productimg"><img class="prod" src="img/<%=product_img%>"> : <%=product_img%></div>
-					<div class="product-info-left-middle">
-						<div class="product-info-left-middle-pnum"><%=p_num%></div>
-						<div class="product-info-left-middle-age"><%=p_age%></div>
-						<div class="product-info-left-middle-runtime"><%=p_runtime%></div>
-						<div class="product-info-left-middle-difficulty"><%=p_level%></div>
+			<div class="prod-info">
+				<div class="prod-info-l">
+					<div class="img-box">
+						<img src="img/<%=product_img%>">
 					</div>
-					<div class="product-info-left-banner"><img src="img/shop_product_view_logo.jpg"></div>
+					<div class="spec-box">
+						<div class="img-spec"><img src="img/shop_p_age.png"><span><%=p_age%></span></div>
+						<div class="img-spec"><img src="img/shop_p_level.png"><span><%=p_level%></span></div>
+						<div class="img-spec"><img src="img/shop_p_num.png"><span><%=p_num%></span></div>
+						<div class="img-spec"><img src="img/shop_p_runtime.png"><span><%=p_runtime%></span></div>
+					</div>
 				</div>
-			
-				<div class="product-info-right">
-					<div class="product-info-right-publisher">출판사 : <%=product_pub%></div>
-					<div class="product-info-right-gname">게임명 : <%=product_name%></div>
-					<div class="product-info-right-explain">요약 : <%=product_summary%></div>
-					<div class="product-info-right-price">가격 : <%=product_price%></div>
-					<div class="product-info-right-memprice">회원가</div>
-					<div class="product-info-right-save-point">300마일리지 적립</div>
-					<div class="product-info-right-order1">내일 출발</div>
-					<div class="product-info-right-order2">무료배송!!</div>
-					<div class="product-info-right-sub-lang">지원언어 : <%=product_lang%> </div>
-					<div class="product-info-right-mileage">마일리지 혜택</div>
-					<div class="product-info-right-picreview">포토상품평</div>
-					<div class="product-info-right-review">일반상품평</div>
-					<div class="product-info-right-reviewguidetext">상품평은 게임 구매 후 작성할 수 있습니다.</div>
-					<table width=100%>					
+				
+				<div class="prod-info-r">
+					<b><%=product_pub%></b>
+					<b><%=product_name%></b>
+					<p class="font_12"><%=product_summary%></p>
+					<b><%=product_price%>&nbsp;원</b>
+					<div style="padding:0 0 0 5px; border-bottom:1px solid lightgray;"></div>
+					<p>무료배송</p>
+					<table>
+					<tr>
+					<td>판매사</td><td>보드라이프</td>
+					</tr>
+					<td width="100">지원언어</td><td><%=product_lang%></td>
+					</table>
+					<div style="padding:0 0 0 5px; border-bottom:1px solid lightgray;"></div>
+								
+					<table width=100%>						
 						<tr>
-							<td width="100" class="font13">게임분류</td>
-							<td class="no-info">정보없음</td>
-						</tr>	
-						<tr>
-							<td>디자이너</td>
+							<td width="100">디자이너</td>
 							<td><%=p_designer%></td>
 						</tr>
 						<tr>
@@ -100,59 +108,69 @@ request.setCharacterEncoding("utf-8");
 							<td><%=p_proceed%></td>
 						</tr>
 					</table>
+					<div style="padding:0 0 0 5px; border-bottom:1px solid lightgray;"></div>
+					<div class="order-box">
 
-					<div class="product-info-right-pay">
-						<div class="product-info-right-pay-box1">
-							<div class="product-info-right-pay-box1-top">
-								<div class="product-info-right-pay-box1-top1">주문수량</div>
-								<div class="product-info-right-pay-box1-top2">n 개</div>
-								<div class="product-info-right-pay-box1-top3">22,000원</div>
+						<div class="pay-box">
+							<div class="pay-ea">
+								<span>주문수량</span>
+								<div class="pay-amount">
+								<input type="image" src="img/shop_pay_left.gif" value="-" name="minus"><img src="img/shop_pay_left.gif">
+								<input class="inputstyle" type="text" value="1" size="1" name="amount">
+								<input type="image" src="img/shop_pay_right.gif" value="+" name="add"><img src="img/shop_pay_right.gif">
+								</div>
+								<span name="sell_price"><%=product_price%>&nbsp;원</span>
 							</div>
-							<div class="product-info-right-pay-box1-bottom">결제금액: 22,000원</div>
+							<div style="padding:0 0 0 680px; border-bottom:1px solid lightgray;"></div>
+							<div class="pay-price">
+								<span name="sum">결제금액 :&nbsp;<%=product_price%>&nbsp;원</span>
+							</div>
 						</div>
-						<div class="product-info-right-pay-box2">
-							<div class="product-info-right-pay-box2-btn"><img src="img/shop_product_view_btn1.jpg"><a href="Order_list.jsp"></a></div>
-							<div class="product-info-right-pay-box2-btn"><img src="img/shop_product_view_btn2.gif"></div>						
-						</div>
-					</div>					
+
+					</div>
+					<div class="btn-box">
+						<div class="btn1"><p>즉시구매</p></div>
+						<div class="btn2"><p>장바구니</p></div>
+					</div>
+					
 				</div>
+			
 			</div>
-				
+			
+<jsp:useBean id="userr" class="board.Product_cont">
+<%
+ArrayList <Product> arru = new ArrayList<Product>();
+arru = userr.as();
+%>
 			<div class="product-info-bottom">
 				<div class="product-info-bottom-text">
 					보드게임몰에서 판매되는 신규입고 상품
 					<input type=button value=전체보기+>
 				</div>
 				<div class="product-info-bottom-related">
+<% 	
+	for(int i=0 ; i<arru.size() ; i++) {
+	%>					
 					<div class="new-product">
-						<div class="np-img"></div>
+						<a href=""><img class="prod" src="img/<%=arru.get(i).getProduct_img()%>"></a>
+						<div class="pub"><%=arru.get(i).getProduct_pub()%></div>
+						<a href=""><div><%=arru.get(i).getProduct_name()%></div></a>
+						<div><%=arru.get(i).getProduct_price()%>&nbsp;원</div>
 					</div>
-					<div class="new-product">
-						<div class="np-img"></div>
-					</div>
-					<div class="new-product">
-						<div class="np-img"></div>
-					</div>
-					<div class="new-product">
-						<div class="np-img"></div>
-					</div>
-					<div class="new-product">
-						<div class="np-img"></div>
-					</div>
-					<div class="new-product">
-						<div class="np-img"></div>
-					</div>
-					<div class="new-product">
-						<div class="np-img"></div>
-					</div>							
+	<% }%>							
 				</div>		
-			</div>
+			</div>	
+</jsp:useBean>			
+			
 		</div>
-		<div class="sub-Layout1">
+			<img src="img/<%=product_detail%>">
+		<div class="sub-layout">
+			
 		</div>
+
 	</div>
 
-</div>
+
 
 </section>
 </html>
