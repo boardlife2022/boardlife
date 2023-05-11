@@ -3,8 +3,11 @@ package action;
 import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import svc.ClubDetailService;
 import svc.Club_BoardListService;
 import vo.ActionForward;
+import vo.ClubReview;
 import vo.Club_PageInfo;
 import vo.Offerclub;
 
@@ -14,6 +17,8 @@ import vo.Offerclub;
 		 
 		ArrayList<Offerclub> slideClubList=new ArrayList<Offerclub>();
 		ArrayList<Offerclub> club_List=new ArrayList<Offerclub>();
+		
+
 		
 	  	int page=1;
 		int limit=12;
@@ -25,6 +30,9 @@ import vo.Offerclub;
 		
 		Club_BoardListService Club_boardListService = new Club_BoardListService();
 		
+		// club 최근 리류정보 불러오기 
+		ArrayList<ClubReview> clubRecentlyReviews = Club_boardListService.getClubRecentlyReviews();
+		
 		slideClubList = Club_boardListService.slideClubList();
 		// slideClubList는 별개의 메서드를 생성함.
 		
@@ -33,6 +41,7 @@ import vo.Offerclub;
 		if(key != null) {
 			// 검색어가 있는지 확인
 			// 검색어가 존재할 경우
+			
 			club_List = Club_boardListService.searchclubList(page, limit, key);
 			//System.out.println("hold on");
 			
@@ -68,6 +77,7 @@ import vo.Offerclub;
 		request.setAttribute("slideClub", slideClubList);
 		request.setAttribute("pageInfo", pageInfo);
 		request.setAttribute("club_List", club_List);
+		request.setAttribute("RecentlyReviews", clubRecentlyReviews);
 		ActionForward forward= new ActionForward();
    		forward.setPath("/boardgame_club_list.jsp");
    		return forward;

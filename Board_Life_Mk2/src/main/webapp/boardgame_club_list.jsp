@@ -1,5 +1,6 @@
 <%@ page import="vo.Club_PageInfo"%>
 <%@ page import="vo.Offerclub"%>
+<%@ page import="vo.ClubReview"%>
 <%@ page import="dao.Club_Function_DAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="java.util.*"%>
@@ -11,6 +12,7 @@
 <%
 	ArrayList<Offerclub> slideClub=(ArrayList<Offerclub>)request.getAttribute("slideClub");
     ArrayList<Offerclub> Club_List=(ArrayList<Offerclub>)request.getAttribute("club_List");
+    ArrayList<ClubReview> RecentlyReviews = (ArrayList<ClubReview>)request.getAttribute("RecentlyReviews");
     Club_PageInfo pageInfo = (Club_PageInfo)request.getAttribute("pageInfo");
     int listCount=pageInfo.getListCount();
     int nowPage=pageInfo.getPage();
@@ -79,7 +81,7 @@
         <div class="club_index">
 
             <!--검색/form태그 추가--->
-            <form name="searchfrm" method="get" action="/BoardLife/Club_boardList.cl">
+            <form name="searchfrm" method="get" action="/Board_Life_Mk2/Club_boardList.cl">
                 <div class="searchBox">
                     <div class="keyword"><input type="text" name="search" placeholder="<% if(key == "" || key == null){ out.print("검색어를 입력해주세요."); } else { out.print(key); } %>"></div>
                     <button>검색</button>
@@ -164,53 +166,22 @@
 
             <ul class="review_wrap">
 
+				<%for(int rr=0; rr<RecentlyReviews.size(); rr++){ %>
                 <li class="review clearfix">
                     <div class="img_wrap">
                         <img src="img/user.png" alt="user">
                     </div>
                     <div class="txt_wrap">
-                        <p class="nickname">nickname</p>
-                        <p class="sentence">존 셸비의 보드게임 클럽 모임에 참여해보았는데, 정말 즐거운 시간을 보냈습니다. 모임장인 존 셸비는 매우 친절하고 재미있는 보드게임을 준비해주어 모임에 참여하는 모든 사람들이 즐길 수 있도록 배려해주었습니다.</p>
-                        <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
+                        <p class="nickname"><%= RecentlyReviews.get(rr).getUser_id() %></p>
+                        <p class="sentence"><%= RecentlyReviews.get(rr).getClub_review_content() %></p>
+                        <p class="r_date">
+                        <%= RecentlyReviews.get(rr).getClub_review_title() %> 
+                        / <%= RecentlyReviews.get(rr).getClub_review_date() %></p>
                         <p class="btn">☆</p>
                     </div>
                 </li>
+                <%} %>
 
-                <li class="review clearfix">
-                    <div class="img_wrap">
-                        <img src="img/user.png" alt="user">
-                    </div>
-                    <div class="txt_wrap">
-                        <p class="nickname">nickname</p>
-                        <p class="sentence">게임이 시작되면 모임원들끼리 친목을 도모하며 게임을 진행해나갈 수 있는 분위기를 만들어주었고, 게임을 마친 후에는 함께 이야기를 나눌 수 있는 시간도 가지게 해주었습니다.</p>
-                        <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
-                        <p class="btn">☆</p>
-                    </div>
-                </li>
-
-                <li class="review clearfix">
-                    <div class="img_wrap">
-                        <img src="img/user.png" alt="user">
-                    </div>
-                    <div class="txt_wrap">
-                        <p class="nickname">nickname</p>
-                        <p class="sentence">또한, 클럽 모임의 장소 역시 넓고 깨끗한 공간을 사용하였고, 보드게임에 필요한 모든 장비와 음료 등도 제공해주어 편안하게 게임을 즐길 수 있었습니다.</p>
-                        <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
-                        <p class="btn">☆</p>
-                    </div>
-                </li>
-
-                <li class="review clearfix">
-                    <div class="img_wrap">
-                        <img src="img/user.png" alt="user">
-                    </div>
-                    <div class="txt_wrap">
-                        <p class="nickname">nickname</p>
-                        <p class="sentence">총평하자면, 존 셸비의 보드게임 클럽 모임은 게임을 즐기는 것 뿐만 아니라 사람들과 소통하고 친해지는 좋은 기회가 되어주는 모임이었습니다. 강력 추천합니다!</p>
-                        <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
-                        <p class="btn">☆</p>
-                    </div>
-                </li>
 
             </ul>
 

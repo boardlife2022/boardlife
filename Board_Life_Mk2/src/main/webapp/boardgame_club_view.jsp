@@ -1,20 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="vo.Offerclub" %> 
+<%@ page import="vo.Offerclub" %> 
 <%@ page import="vo.Boardgames"%>
+<%@ page import="vo.ClubReview"%>
+<%@ page import="vo.ClubQnA"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.NumberFormat" %>
 <%@ page import="java.util.Locale" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 
+
 <jsp:include page="header.jsp"/>
 <link rel="stylesheet" href="css/boardgameclub_view.css">
 
 <%
+	// request를 통해 정보 받아오기
 	Offerclub club = (Offerclub)request.getAttribute("club");
     String nowPage = (String)request.getAttribute("page");
     ArrayList<Boardgames> ClubBgames = (ArrayList<Boardgames>)request.getAttribute("ClubBgames");
+    ArrayList<ClubReview> ClubReviews = (ArrayList<ClubReview>)request.getAttribute("ClubReviews");
+    ArrayList<ClubQnA> ClubQNAs = (ArrayList<ClubQnA>)request.getAttribute("ClubQNAs");
+    ArrayList<ClubReview> RecentlyReviews = (ArrayList<ClubReview>)request.getAttribute("RecentlyReviews");
+    ArrayList<Offerclub> Rclub = (ArrayList<Offerclub>)request.getAttribute("Rclub");
     
     // 가격 정보 원화로 전환하기
     NumberFormat nf = NumberFormat.getCurrencyInstance(Locale.KOREA);
@@ -60,7 +68,7 @@
                 <span class="cover"></span>
                 <img src="img/<%= ClubBgames.get(0).getB_img() %>" alt="peakyblinders">
                 <p class="boardgame_detail">
-                    <span class="title"><%= ClubBgames.get(0).getB_title() %></span>
+                    <span class="title"><%= ClubBgames.get(0).getB_title() %> (<%= ClubBgames.get(0).getYearof() %>) </span>
                     <br>
                     <span class="description"><%= ClubBgames.get(0).getB_detail() %></span>
                 </p>
@@ -123,9 +131,11 @@
                     <p>Board Games</p>
 
                     <div class="boardgame_wrap clearfix">
-                        <img src="img/<%= ClubBgames.get(0).getB_img() %>" alt="Peaky Blinders: Under New Management (2019)" data-value="Create and manage your criminal network in a gang war set in 1920's England." class="choice" id="boardgame1">
-                        <img src="img/7wonders.png" alt="7 Wonders Duel (2015)" data-value="Science Military What will you draft to win this head-to-head version of 7 Wonders" id="boardgame2">
-                        <img src="img/sleeping_gods.png" alt="Sleeping Gods (2021)" data-value="Voyages of the steamship 'Manticore'' and her crew on the Wandering Sea." id="boardgame3">
+                        
+                        <% for(int bg=0; bg < ClubBgames.size(); bg++){ %>
+                        <img src="img/<%= ClubBgames.get(bg).getB_img() %>" alt="<%= ClubBgames.get(bg).getB_title() %> (<%= ClubBgames.get(bg).getYearof() %>)" 
+                        data-value="<%= ClubBgames.get(bg).getB_detail() %>" class="<% if(bg==0){%>choice<%}%>" id="boardgame<%= bg + 1%>">
+                        <% } %>
                     </div>
 
                 </div>
@@ -137,8 +147,8 @@
 
         <ul class="view_tab_menu clearfix">
             <li class="active" id="tab1">상세정보</li>
-            <li id="tab2">참여후기(0)</li>
-            <li id="tab3">Q&amp;A(0)</li>
+            <li id="tab2">참여후기(<%= ClubReviews.size() %>)</li>
+            <li id="tab3">Q&amp;A(<%= ClubQNAs.size() %>)</li>
         </ul>
 
 
@@ -181,54 +191,23 @@
 
                 <ul class="review_wrap">
 
+					<% if(ClubReviews.size() > 0){ %>
+					<% for(int cr=0; cr < ClubReviews.size(); cr++){  %>
                     <li class="review clearfix">
                         <div class="img_wrap">
                             <img src="img/user.png" alt="user">
                         </div>
                         <div class="txt_wrap">
-                            <p class="nickname">nickname</p>
-                            <p class="sentence">존 셸비의 보드게임 클럽 모임에 참여해보았는데, 정말 즐거운 시간을 보냈습니다. 모임장인 존 셸비는 매우 친절하고 재미있는 보드게임을 준비해주어 모임에 참여하는 모든 사람들이 즐길 수 있도록 배려해주었습니다.</p>
-                            <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
+                            <p class="nickname"><%= ClubReviews.get(cr).getUser_id() %></p>
+                            <p class="sentence"><%= ClubReviews.get(cr).getClub_review_content() %></p>
+                            <p class="r_date"><%= ClubReviews.get(cr).getClub_review_title() %> / <%= ClubReviews.get(cr).getClub_review_date() %></p>
                             <p class="btn">☆</p>
                         </div>
                     </li>
-
-                    <li class="review clearfix">
-                        <div class="img_wrap">
-                            <img src="img/user.png" alt="user">
-                        </div>
-                        <div class="txt_wrap">
-                            <p class="nickname">nickname</p>
-                            <p class="sentence">게임이 시작되면 모임원들끼리 친목을 도모하며 게임을 진행해나갈 수 있는 분위기를 만들어주었고, 게임을 마친 후에는 함께 이야기를 나눌 수 있는 시간도 가지게 해주었습니다.</p>
-                            <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
-                            <p class="btn">☆</p>
-                        </div>
-                    </li>
-
-                    <li class="review clearfix">
-                        <div class="img_wrap">
-                            <img src="img/user.png" alt="user">
-                        </div>
-                        <div class="txt_wrap">
-                            <p class="nickname">nickname</p>
-                            <p class="sentence">또한, 클럽 모임의 장소 역시 넓고 깨끗한 공간을 사용하였고, 보드게임에 필요한 모든 장비와 음료 등도 제공해주어 편안하게 게임을 즐길 수 있었습니다.</p>
-                            <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
-                            <p class="btn">☆</p>
-                        </div>
-                    </li>
-
-                    <li class="review clearfix">
-                        <div class="img_wrap">
-                            <img src="img/user.png" alt="user">
-                        </div>
-                        <div class="txt_wrap">
-                            <p class="nickname">nickname</p>
-                            <p class="sentence">총평하자면, 존 셸비의 보드게임 클럽 모임은 게임을 즐기는 것 뿐만 아니라 사람들과 소통하고 친해지는 좋은 기회가 되어주는 모임이었습니다. 강력 추천합니다!</p>
-                            <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
-                            <p class="btn">☆</p>
-                        </div>
-                    </li>
-
+                    <% } // for %>
+                    <%} else { %>
+                    <li class="empty">여러분의 후기를 기다리고 있어요!</li>
+                    <%} //else %>
                 </ul>
             </div>
 
@@ -241,73 +220,50 @@
                     <a href="#" class="btn">문의하기</a>
 
                 </div>
+                    <%if(0<ClubQNAs.size()){ %>
+                    <table class="qna_wrap">
+                    <colgroup>
+                    	<col width="7%">
+                    	<col width="48%">
+                    	<col width="20%">
+                    	<col width="15%">
+                	</colgroup>
+                
+                <thead>
+                    <tr>
+                        <th>상태</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>등록일</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                
+                <%for(int q=0; q<ClubQNAs.size(); q++){ %>
+                    <tr>
+                		<td>답변대기</td>
+                		<td><a href="#"><%= ClubQNAs.get(q).getClub_qna_title() %></a></td>
+                		<td><%= ClubQNAs.get(q).getUser_id() %></td>
+                		<td><%= ClubQNAs.get(q).getClub_qna_date() %></td>
+                	</tr>
+                 <%} // for문 %>
+                
+                	<tr>
+                		<td></td>
+                		<td></td>
+                		<td></td>
+                		<td></td>
+                	</tr>
+                </tbody>
+                    
+                    </table>
 
-                <ul class="qna_wrap">
-
-                    <li class="qna clearfix">
-                        <div class="img_wrap">
-                            <img src="img/user.png" alt="user">
-                        </div>
-                        <div class="txt_wrap">
-                            <p class="nickname">nickname</p>
-                            <p class="sentence">톰 셸비의 보드게임 여행 보드게임 클럽에서 가장 인기 있는 보드게임 상위 3개는 무엇인가요?</p>
-                            <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
-                            <p class="btn"></p>
-                        </div>
-                    </li>
-
-                    <li class="qna clearfix">
-                        <div class="img_wrap">
-                            <img src="img/user.png" alt="user">
-                        </div>
-                        <div class="txt_wrap">
-                            <p class="nickname">nickname</p>
-                            <p class="sentence">톰 셸비의 보드게임 여행 클럽에서 회원들이 주로 참여하는 활동들은 어떤 것들이 있나요?</p>
-                            <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
-                            <p class="btn"></p>
-                        </div>
-                    </li>
-
-                    <li class="qna clearfix">
-                        <div class="img_wrap">
-                            <img src="img/user.png" alt="user">
-                        </div>
-                        <div class="txt_wrap">
-                            <p class="nickname">nickname</p>
-                            <p class="sentence">클럽 회원들에게 제공되는 혜택이나 서비스는 어떤 것들이 있나요? 예를 들어, 할인 이벤트, 게임 대여 서비스 등이 있을까요?</p>
-                            <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
-                            <p class="btn"></p>
-                        </div>
-                    </li>
-
-                    <li class="qna clearfix">
-                        <div class="img_wrap">
-                            <img src="img/user.png" alt="user">
-                        </div>
-                        <div class="txt_wrap">
-                            <p class="nickname">nickname</p>
-                            <p class="sentence">톰 셸비의 보드게임 여행 클럽에서 주최하는 특별한 이벤트나 대회가 있나요? 있다면, 어떤 종류의 이벤트가 있는지 설명해 주세요.</p>
-                            <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
-                            <p class="btn"></p>
-                        </div>
-                    </li>
-
-                    <li class="qna clearfix">
-                        <div class="img_wrap">
-                            <img src="img/user.png" alt="user">
-                        </div>
-                        <div class="txt_wrap">
-                            <p class="nickname">nickname</p>
-                            <p class="sentence">클럽에 가입하려면 어떤 절차를 거쳐야 하며, 회비는 어느 정도인가요? 회비를 납부하면 어떤 서비스를 이용할 수 있는지 알려주세요.</p>
-                            <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
-                            <p class="btn"></p>
-                        </div>
-                    </li>
-
-
-                </ul>
-
-            </div>
+                <%}else{ %>
+                <p class="empty"> 등록된 문의가 없습니다. </p>
+                <%} //if else%>
+               
+			</div>
 
         </div>
 
@@ -315,72 +271,44 @@
 
     <section id="boardgame_club_list">
 
-        <h3>👀함께 본 클럽</h3>
+        <h3>👀 같은 테마의 보드게임 클럽</h3>
 
         <div class="inner_club_list">
 
             <div class="club_wraps clearfix">
 
-                <a href="#" class="club">
-                    <img src="img/peakyblinders.png" alt="7wonders" class="boardgame">
+		<%  for(int i=0; i < Rclub.size(); i++ ){ %>
+                <a href="ClubDetail.cl?clubNum=<%=Rclub.get(i).getClub_num()%>&page=<%=nowPage%>" class="club">
+                
+                    <img src="img/<%= Rclub.get(i).getB_img() %>" alt="<%= Rclub.get(i).getB_img() %>" class="boardgame">
 
                     <div class="club_info">
-                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
-                        <p class="club_moder">by green</p>
-                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
-
-                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
+                        <p class="club_title"><%= Rclub.get(i).getClub_title() %></p>
+                        <p class="club_moder">by <%= Rclub.get(i).getUser_id() %></p>
+                        <p class="hashtag"><span>#<%= Rclub.get(i).getClub_reps() %>회차</span><span>#<%= Rclub.get(i).getProceed() %></span>
+                        <span>
+                        #<% if(Rclub.get(i).getClub_place().equals("online")){ out.print("online"); } else {out.print("offline");} %>
+                        </span>
+                        </p>
+                        <p class="club_detail"><%= Rclub.get(i).getClub_intro() %></p>
                     </div>
-
+                    
                     <div class="lower">
                         <div class="participate clearfix">
                             <img src="img/user.png" alt="user">
-                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
+                            <p>
+                            23. 04. <%=Rclub.get(i).getStart_date().substring(4)%> 
+                            | <%= Rclub.get(i).getClub_day() %> 
+                            | <%= Rclub.get(i).getClub_time() %>시 
+                            | <% if(Rclub.get(i).getClub_place().equals("online")){ out.print("online"); } else {out.print(Rclub.get(i).getClub_place().substring(0, 2));} %>
+                            | 1/<%= Rclub.get(i).getCapacity() %>명 
+                            | <%= Rclub.get(i).getMembership_fee() %>원
+                            </p>
                         </div>
                     </div>
 
                 </a>
-
-                <a href="#" class="club">
-                    <img src="img/woodcraft.png" alt="7wonders" class="boardgame">
-
-                    <div class="club_info">
-                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
-                        <p class="club_moder">by green</p>
-                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
-
-                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
-                    </div>
-
-                    <div class="lower">
-                        <div class="participate clearfix">
-                            <img src="img/user.png" alt="user">
-                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
-                        </div>
-                    </div>
-
-                </a>
-
-
-                <a href="#" class="club">
-                    <img src="img/7wonders.png" alt="7wonders" class="boardgame">
-
-                    <div class="club_info">
-                        <p class="club_title">톰 셸비와 함께 하는 보드게임 여행</p>
-                        <p class="club_moder">by green</p>
-                        <p class="hashtag"><span>#1회차</span><span>#Crime</span><span>#Business</span><span>#Offline</span></p>
-
-                        <p class="club_detail">톰 셸비가 직접 안내하는 보드게임 여행은 다양한 보드게임을 즐기며 새로운 사람들과 친구가 될 수 있는 좋은 기회입니다. 각종 이벤트와 대회도 준비되어 있으며, 보드게임을 좋아하는 사람이라면 누구나 참여할 수 있습니다.</p>
-                    </div>
-
-                    <div class="lower">
-                        <div class="participate clearfix">
-                            <img src="img/user.png" alt="user">
-                            <p>23.04.12-13 | 수, 목 | 18-20시 | 경기 | 1/5명 | 8,000원 </p>
-                        </div>
-                    </div>
-
-                </a>
+        <% }  // for문 %>
 
             </div>
 
@@ -397,58 +325,28 @@
 
             <ul class="review_wrap">
 
+				<%for(int rr=0; rr<RecentlyReviews.size(); rr++){ %>
                 <li class="review clearfix">
                     <div class="img_wrap">
                         <img src="img/user.png" alt="user">
                     </div>
                     <div class="txt_wrap">
-                        <p class="nickname">nickname</p>
-                        <p class="sentence">존 셸비의 보드게임 클럽 모임에 참여해보았는데, 정말 즐거운 시간을 보냈습니다. 모임장인 존 셸비는 매우 친절하고 재미있는 보드게임을 준비해주어 모임에 참여하는 모든 사람들이 즐길 수 있도록 배려해주었습니다.</p>
-                        <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
+                        <p class="nickname"><%= RecentlyReviews.get(rr).getUser_id() %></p>
+                        <p class="sentence"><%= RecentlyReviews.get(rr).getClub_review_content() %></p>
+                        <p class="r_date">
+                        <%= RecentlyReviews.get(rr).getClub_review_title() %> 
+                        / <%= RecentlyReviews.get(rr).getClub_review_date() %></p>
                         <p class="btn">☆</p>
                     </div>
                 </li>
-
-                <li class="review clearfix">
-                    <div class="img_wrap">
-                        <img src="img/user.png" alt="user">
-                    </div>
-                    <div class="txt_wrap">
-                        <p class="nickname">nickname</p>
-                        <p class="sentence">게임이 시작되면 모임원들끼리 친목을 도모하며 게임을 진행해나갈 수 있는 분위기를 만들어주었고, 게임을 마친 후에는 함께 이야기를 나눌 수 있는 시간도 가지게 해주었습니다.</p>
-                        <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
-                        <p class="btn">☆</p>
-                    </div>
-                </li>
-
-                <li class="review clearfix">
-                    <div class="img_wrap">
-                        <img src="img/user.png" alt="user">
-                    </div>
-                    <div class="txt_wrap">
-                        <p class="nickname">nickname</p>
-                        <p class="sentence">또한, 클럽 모임의 장소 역시 넓고 깨끗한 공간을 사용하였고, 보드게임에 필요한 모든 장비와 음료 등도 제공해주어 편안하게 게임을 즐길 수 있었습니다.</p>
-                        <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
-                        <p class="btn">☆</p>
-                    </div>
-                </li>
-
-                <li class="review clearfix">
-                    <div class="img_wrap">
-                        <img src="img/user.png" alt="user">
-                    </div>
-                    <div class="txt_wrap">
-                        <p class="nickname">nickname</p>
-                        <p class="sentence">총평하자면, 존 셸비의 보드게임 클럽 모임은 게임을 즐기는 것 뿐만 아니라 사람들과 소통하고 친해지는 좋은 기회가 되어주는 모임이었습니다. 강력 추천합니다!</p>
-                        <p class="r_date">셸비 가문의 보드게임 / 23. 04. 07.</p>
-                        <p class="btn">☆</p>
-                    </div>
-                </li>
+                <%} %>
 
             </ul>
 
         </div>
 
     </section>
+    
+    </body>
 
 <jsp:include page="footer.jsp"/>

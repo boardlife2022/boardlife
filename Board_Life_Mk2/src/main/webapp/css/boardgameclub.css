@@ -141,6 +141,9 @@ body {
     font-size: 12px;
     margin: 20px 0;
     font-weight: 600;
+    line-height: 21px;
+    height: 21px;
+    overflow: hidden;
 }
 
 #club_slider .sclub_wrap .sclub .sclub_info .hashtag span {
@@ -401,6 +404,9 @@ body {
 
 .club .club_info .hashtag {
     margin: 10px 0;
+    overflow: hidden;
+    height: 20px;
+    line-height: 17px;
 }
 
 .club .club_info .hashtag span {
@@ -417,12 +423,13 @@ body {
     line-height: 14px;
     color: #888;
     text-indent: 5px;
+    height: 100px;
 }
 
 .club .lower {
     width: 100%;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .club .lower .participate img {

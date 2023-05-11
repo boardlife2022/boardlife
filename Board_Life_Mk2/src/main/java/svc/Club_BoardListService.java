@@ -4,6 +4,7 @@ import static db.JdbcUtil.*;
 import java.sql.Connection;
 import java.util.ArrayList;
 import dao.Club_Function_DAO;
+import vo.ClubReview;
 import vo.Offerclub;
 
 public class Club_BoardListService {
@@ -72,5 +73,18 @@ public class Club_BoardListService {
 		
 		return clubList;
 	}
+	
+	public ArrayList<ClubReview> getClubRecentlyReviews() throws Exception {
+		
+		ArrayList<ClubReview> ClubRecentlyReviews = null;
+		Connection con = getConnection();
+		Club_Function_DAO boardDAO = Club_Function_DAO.getInstance();
+		
+		boardDAO.setConnection(con);
+		ClubRecentlyReviews = boardDAO.clubRecentlyReviews();
+		close(con);
+	
+		return ClubRecentlyReviews;
+	} // getClubRecentlyReviews
 
-}
+} // class end

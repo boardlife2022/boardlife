@@ -3,8 +3,8 @@ package vo;
 public class ClubQnA {
 
 	int club_qna_num, club_num, qnum;
-	String user_id, club_qna_category, club_qna_title, club_qna_content, club_qna_date, qna;
-	
+	String user_id, club_qna_title, club_qna_content, club_qna_date, qna;
+
 	public int getClub_qna_num() {
 		return club_qna_num;
 	}
@@ -28,12 +28,6 @@ public class ClubQnA {
 	}
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
-	}
-	public String getClub_qna_category() {
-		return club_qna_category;
-	}
-	public void setClub_qna_category(String club_qna_category) {
-		this.club_qna_category = club_qna_category;
 	}
 	public String getClub_qna_title() {
 		return club_qna_title;
@@ -59,5 +53,7 @@ public class ClubQnA {
 	public void setQna(String qna) {
 		this.qna = qna;
 	}
+	
+
 	
 }

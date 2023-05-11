@@ -48,4 +48,7 @@ public class ClubReview {
 		this.club_review_date = club_review_date;
 	}
 	
+	
+	
+	
 }
