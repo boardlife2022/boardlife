@@ -76,8 +76,9 @@
    		</p>
    		</td>
 		<td class="best_rating"><a href="boardgameinfo_detail.in?bid=<%=articleList.get(i).getB_id()%>&page=<%=nowPage%>">0</a></td>
-		<%} %>
+		
 		</tr>
+		<%} %>
 </table>
 </section>
 </body>

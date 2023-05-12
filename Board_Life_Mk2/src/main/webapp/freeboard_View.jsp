@@ -9,8 +9,17 @@
 	<section id='wrapper' style="height: 75.2%;">
         <h2>자유게시판 <span>FREEBOARD</span></h2>
         <% 
-        	int g = Integer.parseInt(request.getParameter("post_id"));
-        	String id = (String) session.getAttribute("ID");
+        String login = (String)session.getAttribute("LOGIN");
+        int g = Integer.parseInt(request.getParameter("post_id"));
+        boolean member = false;
+        String id = "";
+        String name = "";
+        
+
+        if(login != null){
+        	id = (String) session.getAttribute("ID");
+        	member = true;
+        }
         %>
         <jsp:useBean id="userd" class="board.Freeboard_cont">
         <%
@@ -34,6 +43,12 @@
         	int bid = Integer.parseInt(stt1.get(0).getB_id());
         	bg = userd.bgselectone(bid);
         %>
+        <%
+        	Boardgames2 bg2 = new Boardgames2();
+    		int bid2 = Integer.parseInt(stt1.get(0).getB_id());
+    		bg2 = userd.bgselectone2(bid2);
+        
+        %>
         <!--table-->
         <div class="viewBox">
             <table>
@@ -50,7 +65,7 @@
                         
                     </tr>
                     <tr>
-                    	<td class="freeboardbgimg" colspan="4"><img src="img/<%= bg.getB_img() %>"><br><%= bg.getB_title() %></td>
+                    	<td class="freeboardbgimg" colspan="4"><img src="img/<%= bg2.getB_img() %>"><br><%= bg2.getB_title_kor() %></td>
                     </tr>
                 </thead>
                 <tbody>

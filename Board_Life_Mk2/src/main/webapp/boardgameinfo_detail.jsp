@@ -9,7 +9,6 @@
  %>
 <%
 	int rating = 0;
-
 %>
 
 <link rel="stylesheet" type="text/css" href="css/boardgameinfo_detail.css">
@@ -58,7 +57,7 @@
 					<div class="detail_right_title">
 					 <div>
 						<div class="detail_rating">
-							7.3
+							7.6
 						</div>
 						<div>
 							<p class="detail_title"><%=articleList.getB_title_kor() %><span class="detail_year"> (<%=articleList.getYearof()%>)</span></p> 
@@ -101,13 +100,13 @@
 					</div>
 					<div class="detail_detail">
 						<div>
-							<div>디자이너: </div> <div><%=articleList.getDesigner() %></div><br>
+							<div>디자이너:</div> <div><%=articleList.getDesigner() %></div><br>
 						</div><br>
 						<div>
-							<div>출판사: </div> <div><%=articleList.getPublisher() %></div><br>
+							<div>출판사:</div> <div><%=articleList.getPublisher() %></div><br>
 						</div><br>
 						<div>
-							<div>한글화: </div> <div><%=articleList.getSub_lang() %></div><br>
+							<div>한글화:</div> <div><%=articleList.getSub_lang() %></div><br>
 						</div><br>
 					</div>
 					<div class="detail_other">
@@ -143,21 +142,27 @@
 			
 			
 			<div class="detail_bottom_layout">
-				<div class="detail_rating1">
-						7.0
-				</div>
-				<div class="detail_bottomrating">
-					<div>
-						아이디
+			<% for(int i =0;i < 5;i++) { %>
+				<div class="boardgame_detail_rating">
+					<div class="detail_rating1">
+							7.6
 					</div>
-					<div>
-						날짜
-					</div><br/><br/>
-					<div>
-						재미있습니다.
+					<div class="detail_bottomrating">
+						<div>
+							아이디
+						</div>
+						<div>
+							날짜
+						</div><br/><br/>
+						<div>
+							재미있습니다.
+						</div>
 					</div>
+			<%} %>
 				</div>
+				
 			</div>
+			
 			</section>
         </section>
 <jsp:include page="footer.jsp"/>
