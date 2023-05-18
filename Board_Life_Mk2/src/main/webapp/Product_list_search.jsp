@@ -6,7 +6,7 @@ request.setCharacterEncoding("utf-8");
 <%@ page import="vo.*" %>
 <%@ page import="board.Product_cont" %>
 <%@ page import="java.util.ArrayList" %>
-<link rel="stylesheet" type="text/css" href="css/Product_list2.css">
+<link rel="stylesheet" type="text/css" href="css/Product_list.css">
 
 
 <body>

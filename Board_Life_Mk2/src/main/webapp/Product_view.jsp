@@ -10,7 +10,56 @@ request.setCharacterEncoding("utf-8");
 <link rel="stylesheet" type="text/css" href="css/Product_view.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script type="text/javascript" src="js/product_view.js"></script>
+<script type="text/javascript" src="js/#"></script>
+
+<script>         
+            function increaseQuantity(event) {
+                 event.preventDefault(); // 기본 동작 취소
+                 var quantityInput = document.getElementById("quantity");
+                 var currentQuantity = parseInt(quantityInput.value);
+                 quantityInput.value = currentQuantity + 1;
+                 updateTotalPrice();
+            }
+
+            function decreaseQuantity(event) {
+              event.preventDefault(); // 기본 동작 취소
+              var quantityInput = document.getElementById("quantity");
+              var currentQuantity = parseInt(quantityInput.value);
+              if (currentQuantity > 1) {
+                quantityInput.value = currentQuantity - 1;
+                updateTotalPrice();
+              } else {
+                alert("최소 주문 수량은 1개입니다.");
+              }
+            }
+            
+//             //수량증가감소해야지 쉼표가 생겨서, 화면 들어오자마자 바로 쉼표 설정해주는 거 따로 추가했음.
+//             window.onload = function() {
+//                  var prodPrice = document.getElementById("prod_price").value;
+//                  var formattedProdPrice = numberWithCommas(parseFloat(prodPrice));
+//                  var totalPrice = "TOTAL" + "₩" + formattedProdPrice;
+//                  document.getElementById("prod_price").value = formattedProdPrice;
+//                  document.getElementById("prod_total_price").value = totalPrice;
+//                }
+            
+//             //이게 쉼표넣을 자릿수 설정해주는 거. 위 window.onload랑 같이 있어야 작동하는 듯. 
+//             function numberWithCommas(x) { 
+//                  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+//                }
+            
+            //total_price 쉼표 넣어주는 것.
+             function updateTotalPrice() {
+//                 var prodPrice = parseFloat(document.getElementById("prod_price").value.replace(",", ""));
+               var prodPrice = document.getElementByName("sell_price").value;
+                 var quantity = document.getElementByName("amount").value;
+                var totalPrice = prodPrice * quantity;
+                
+                 //document.getElementById("prod_total_price").value = "TOTAL₩" + totalPrice.toLocaleString();
+                 document.getElementById("sum").value = "TOTAL₩" + totalPrice;
+               }
+            
+         </script>
+
 
 <body>
 <jsp:include page="header.jsp"/>
@@ -112,26 +161,33 @@ request.setCharacterEncoding("utf-8");
 					<div class="order-box">
 
 						<div class="pay-box">
+						
+						<form id="form1" method="post" action="#">
+						
 							<div class="pay-ea">
 								<span>주문수량</span>
 								<div class="pay-amount">
-								<input type="image" src="img/shop_pay_left.gif" value="-" name="minus"><img src="img/shop_pay_left.gif">
+								<input type="image" src="img/shop_pay_left.gif" name="minus"><img src="img/shop_pay_left.gif">
 								<input class="inputstyle" type="text" value="1" size="1" name="amount">
-								<input type="image" src="img/shop_pay_right.gif" value="+" name="add"><img src="img/shop_pay_right.gif">
+								<input type="button" src="img/shop_pay_right.gif" value="+" name="add"><img src="img/shop_pay_right.gif">								
 								</div>
-								<span name="sell_price"><%=product_price%>&nbsp;원</span>
+								
+								<span id="sell_price"><%=product_price%>&nbsp;원</span>
 							</div>
 							<div style="padding:0 0 0 680px; border-bottom:1px solid lightgray;"></div>
 							<div class="pay-price">
-								<span name="sum">결제금액 :&nbsp;<%=product_price%>&nbsp;원</span>
+								<span id="sum">결제금액 :&nbsp;<%=product_price%>&nbsp;원</span>
 							</div>
 						</div>
 
 					</div>
+					<input type="submit" class="" onclick="Product_basket.jsp">
 					<div class="btn-box">
-						<div class="btn1"><p>즉시구매</p></div>
-						<div class="btn2"><p>장바구니</p></div>
+						<a href="#"><div class="btn1"><p>즉시구매</p></div></a>
+						<a href="#"><div class="btn2"><p>장바구니</p></div></a>
 					</div>
+					
+						</form>
 					
 				</div>
 			
@@ -142,17 +198,17 @@ request.setCharacterEncoding("utf-8");
 ArrayList <Product> arru = new ArrayList<Product>();
 arru = userr.as();
 %>
-			<div class="product-info-bottom">
-				<div class="product-info-bottom-text">
+			<div class="prod-related-box">
+				<div class="product-related-text">
 					보드게임몰에서 판매되는 신규입고 상품
 					<input type=button value=전체보기+>
 				</div>
-				<div class="product-info-bottom-related">
+				<div class="prod-related">
 <% 	
 	for(int i=0 ; i<arru.size() ; i++) {
 	%>					
 					<div class="new-product">
-						<a href=""><img class="prod" src="img/<%=arru.get(i).getProduct_img()%>"></a>
+						<a href="Product_view.jsp?Product_num=<%=arru.get(i).getProduct_num() %>"><img class="prod" src="img/<%=arru.get(i).getProduct_img()%>"></a>
 						<div class="pub"><%=arru.get(i).getProduct_pub()%></div>
 						<a href=""><div><%=arru.get(i).getProduct_name()%></div></a>
 						<div><%=arru.get(i).getProduct_price()%>&nbsp;원</div>
@@ -160,12 +216,12 @@ arru = userr.as();
 	<% }%>							
 				</div>		
 			</div>	
-</jsp:useBean>			
+</jsp:useBean>
 			
 		</div>
-			<img src="img/<%=product_detail%>">
-		<div class="sub-layout">
 			
+		<div class="sub-layout">
+			<img src="img/<%=product_detail%>">
 		</div>
 
 	</div>

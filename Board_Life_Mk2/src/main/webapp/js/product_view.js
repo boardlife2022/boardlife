@@ -1,16 +1,14 @@
 //product_view
 
 
-const	formform=document.getElementsByName("form1"),
-		sell_price=document.form1.sell_price,
+$(document).ready(function () { 
+
+const	formform=document.getElementsByName("form1"), 
+		sell_price=document.form1.sell_price, //오로지 form 태그만 'document.name속성명'으로 접근할 수 있음.
 		amount=document.form1.amount,
 		add=document.form1.add,
 		minus=document.form1.minus,
 		sum=document.form1.sum;
-
-$(document).ready(function () { 
-
-
 		
 		
 if(formform){
@@ -23,7 +21,7 @@ if(formform){
 	
 	if(add){
 		add.addEventListener('click',function(){
-			amountvall++;
+			amountval++;
 			sumval=amountval*priceval;
 			amount.value=amountval;
 			sum.value=sumval;
@@ -44,7 +42,6 @@ if(formform){
 			}
 		})
 	}
-	
 }
 
 });

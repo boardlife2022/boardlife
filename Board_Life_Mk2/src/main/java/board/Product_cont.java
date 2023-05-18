@@ -19,7 +19,7 @@ public class Product_cont {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","1234");
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518");
 			if(conn == null) //conn 에 아무값이 없다면,
 				throw new Exception("데이터베이스에 연결할 수 없습니다."); //이렇게 예외처리가 된다.
 			stmt = (Statement) conn.createStatement();
@@ -71,7 +71,7 @@ public class Product_cont {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","1234");
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518");
 			if(conn == null) //conn 에 아무값이 없다면,
 				throw new Exception("데이터베이스에 연결할 수 없습니다."); //이렇게 예외처리가 된다.
 			stmt = (Statement) conn.createStatement();
@@ -125,7 +125,7 @@ public class Product_cont {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","1234");
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518");
 			if(conn == null) //conn 에 아무값이 없다면,
 				throw new Exception("데이터베이스에 연결할 수 없습니다."); //이렇게 예외처리가 된다.
 			stmt = (Statement) conn.createStatement();
@@ -173,7 +173,7 @@ public class Product_cont {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","1234");
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518");
 			if(conn == null) //conn 에 아무값이 없다면,
 				throw new Exception("데이터베이스에 연결할 수 없습니다."); //이렇게 예외처리가 된다.
 			stmt = (Statement) conn.createStatement();
@@ -241,7 +241,7 @@ public class Product_cont {
 		
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","root","1234");
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518");
 			if(conn == null)
 				throw new Exception("데이터베이스에 연결할 수 없습니다.");
 			stmt=(Statement) conn.createStatement();

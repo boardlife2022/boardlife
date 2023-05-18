@@ -9,7 +9,7 @@
 
     try {
         Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame", "root", "0407");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame", "boardlife", "0518");
         if(conn == null)
             throw new Exception("Unable to connect database.");
         stmt = conn.createStatement();

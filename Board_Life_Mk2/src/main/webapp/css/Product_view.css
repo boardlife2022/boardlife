@@ -228,13 +228,15 @@ section {
 	width:1280px;
 
 	display:flex;
-	
  	border:1px solid lightgray;
+}
+.sub-layout img {
+	width:1280;
 }
 
 
 /*** 첫번째 레이아웃 아랫쪽 시작 ***/
-.product-info-bottom{
+.prod-related-box{
  	border:1px solid lightgray;	
  	padding:5 5 5 0px;
  	display:flex;
@@ -244,11 +246,11 @@ section {
  		overflow:hidden;
 	flex-wrap: wrap;
 }
-.product-info-bottom-text{
+.product-related-text{
  	border:1px solid lightgray;	
  	padding:5px 5px;	
 }
-.product-info-bottom-related{
+.prod-related{
  	border:1px solid lightgray;	
  	padding:5px 5px;
  	display:flex;	
