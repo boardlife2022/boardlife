@@ -14,6 +14,7 @@ import action.Action;
 import action.Info_BoardListAction;
 import action.Info_CustomAction;
 import action.Info_DetailAction;
+import action.Info_InsertAction;
 import vo.ActionForward;
 
 @WebServlet("*.in")
@@ -37,6 +38,13 @@ public class Info_BoardFrontController extends javax.servlet.http.HttpServlet
 				System.out.println("베스트50.in안됨");
 			}
 			
+		}else if(command.equals("/boardgame_insert.bo")){
+			action  = new Info_InsertAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				System.out.println("보드게임 등록안됨");
+			}
 		}
 		else if(command.equals("/boardgameinfo_custom.in")){
 			action = new Info_CustomAction();

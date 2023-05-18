@@ -52,7 +52,7 @@
 			for(int i = 0; i < articleList.size(); i++){
 		%>
 		<tr class="boardgame_list">
-		<td style="margin-left: 10px;border-left: 1px solid #aaa"><a href="boardgameinfo_detail.in?bid=<%=articleList.get(i).getB_id()%>&page=<%=nowPage%>"><%=i+1%></a></td>
+		<td style="margin-left: 10px;border-left: 2px solid #aaa"><a href="boardgameinfo_detail.in?bid=<%=articleList.get(i).getB_id()%>&page=<%=nowPage%>"><%=i+1%></a></td>
 		<td><a href="boardgameinfo_detail.in?bid=<%=articleList.get(i).getB_id()%>&page=<%=nowPage%>"><img src="img/<%=articleList.get(i).getB_img()%>"></a></td>
    		<td id="b_t"><a href="boardgameinfo_detail.in?bid=<%=articleList.get(i).getB_id()%>&page=<%=nowPage%>">
    		<h2><%= articleList.get(i).getB_title_kor()%></h2><br>

@@ -120,7 +120,12 @@ public class Info_Function_DAO {
 		
 		try{
 			pstmt = con.prepareStatement(
-					"select * from board_game2 where b_id = ?");
+					"select *,"
+					+" substring_index(substring_index(proceed,',',1),',',-1) as first_proceed,"
+					+" substring_index(substring_index(proceed,',',2),',',-1) as second_proceed,"
+					+" substring_index(substring_index(proceed,',',3),',',-1) as third_proceed,"
+					+" substring_index(substring_index(proceed,',',4),',',-1) as fourth_proceed"
+					+ " from board_game2 where b_id = ?");
 			pstmt.setInt(1, bid);
 			rs= pstmt.executeQuery();
 			
@@ -143,7 +148,10 @@ public class Info_Function_DAO {
         		board.setDesigner(rs.getString("designer"));
         		board.setB_theme(rs.getString("b_theme"));
         		board.setProceed(rs.getString("proceed"));
-        		
+        		board.setFirst_proceed(rs.getString("first_proceed"));
+        		board.setSecond_proceed(rs.getString("second_proceed"));
+        		board.setThird_proceed(rs.getString("third_proceed"));
+        		board.setFourth_proceed(rs.getString("fourth_proceed"));
 			}
 		}catch(Exception ex){
 			System.out.println(ex);

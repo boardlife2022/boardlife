@@ -30,7 +30,7 @@
 
 <jsp:include page="header.jsp"/>
 		
-        <section style="width: 100%; height: 1200px; padding-top: 120px">
+        <section style="width: 100%; height: 1200px; padding-top: 120px;">
         
         <jsp:useBean id="user" class="board.Freeboard_cont" />
         <div class="detail_backgroundimg">
@@ -43,6 +43,16 @@
 					</div>
 					<div class="detail_info">
 						한글판
+					</div><br/>
+					<div style="color: white;" class="hash">
+						<span>#<%=articleList.getFirst_proceed()
+						%><br/>
+						<span>#<%=articleList.getSecond_proceed()
+						%><br/>
+						<span>#<%=articleList.getThird_proceed()
+						%><br/>
+						<span>#<%=articleList.getFourth_proceed()
+						%><br/>
 					</div>
 				</div>
 				<div class="detail_gameright">
