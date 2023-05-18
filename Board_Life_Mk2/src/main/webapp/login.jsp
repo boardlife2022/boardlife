@@ -11,8 +11,8 @@
     Connection conn = null;
 
     try {
-        Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        conn = DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
         if(conn == null)
             throw new Exception("Unable to connect database.");
         stmt = conn.createStatement();

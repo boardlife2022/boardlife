@@ -19,8 +19,8 @@ public class User_trade_cont {
 		ArrayList<User_trade> arr = new ArrayList<User_trade>();
 		
 		try{
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame","boardlife","0518");
 			if(conn == null)
 				throw new Exception("데이터베이스에 연결할 수 없습니다.");
 			stmt = (Statement) conn.createStatement();
@@ -58,8 +58,8 @@ public class User_trade_cont {
 		Connection conn = null; //Connection 이라는 연결기능을 conn 이라는 것으로 선언하여, 이 메소드 내에서 사용하겠다.
 		Statement stmt = null; //Statement 이라는 기능을 stmt 이라는 것으로 선언하여, 이 메소드 내에서 사용하겠다.
 		try{
-			Class.forName("com.mysql.jdbc.Driver"); // 이놈이 생성자로 가야하는거.. 
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518"); //연결메소드 로 빼는것
+			Class.forName("com.mysql.cj.jdbc.Driver"); // 이놈이 생성자로 가야하는거.. 
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame","boardlife","0518"); //연결메소드 로 빼는것
 			if(conn == null){ //conn 에 연결했을때, 값이 없으면, "데이터베이스에 연결할 수 없습니다." 라고 예외처리를 하겠다.
 				throw new Exception("데이터베이스에 연결할 수 없습니다.");
 			}
@@ -93,8 +93,8 @@ public class User_trade_cont {
 		String tr_content = ur.getTr_content();
 		
 		try{
-			Class.forName("com.mysql.jdbc.Driver"); // 이놈이 생성자로 가야하는거.. 
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518");
+			Class.forName("com.mysql.cj.jdbc.Driver"); // 이놈이 생성자로 가야하는거.. 
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame","boardlife","0518");
 			if(conn == null)
 				throw new Exception("데이터베이스에 연결할 수 없습니다.");
 			stmt=(Statement) conn.createStatement();
@@ -129,8 +129,8 @@ public class User_trade_cont {
 		//System.out.println(trpost_num+user_id+tr_title+tr_category+tr_price+tr_content); // 이 거 안나오면 값 넘기는거부터 다시해야한다.
 		
 		try{
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame","boardlife","0518");
 			if(conn == null)
 				throw new Exception("데이터베이스에 연결할 수 없습니다.");
 			stmt = (Statement) conn.createStatement();
@@ -158,8 +158,8 @@ public class User_trade_cont {
 		User_trade ut = new User_trade(); //ut라는 객체를 생성.. 
 		
 		try{
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame","boardlife","0518");
 			if(conn == null)
 				throw new Exception("데이터베이스에 연결할 수 없습니다.");
 			stmt = (Statement) conn.createStatement();

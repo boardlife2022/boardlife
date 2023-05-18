@@ -18,8 +18,8 @@ public class Product_cont {
 		ArrayList<Product> arr = new ArrayList<Product>();
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame","boardlife","0518");
 			if(conn == null) //conn 에 아무값이 없다면,
 				throw new Exception("데이터베이스에 연결할 수 없습니다."); //이렇게 예외처리가 된다.
 			stmt = (Statement) conn.createStatement();
@@ -70,8 +70,8 @@ public class Product_cont {
 		ArrayList<Product> arr = new ArrayList<Product>();
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame","boardlife","0518");
 			if(conn == null) //conn 에 아무값이 없다면,
 				throw new Exception("데이터베이스에 연결할 수 없습니다."); //이렇게 예외처리가 된다.
 			stmt = (Statement) conn.createStatement();
@@ -124,8 +124,8 @@ public class Product_cont {
 		Product pd = new Product();
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame","boardlife","0518");
 			if(conn == null) //conn 에 아무값이 없다면,
 				throw new Exception("데이터베이스에 연결할 수 없습니다."); //이렇게 예외처리가 된다.
 			stmt = (Statement) conn.createStatement();
@@ -172,8 +172,8 @@ public class Product_cont {
 		ArrayList<Product> arr = new ArrayList<Product>();
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame","boardlife","0518");
 			if(conn == null) //conn 에 아무값이 없다면,
 				throw new Exception("데이터베이스에 연결할 수 없습니다."); //이렇게 예외처리가 된다.
 			stmt = (Statement) conn.createStatement();
@@ -240,8 +240,8 @@ public class Product_cont {
 		String product_detail = pr.getProduct_detail();		
 		
 		try{
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame","boardlife","0518");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = (Connection) DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame","boardlife","0518");
 			if(conn == null)
 				throw new Exception("데이터베이스에 연결할 수 없습니다.");
 			stmt=(Statement) conn.createStatement();

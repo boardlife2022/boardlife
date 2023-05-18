@@ -20,8 +20,8 @@ public class Notice_cont {
 		Statement save = null;
 		
 		try{
-			Class.forName("com.mysql.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connect = DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
 			// 하나의 커넥트당 작업은 하나씩 해야한다.
 			save = connect.createStatement();
 			System.out.println("-----------Database : notice_input (입력) 클래스 실행-----------");
@@ -57,8 +57,8 @@ public ArrayList<Notice> select() {
 	// 그래서 대신, collection을 많이 쓴다. 이것은 따로 사이즈를 주지 않아도 상관이 없다.
 	
 	try{
-		Class.forName("com.mysql.jdbc.Driver");
-		connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		connect = DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
 		save = connect.createStatement();
 		System.out.println("-----------Databases1(select) 클래스 실행-----------");
 		String data = "select * from notice order by post_id desc;"; 
@@ -105,8 +105,8 @@ public ArrayList<Notice> search(String key) {
 	// 그래서 대신, collection을 많이 쓴다. 이것은 따로 사이즈를 주지 않아도 상관이 없다.
 	
 	try{
-		Class.forName("com.mysql.jdbc.Driver");
-		connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		connect = DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
 		save = connect.createStatement();
 		System.out.println("-----------Databases1(select) 클래스 실행-----------");
 		String data = "SELECT * from notice where post_title like '%" + key + "%' order by post_id desc;";
@@ -151,8 +151,8 @@ public Notice select_post(int i) {
 	Notice ob = new Notice();
 	
 	try{
-		Class.forName("com.mysql.jdbc.Driver");
-		connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		connect = DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
 		save = connect.createStatement();
 		System.out.println("-----------Databases1(select_post) 클래스 실행-----------");
 		String data = "select * from notice where post_id =" + i + ";"; 
@@ -197,8 +197,8 @@ public Notice select_prevpost(int i) {
 	Notice ob = new Notice();
 	
 	try{
-		Class.forName("com.mysql.jdbc.Driver");
-		connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		connect = DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
 		save = connect.createStatement();
 		System.out.println("-----------Databases1(select_post) 클래스 실행-----------");
 		String data = "select * from notice where post_id <" + i + " ORDER BY post_id DESC LIMIT 1;"; 
@@ -242,8 +242,8 @@ public Notice select_nxtpost(int i) {
 	Notice ob = new Notice();
 	
 	try{
-		Class.forName("com.mysql.jdbc.Driver");
-		connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		connect = DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
 		save = connect.createStatement();
 		System.out.println("-----------Databases1(select_post) 클래스 실행-----------");
 		String data = "select * from notice where post_id >" + i + " ORDER BY post_id ASC LIMIT 1;"; 
@@ -287,8 +287,8 @@ public Notice delete_post(int i) {
 	Notice ob = new Notice();
 	
 	try{
-		Class.forName("com.mysql.jdbc.Driver");
-		connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		connect = DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
 		save = connect.createStatement();
 		System.out.println("-----------Databases1(delete_post) 클래스 실행-----------");
 		String data = "delete from notice where post_id =" + i + ";"; 
@@ -319,8 +319,8 @@ public void update_post(Notice ob, int post_num) {
 	// select한 정보를 ResultSet 안에다가 담는다
 	
 	try{
-		Class.forName("com.mysql.jdbc.Driver");
-		connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		connect = DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
 		save = connect.createStatement();
 		System.out.println("-----------Databases1(update_post) 클래스 실행-----------");
 		String data = "update notice set post_title='" + ob.getPost_title() +"', post_content='" + ob.getPost_content() + "' where post_id =" + post_num + ";"; 
