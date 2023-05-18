@@ -2,4 +2,4 @@
     pageEncoding="UTF-8"%>
     
     <% session.invalidate(); %>
-    <% response.sendRedirect("/BoardLife/index.jsp"); %>
+    <% response.sendRedirect("/"); %>

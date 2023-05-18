@@ -4,8 +4,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+import java.sql.Connection;
+import java.sql.Statement;
 
 import vo.Product;
 
@@ -50,6 +50,9 @@ public class Product_cont {
 			}			
 		}
 		catch(Exception ignored) {
+			
+			ignored.printStackTrace();
+			
 		}
 		finally{
 			try{
@@ -75,7 +78,7 @@ public class Product_cont {
 			if(conn == null) //conn 에 아무값이 없다면,
 				throw new Exception("데이터베이스에 연결할 수 없습니다."); //이렇게 예외처리가 된다.
 			stmt = (Statement) conn.createStatement();
-			ResultSet rs = stmt.executeQuery("select*from product order by product_num asc;");
+			ResultSet rs = stmt.executeQuery("select * from product order by product_num asc;");
 			while(rs.next())
 			{	
 				Product pd = new Product();				
@@ -102,6 +105,7 @@ public class Product_cont {
 			}			
 		}
 		catch(Exception ignored) {
+			ignored.printStackTrace();
 		}
 		finally{
 			try{
@@ -152,7 +156,8 @@ public class Product_cont {
 				pd.setProduct_detail(rs.getString("product_detail"));	
 			}
 		}
-		catch(Exception ignored) {		
+		catch(Exception ignored) {
+			ignored.printStackTrace();
 		}
 		finally {
 			try {
@@ -204,6 +209,7 @@ public class Product_cont {
 			}			
 		}
 		catch(Exception ignored) {
+			ignored.printStackTrace();
 		}
 		finally{
 			try{

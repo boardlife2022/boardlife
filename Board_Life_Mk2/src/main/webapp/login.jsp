@@ -50,10 +50,10 @@
 	        session.setAttribute("ID", uid);
 	        session.setAttribute("NAME", uname);
 	        
-            response.sendRedirect("/BoardLife/index.jsp");
+            response.sendRedirect("/");
             
 		} else {
 			out.println("fail");
-            response.sendRedirect("/BoardLife/login_page.jsp?warn=fail");
+            response.sendRedirect("/login_page.jsp?warn=fail");
 		}
 %>

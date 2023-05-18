@@ -86,7 +86,7 @@
          }
     }
 
-    response.sendRedirect("/BoardLife/join_complete.jsp");
+    response.sendRedirect("/join_complete.jsp");
 
 
 %>
