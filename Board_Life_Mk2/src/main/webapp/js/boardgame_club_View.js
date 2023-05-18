@@ -15,12 +15,15 @@ $(document).ready(function () {
     var newBackgroundImage;
 
     var overClick = false;
+    
+    // boardGame Club Review Modal 
+    
     // 광클 금지
-
+    
     // click tab function
     var clickValue; //클릭한 탭의 값을 담아두는 역할
     
-
+	// 보드게임클럽 게임 클릭시 메인게임 화면이 전환되는 효과
     $(".boardgame_wrap img").click(function () {
         //        console.log($(this).attr('alt'));
         //        console.log($(this).attr('src'));
@@ -111,6 +114,22 @@ $(document).ready(function () {
         $("#" + clickValue).addClass("active");
         
     }); // tab click function
-
+    
+    
+    // 리뷰하기 클릭할경우 모달창 띄우기
+    $("#rBtn").click(function(){
+		
+		$("#modal.modal-overlay").css("display", "flex");
+		document.body.style.overflow = 'hidden';
+		
+	}); // click rBtn
+	
+	// 취소 버튼 클릭할 경우 모달창 끄기
+	$("#cancle").click(function(){
+		
+		$("#modal.modal-overlay").css("display", "none");
+		document.body.style.overflow = 'auto';
+		
+	}); // click cancle
 
 }); // $(document).ready(function(){}); 

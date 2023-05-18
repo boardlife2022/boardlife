@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
+import action.ClubReviewAction;
 import action.Club_BoardListAction;
 import action.Club_DetailAction;
 import vo.ActionForward;
@@ -44,6 +45,13 @@ public class Club_BoardFrontController extends javax.servlet.http.HttpServlet
 			try{
 				forward=action.execute(request, response);
 			}catch(Exception e){
+				e.printStackTrace();
+			}
+		} else if(command.equals("/ClubReviewWrite.cl")) {
+			action = new ClubReviewAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}

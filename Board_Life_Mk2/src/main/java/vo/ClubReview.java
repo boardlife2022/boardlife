@@ -14,8 +14,8 @@ public class ClubReview {
 	public int getClub_num() {
 		return club_num;
 	}
-	public void setClub_num(int club_num) {
-		this.club_num = club_num;
+	public void setClub_num(int ClubNum) {
+		this.club_num = ClubNum;
 	}
 	public int getClub_review_rating() {
 		return club_review_rating;

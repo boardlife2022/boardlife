@@ -655,5 +655,30 @@ public class Club_Function_DAO {
 		return RclubList;
 	} // selectClubList();
 	
+	public void insertClubReview(ClubReview review){
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql="";
+		
+		try{
+			sql= "INSERT INTO club_review"
+			+	" (`club_num`, `user_id`, `club_review_content`, `club_review_rating`)"
+			+   " VALUES (?, ?, ?, ?);";
+
+			System.out.println("fokin execute");
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, review.getClub_num());
+			pstmt.setString(2, review.getUser_id());
+			pstmt.setString(3, review.getClub_review_content());
+			pstmt.setInt(4, review.getClub_review_rating());
+
+		}catch(Exception ex){
+		}finally{
+			close(rs);
+			close(pstmt);
+		}
+
+	} // insertClubReview
+	
 
 } // Function_DAO.class
