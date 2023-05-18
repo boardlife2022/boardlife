@@ -12,7 +12,7 @@
 	<section style="width: 100%; height: 800px; padding-top: 120px;">
         <h2 style="text-align: center;"><span>보드게임 등록</span></h2>
 
-        <form name="boardgame" method="post" action="boardgame_insert2.jsp" style="text-align: center;">
+        <form name="boardgame" method="post" action="boardgame_insert.bo" enctype="multipart/form-data" style="text-align: center;">
                 	<center><div class="b_insert" style="border-style:dotted; width:300px;">
                     <div class="b_img">
                         <span>게임 이미지</span>
@@ -93,7 +93,8 @@
                         <input type="text" name="proceed" maxlength="255" required>
                     </div>
 
-                    <input type="submit" class="btn" value="등록">
+                    <input type="submit" class="btn" value="등록" />
+                    <input type="reset" class="btn" value="다시쓰기" />
         </form>
         </div></center>
     </section>
