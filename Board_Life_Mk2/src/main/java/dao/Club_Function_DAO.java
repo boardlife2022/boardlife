@@ -136,7 +136,7 @@ public class Club_Function_DAO {
 		+ " FROM offer_club oc, board_game bg"
 		+ " WHERE SUBSTRING_INDEX(oc.b_id,',', 1) = bg.b_id"
 		+ " ORDER BY club_num DESC"
-		+ " limit ?, 12";
+		+ " limit ?, 12;";
 		
 		ArrayList<Offerclub> clubList = new ArrayList<Offerclub>();
 		// System.out.println(club_list_sql);
@@ -206,8 +206,7 @@ public class Club_Function_DAO {
 		+ " bg.b_img, bg.b_theme, bg.proceed"
 		+ " FROM offer_club oc, board_game bg"
 		+ " WHERE SUBSTRING_INDEX(oc.b_id,',', 1) = bg.b_id AND oc.club_title like '%" + key +"%'"
-		+ " ORDER BY club_num DESC"
-		+ " limit ?, 12";
+		+ " ORDER BY club_num DESC;";
 		
 		ArrayList<Offerclub> clubList = new ArrayList<Offerclub>();
 
@@ -219,7 +218,6 @@ public class Club_Function_DAO {
 		try {
 			pstmt = con.prepareStatement(club_list_sql);
 			System.out.println("실행");
-			pstmt.setInt(1, startrow);
 			rs = pstmt.executeQuery();
 			System.out.println(rs);
 		
@@ -278,8 +276,7 @@ public class Club_Function_DAO {
 		+ " bg.b_img, bg.b_theme, bg.proceed"
 		+ " FROM offer_club oc, board_game bg"
 		+ " WHERE SUBSTRING_INDEX(oc.b_id,',', 1) = bg.b_id AND oc.club_place " + index
-		+ " ORDER BY club_num DESC"
-		+ " limit ?, 12";
+		+ " ORDER BY club_num DESC;";
 		
 		ArrayList<Offerclub> clubList = new ArrayList<Offerclub>();
 
@@ -291,7 +288,6 @@ public class Club_Function_DAO {
 		try {
 			pstmt = con.prepareStatement(club_list_sql);
 			//System.out.println("실행");
-			pstmt.setInt(1, startrow);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -665,14 +661,20 @@ public class Club_Function_DAO {
 			+	" (`club_num`, `user_id`, `club_review_content`, `club_review_rating`)"
 			+   " VALUES (?, ?, ?, ?);";
 
-			System.out.println("fokin execute");
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, review.getClub_num());
 			pstmt.setString(2, review.getUser_id());
 			pstmt.setString(3, review.getClub_review_content());
 			pstmt.setInt(4, review.getClub_review_rating());
+			pstmt.executeUpdate();
+			con.commit();
+			System.out.println("헤치웠나?");
+			System.out.println("sql문 : " + pstmt);
 
 		}catch(Exception ex){
+			System.out.println("문제발생");
+			ex.printStackTrace();
+			
 		}finally{
 			close(rs);
 			close(pstmt);

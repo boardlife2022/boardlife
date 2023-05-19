@@ -32,8 +32,6 @@
 
 
 </head>
-
-<body>
  
  <% 
  
@@ -46,9 +44,22 @@
 	 id = (String) session.getAttribute("ID");
 	 name = (String) session.getAttribute("NAME");
 	 member = true;
- }
- 
  %>
+        <!-- 로그인 성공 시, JavaScript 코드를 이용하여 sessionStorage에 사용자 정보를 저장 -->
+        <script type="text/javascript">
+        	sessionStorage.setItem('LOGIN', "login");
+            sessionStorage.setItem('ID', '<%= id%>');
+            sessionStorage.setItem('NAME', '<%= name%>');
+            console.log("active?!");
+        </script>
+ <% } else { %>
+ 		<script type="text/javascript">
+ 		sessionStorage.clear();
+ 		// sessionStorage에 있는 모든 정보(로그인 정보)들을 지움
+ 		</script>
+ <%} //else문 %>
+
+<body>
 
    <header>
 
@@ -126,8 +137,5 @@
         </div>
 
     </header>
-
-
-</body>
 
 </html>

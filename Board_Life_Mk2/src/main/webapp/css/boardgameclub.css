@@ -609,8 +609,13 @@ font-size: 20px;
     font-size: 12px;
 }
 
-.review_tab .review_wrap .review .txt_wrap .btn {
+.review_tab .review_wrap .review .txt_wrap .ratingStar {
     position: absolute;
     top: 0;
     right: 0;
+    font-size: 1em; /* 이모지 크기 */
+    color: transparent; /* 기존 이모지 컬러 제거 */
+    text-shadow: 0 0 0 #FFFF00; /* 새 이모지 색상 부여 */
+    transition: ease-out, .1s;
+    user-select: none;
 }

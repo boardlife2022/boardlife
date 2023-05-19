@@ -33,6 +33,18 @@ SimpleDateFormat inputFormat = new SimpleDateFormat("yyMMdd");
 Date date = inputFormat.parse(club.getStart_date());
 SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy년 M월 d일");
 String formattedDate = outputFormat.format(date);
+
+// login정보 받아올 변수 선언
+ 	String login = (String)session.getAttribute("LOGIN"); 
+ 	boolean member = false;
+ 	String id = "";
+ 	String name = "";
+
+ 	if(login != null){
+	 id = (String) session.getAttribute("ID");
+	 name = (String) session.getAttribute("NAME");
+	 member = true;
+ 	}
 %>
 
 <!--  CSS  -->
@@ -205,7 +217,7 @@ String formattedDate = outputFormat.format(date);
 				if (ClubReviews.size() > 0) {
 				%>
 				<%
-				for (int cr = 0; cr < ClubReviews.size(); cr++) {
+				for (int cr=0; cr < ClubReviews.size(); cr++) {
 				%>
 				<li class="review clearfix">
 					<div class="img_wrap">
@@ -217,7 +229,7 @@ String formattedDate = outputFormat.format(date);
 						<p class="r_date"><%=ClubReviews.get(cr).getClub_review_title()%>
 							/
 							<%=ClubReviews.get(cr).getClub_review_date()%></p>
-						<p class="btn">☆</p>
+						<p class="ratingStar"><% for(int ra=0; ra<ClubReviews.get(cr).getClub_review_rating(); ra++){out.print("⭐");} %></p>
 					</div>
 				</li>
 				<%
@@ -393,7 +405,7 @@ String formattedDate = outputFormat.format(date);
 						<%=RecentlyReviews.get(rr).getClub_review_title()%>
 						/
 						<%=RecentlyReviews.get(rr).getClub_review_date()%></p>
-					<p class="btn">☆</p>
+					<p class="ratingStar"><% for(int ra=0; ra<RecentlyReviews.get(rr).getClub_review_rating(); ra++){out.print("⭐");} %></p>
 				</div>
 			</li>
 			<%
@@ -414,20 +426,21 @@ String formattedDate = outputFormat.format(date);
 			<form action="ClubReviewWrite.cl" name="Creview" method="post">
 				<div class="star">
 					<fieldset>
-						<input type="radio" name="rating" value="1" id="rate1"><label for="rate1">⭐</label> 
-						<input type="radio" name="rating" value="2" id="rate2"><label for="rate2">⭐</label> 
+						<input type="radio" name="rating" value="5" id="rate1"><label for="rate1">⭐</label> 
+						<input type="radio" name="rating" value="4" id="rate2"><label for="rate2">⭐</label> 
 						<input type="radio" name="rating" value="3" id="rate3"><label for="rate3">⭐</label>
-						<input type="radio" name="rating" value="4" id="rate4"><label for="rate4">⭐</label>
-						<input type="radio" name="rating" value="5" id="rate5"><label for="rate5">⭐</label>
+						<input type="radio" name="rating" value="2" id="rate4"><label for="rate4">⭐</label>
+						<input type="radio" name="rating" value="1" id="rate5"><label for="rate5">⭐</label>
 					</fieldset>
 				</div>
 				<input type="text" name="clubNum" class="hide" value="<%= club.getClub_num() %>">
-				<input type="text" name="user" class="hide" value="user">
+				<input type="text" name="user" class="hide" value="<% if(member){out.print(id);}%>">
+				<input type="text" name="page" class="hide" value="<%= nowPage %>">
 				<input type="text" name="reviewTxt" class="reviewTxt" placeholder="리뷰를 입력하세요">
 				
 				<div class="btnGrp clearfix">
 					<span class="btn" id="cancle">취소</span>
-					<input type="submit" class="btnReview" value="제출" disabled>
+					<input type="submit" class="btnReview" value="제출">
 				</div>
 			</form>
 		</div>

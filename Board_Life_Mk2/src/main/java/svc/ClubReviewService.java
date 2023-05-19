@@ -13,8 +13,9 @@ public class ClubReviewService {
 		
 		Connection con = getConnection();
 		Club_Function_DAO boardDAO = Club_Function_DAO.getInstance();
-		boardDAO.insertClubReview(review);
 		boardDAO.setConnection(con);
+		boardDAO.insertClubReview(review);
+		
 		
 		close(con);		
 	}

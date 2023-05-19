@@ -13,9 +13,6 @@
 
 </head>
 
-<body>
-
-
     <footer>
 
         <div class="inner-footer">

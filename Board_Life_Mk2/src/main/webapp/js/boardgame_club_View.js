@@ -14,11 +14,20 @@ $(document).ready(function () {
     var imgIndex;
     var newBackgroundImage;
 
+	// 광클금지
     var overClick = false;
     
-    // boardGame Club Review Modal 
+    // 로그인여부를 확인하는 코드
+    var login = sessionStorage.getItem('LOGIN');
+    var userId, userName;
+    if(login != null){
+		userId = sessionStorage.getItem('ID');
+		userName = sessionStorage.getItem('NAME');
+	}
     
-    // 광클 금지
+    //console.log("login여부 : " + login);
+    //console.log("id : " + userId);
+    //console.log("pw : " + userName);
     
     // click tab function
     var clickValue; //클릭한 탭의 값을 담아두는 역할
@@ -118,6 +127,11 @@ $(document).ready(function () {
     
     // 리뷰하기 클릭할경우 모달창 띄우기
     $("#rBtn").click(function(){
+		
+		if(login == null) {
+			alert("먼저 로그인 해주세요!");
+			return false;
+		}
 		
 		$("#modal.modal-overlay").css("display", "flex");
 		document.body.style.overflow = 'hidden';

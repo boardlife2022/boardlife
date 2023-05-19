@@ -25,10 +25,18 @@ public class ClubReviewAction implements Action {
 		review.setClub_review_rating(Integer.parseInt(request.getParameter("rating")));
 		review.setUser_id(request.getParameter("user"));
 		
+		int ClubNum = Integer.parseInt(request.getParameter("clubNum"));
+		int page = Integer.parseInt(request.getParameter("page"));
+		// System.out.println("클럽번호 : " + ClubNum + ", 페이지 번호 : " + page);
+		
+		String path = "/ClubDetail.cl?clubNum=" + ClubNum + "&page=" + page;
+		
 		System.out.println(review.getClub_num());
 		System.out.println(review.getClub_review_content());
 		System.out.println(review.getClub_review_rating());
 		System.out.println(review.getUser_id());
+		
+		
 
 		
 		ClubReviewService ClubReviewWriteProService = new ClubReviewService();
@@ -36,7 +44,7 @@ public class ClubReviewAction implements Action {
 		
 		forward = new ActionForward();
 		forward.setRedirect(true);
-		forward.setPath("ClubDetail.cl");
+		forward.setPath(path);
 		
 		return forward;
 	} // execute

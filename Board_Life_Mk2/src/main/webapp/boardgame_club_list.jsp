@@ -21,7 +21,6 @@
     int endPage=pageInfo.getEndPage();
     
     String key = (String)request.getParameter("search");
-    
     String index = (String)request.getParameter("index");
     
     if(index == null){ index = "total"; }
@@ -141,7 +140,8 @@
 
     </section>
     
-            <!--pagination-->
+    <% if(key == null && index.equals("total")){ %>
+        <!--pagination-->
         <section class="page">
         
         <% if(nowPage<=1){}else{ %>
@@ -156,8 +156,9 @@
             
 		<%if(nowPage>=maxPage){}else{ %>
             <a href="Club_boardList.cl?page=<%=nowPage+1 %>" class="right">&gt;</a>
-		<%} %>
+		<%} // if else%>
         </section>
+      <%} // 페이징 if문 %>
 
     <section id="reviews">
 
@@ -177,7 +178,7 @@
                         <p class="r_date">
                         <%= RecentlyReviews.get(rr).getClub_review_title() %> 
                         / <%= RecentlyReviews.get(rr).getClub_review_date() %></p>
-                        <p class="btn">☆</p>
+                        <p class="ratingStar"><% for(int ra=0; ra<RecentlyReviews.get(rr).getClub_review_rating(); ra++){out.print("⭐");} %></p>
                     </div>
                 </li>
                 <%} %>
