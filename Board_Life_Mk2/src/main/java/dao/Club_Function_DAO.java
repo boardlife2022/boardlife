@@ -213,15 +213,15 @@ public class Club_Function_DAO {
 
 		Offerclub Club = null;
 		
-		//System.out.println(club_list_sql);
+		System.out.println(club_list_sql);
 
 		
 		try {
 			pstmt = con.prepareStatement(club_list_sql);
-			//System.out.println("실행");
+			System.out.println("실행");
 			pstmt.setInt(1, startrow);
 			rs = pstmt.executeQuery();
-			//System.out.println(rs);
+			System.out.println(rs);
 		
 			while(rs.next()) {
 				Club = new Offerclub();

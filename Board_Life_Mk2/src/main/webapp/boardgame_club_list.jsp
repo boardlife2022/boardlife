@@ -81,7 +81,7 @@
         <div class="club_index">
 
             <!--검색/form태그 추가--->
-            <form name="searchfrm" method="get" action="/Board_Life_Mk2/Club_boardList.cl">
+            <form name="searchfrm" method="get" action="/Club_boardList.cl">
                 <div class="searchBox">
                     <div class="keyword"><input type="text" name="search" placeholder="<% if(key == "" || key == null){ out.print("검색어를 입력해주세요."); } else { out.print(key); } %>"></div>
                     <button>검색</button>
