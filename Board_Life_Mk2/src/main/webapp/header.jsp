@@ -7,6 +7,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Board Life</title>
+    
+    <!--favicon-->
+    <!--pc용/ico-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!--안드로이드/png-->
+    <link rel="shortcut icon" href="img/favicon-16x16.png">
+
+    <!--아이폰/png, jpg-->
+    <link rel="apple-touch-icon" href="img/favicon-16x16.png">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/header.css?ver=4" type="text/css">
