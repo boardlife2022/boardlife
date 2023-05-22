@@ -1,12 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="utf-8"%>
+<%
+request.setCharacterEncoding("utf-8");
+%>
+
+
+<link rel="stylesheet" type="text/css" href="css/Product_basket.css">
+    
+<body>
+<jsp:include page="header.jsp"/>  
+
+
+<section>
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>장바구니</title>
 </head>
-<body>
 
-</body>
+
+
+
+
+
+
+</section>
 </html>
+</body>
+<jsp:include page="footer.jsp"/>

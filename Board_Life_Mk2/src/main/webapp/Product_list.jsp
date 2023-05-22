@@ -8,24 +8,10 @@ request.setCharacterEncoding("utf-8");
 <%@ page import="java.util.ArrayList" %>
 <link rel="stylesheet" type="text/css" href="css/Product_list.css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-<script type="text/javascript" src="slick/slick.min.js"></script>
 <script type="text/javascript" src="js/product_list.js"></script>
-
-<body>
 <jsp:include page="header.jsp"/>
 
-
 <section>
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>상품 목록</title>
-</head>
 
 <div>
 
@@ -185,8 +171,7 @@ arruu = user.ass();
 
 </section>
 
-</html>
-</body>
+
 <jsp:include page="footer.jsp"/>
 
 
