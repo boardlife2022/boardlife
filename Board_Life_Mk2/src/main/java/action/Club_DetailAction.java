@@ -1,7 +1,6 @@
 package action;
 
 import java.util.ArrayList;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import svc.ClubDetailService;
@@ -57,7 +56,6 @@ public class Club_DetailAction implements Action {
 		request.setAttribute("club", club);
 		request.setAttribute("RecentlyReviews", clubRecentlyReviews);
 		request.setAttribute("Rclub", Rclub);
-		
 		
 		// 마크업 && CSS 해놓은 jsp 페이지 불러오기
 		forward.setPath("/boardgame_club_view.jsp");

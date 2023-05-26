@@ -35,16 +35,16 @@ SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy년 M월 d일");
 String formattedDate = outputFormat.format(date);
 
 // login정보 받아올 변수 선언
- 	String login = (String)session.getAttribute("LOGIN"); 
- 	boolean member = false;
- 	String id = "";
- 	String name = "";
+String login = (String) session.getAttribute("LOGIN");
+boolean member = false;
+String id = "";
+String name = "";
 
- 	if(login != null){
-	 id = (String) session.getAttribute("ID");
-	 name = (String) session.getAttribute("NAME");
-	 member = true;
- 	}
+if (login != null) {
+	id = (String) session.getAttribute("ID");
+	name = (String) session.getAttribute("NAME");
+	member = true;
+}
 %>
 
 <!--  CSS  -->
@@ -53,6 +53,61 @@ String formattedDate = outputFormat.format(date);
 
 <!--  JS  -->
 <script src="js/boardgame_club_View.js"></script>
+
+<!--  Kakao Map  -->
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b8d8601a660b9187e634f6eb2c5bacac"></script>
+
+
+
+
+<script>
+		
+		window.onload = function() {
+			  // 페이지가 완전히 로드된 후 실행될 코드
+			  
+		var url = new URL("https://dapi.kakao.com/v2/local/search/address.json");
+
+		var xPoint;
+		var yPoint;
+		
+		var params = {query: "수청로 220"};
+		url.search = new URLSearchParams(params);
+
+		fetch(url, {
+		    method: 'GET',
+		    headers: {
+		        'Authorization': 'KakaoAK ' + 'c3eca0415f7d0b5f798eac3b1777a7e1'  // 실제 REST API 키로 대체
+		    }
+		})
+		
+		.then(response => response.json())
+		.then(data => {
+		 xPoint = data.documents[0].x;
+    	 yPoint = data.documents[0].y;
+    	 // console.log("x : " + xPoint, "y : " + yPoint);  // 이곳에서 x와 y 값을 사용할 수 있습니다.
+    	 // console.log(data); // data 작성
+    	 
+    	// 지도표시			  
+			var container = document.getElementById('map');
+			var options = {
+				center : new kakao.maps.LatLng(yPoint, xPoint), // 위도(y)가 먼저 경도(x)가 나중에 나온다
+				level : 3
+			};
+
+			var map = new kakao.maps.Map(container, options);
+    	 
+		})
+		
+		.catch(error => console.error('Error:', error));
+		
+			  
+			
+			  
+			}; // onload
+
+	
+</script>
 
 <style>
 .club_apply .club_img {
@@ -182,6 +237,11 @@ String formattedDate = outputFormat.format(date);
 <b>🎲 보드게임 클럽 소개</b>
  
 <%=club.getClub_detail()%>
+
+
+<b>📍 보드게임 클럽 장소 안내 </b>
+
+<div id="map" style="width: 100%; height: 400px;"></div>
               
                
 <b style="color: red">🛑 주의해주세요!!</b>
@@ -217,7 +277,7 @@ String formattedDate = outputFormat.format(date);
 				if (ClubReviews.size() > 0) {
 				%>
 				<%
-				for (int cr=0; cr < ClubReviews.size(); cr++) {
+				for (int cr = 0; cr < ClubReviews.size(); cr++) {
 				%>
 				<li class="review clearfix">
 					<div class="img_wrap">
@@ -229,7 +289,13 @@ String formattedDate = outputFormat.format(date);
 						<p class="r_date"><%=ClubReviews.get(cr).getClub_review_title()%>
 							/
 							<%=ClubReviews.get(cr).getClub_review_date()%></p>
-						<p class="ratingStar"><% for(int ra=0; ra<ClubReviews.get(cr).getClub_review_rating(); ra++){out.print("⭐");} %></p>
+						<p class="ratingStar">
+							<%
+							for (int ra = 0; ra < ClubReviews.get(cr).getClub_review_rating(); ra++) {
+								out.print("⭐");
+							}
+							%>
+						</p>
 					</div>
 				</li>
 				<%
@@ -405,7 +471,13 @@ String formattedDate = outputFormat.format(date);
 						<%=RecentlyReviews.get(rr).getClub_review_title()%>
 						/
 						<%=RecentlyReviews.get(rr).getClub_review_date()%></p>
-					<p class="ratingStar"><% for(int ra=0; ra<RecentlyReviews.get(rr).getClub_review_rating(); ra++){out.print("⭐");} %></p>
+					<p class="ratingStar">
+						<%
+						for (int ra = 0; ra < RecentlyReviews.get(rr).getClub_review_rating(); ra++) {
+							out.print("⭐");
+						}
+						%>
+					</p>
 				</div>
 			</li>
 			<%
@@ -426,21 +498,29 @@ String formattedDate = outputFormat.format(date);
 			<form action="ClubReviewWrite.cl" name="Creview" method="post">
 				<div class="star">
 					<fieldset>
-						<input type="radio" name="rating" value="5" id="rate1"><label for="rate1">⭐</label> 
-						<input type="radio" name="rating" value="4" id="rate2"><label for="rate2">⭐</label> 
-						<input type="radio" name="rating" value="3" id="rate3"><label for="rate3">⭐</label>
-						<input type="radio" name="rating" value="2" id="rate4"><label for="rate4">⭐</label>
-						<input type="radio" name="rating" value="1" id="rate5"><label for="rate5">⭐</label>
+						<input type="radio" name="rating" value="5" id="rate1"><label
+							for="rate1">⭐</label> <input type="radio" name="rating" value="4"
+							id="rate2"><label for="rate2">⭐</label> <input
+							type="radio" name="rating" value="3" id="rate3"><label
+							for="rate3">⭐</label> <input type="radio" name="rating" value="2"
+							id="rate4"><label for="rate4">⭐</label> <input
+							type="radio" name="rating" value="1" id="rate5"><label
+							for="rate5">⭐</label>
 					</fieldset>
 				</div>
-				<input type="text" name="clubNum" class="hide" value="<%= club.getClub_num() %>">
-				<input type="text" name="user" class="hide" value="<% if(member){out.print(id);}%>">
-				<input type="text" name="page" class="hide" value="<%= nowPage %>">
-				<input type="text" name="reviewTxt" class="reviewTxt" placeholder="리뷰를 입력하세요">
-				
+				<input type="text" name="clubNum" class="hide"
+					value="<%=club.getClub_num()%>"> <input type="text"
+					name="user" class="hide"
+					value="<%if (member) {
+	out.print(id);
+}%>"> <input
+					type="text" name="page" class="hide" value="<%=nowPage%>">
+				<input type="text" name="reviewTxt" class="reviewTxt"
+					placeholder="리뷰를 입력하세요">
+
 				<div class="btnGrp clearfix">
-					<span class="btn" id="cancle">취소</span>
-					<input type="submit" class="btnReview" value="제출">
+					<span class="btn" id="cancle">취소</span> <input type="submit"
+						class="btnReview" value="제출">
 				</div>
 			</form>
 		</div>

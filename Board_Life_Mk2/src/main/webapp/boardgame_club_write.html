@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<title>Board Life Community Club</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/boardgame_club_write.css">
+<script
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+	function execDaumPostcode() {
+		new daum.Postcode(
+				{
+					oncomplete : function(data) {
+						// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+						// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+						// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+						var roadAddr = data.roadAddress; // 도로명 주소 변수
+						var extraRoadAddr = ''; // 참고 항목 변수
+
+						// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+						// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+						if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+							extraRoadAddr += data.bname;
+						}
+						// 건물명이 있고, 공동주택일 경우 추가한다.
+						if (data.buildingName !== '' && data.apartment === 'Y') {
+							extraRoadAddr += (extraRoadAddr !== '' ? ', '
+									+ data.buildingName : data.buildingName);
+						}
+						// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+						if (extraRoadAddr !== '') {
+							extraRoadAddr = ' (' + extraRoadAddr + ')';
+						}
+
+						// 우편번호와 주소 정보를 해당 필드에 넣는다.
+						document.getElementById('postcode').value = data.zonecode;
+						document.getElementById("roadAddress").value = roadAddr;
+						document.getElementById("jibunAddress").value = data.jibunAddress;
+
+						// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+						if (roadAddr !== '') {
+							document.getElementById("extraAddress").value = extraRoadAddr;
+						} else {
+							document.getElementById("extraAddress").value = '';
+						}
+
+						var guideTextBox = document.getElementById("guide");
+						// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+						if (data.autoRoadAddress) {
+							var expRoadAddr = data.autoRoadAddress
+									+ extraRoadAddr;
+							guideTextBox.innerHTML = '(예상 도로명 주소 : '
+									+ expRoadAddr + ')';
+							guideTextBox.style.display = 'block';
+
+						} else if (data.autoJibunAddress) {
+							var expJibunAddr = data.autoJibunAddress;
+							guideTextBox.innerHTML = '(예상 지번 주소 : '
+									+ expJibunAddr + ')';
+							guideTextBox.style.display = 'block';
+						} else {
+							guideTextBox.innerHTML = '';
+							guideTextBox.style.display = 'none';
+						}
+					}
+				}).open();
+	}
+</script>
+</head>
+
+<body>
+
+
+
+	<section id="OfferClub">
+
+		<form action="#" name="OfferClub" method="post">
+			<div class="contentWrap" id="title">
+				<!--    보드게임클럽 제목, Intro      -->
+				<div class="bar"></div>
+				<table class="content">
+					<tr>
+						<td><input type="text" name="club_title" class="clubtitle"
+							placeholder="보드게임 클럽 이름"></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="club_intro" class="clubIntro"
+							placeholder="보드게임 클럽 소개"></td>
+					</tr>
+				</table>
+				<p class="explain">* 보드게임클럽에 대한 간략한 소개를 적어주세요! (150자 이내)</p>
+			</div>
+
+			<div class="contentWrap">
+				<!--     play할 보드게임 선택     -->
+				<p class="item">보드게임 선택</p>
+				<div class="selectBg clearfix">
+					<div class="Bg">
+						<img src="img/7wonders.png" alt="bg" class="show"> <span
+							class="plus"></span>
+					</div>
+
+					<div class="Bg">
+						<img src="img/peakyblinders.png" alt="bg"> <span
+							class="plus"></span>
+					</div>
+
+					<div class="Bg">
+						<img src="img/Champions_of_Midgard.png" alt="bg"> <span
+							class="plus"></span>
+					</div>
+					<input type="text" name="b_id" class="hide">
+
+				</div>
+
+				<p class="explain">* 보드게임클럽에서 함께 play할 보드게임을 선택해주세요.</p>
+
+				<div class="btnWrap clearfix">
+					<div class="btn" id="clear">초기화</div>
+					<div class="btn" id="confirm">확정</div>
+				</div>
+
+				<div class="bgWrap">
+
+					<ul class="bgs">
+						<li class="bg clearfix"><img src="img/peakyblinders.png"
+							alt=""></li>
+
+						<li class="bg clearfix"><img src="img/peakyblinders.png"
+							alt=""></li>
+
+						<li class="bg clearfix"><img src="img/peakyblinders.png"
+							alt=""></li>
+
+						<li class="bg clearfix"><img src="img/peakyblinders.png"
+							alt=""></li>
+						<li class="bg clearfix"><img src="img/peakyblinders.png"
+							alt=""></li>
+
+						<li class="bg clearfix"><img src="img/peakyblinders.png"
+							alt=""></li>
+
+						<li class="bg clearfix"><img src="img/peakyblinders.png"
+							alt=""></li>
+						<li class="bg clearfix"><img src="img/peakyblinders.png"
+							alt=""></li>
+						<li class="bg clearfix"><img src="img/peakyblinders.png"
+							alt=""></li>
+					</ul>
+
+				</div>
+
+
+
+
+			</div>
+
+			<div class="contentWrap">
+				<!--    날짜, 장소, 시간, 클럽 회비 세부정보 선택      -->
+
+				<p class="item">기간 설정</p>
+				<p class="inPut">
+					<input type="date" name="start_date"> ~ <input type="date"
+						name="finish_date">
+				</p>
+
+				<p class="explain">* 보드게임클럽을 운영하는 기간을 선택해주세요.</p>
+			</div>
+
+			<div class="contentWrap">
+				<p class="item">Weekly</p>
+				<p class="inPut clearfix">
+					<input type="radio" name="club_day" id="mon" value="월" class="hide">
+					<label for="mon">월</label> <input type="radio" name="club_day"
+						id="tue" value="화" class="hide"> <label for="tue">화</label>
+					<input type="radio" name="club_day" id="wed" value="수" class="hide">
+					<label for="wed">수</label> <input type="radio" name="club_day"
+						id="thu" value="목" class="hide"> <label for="thu">목</label>
+					<input type="radio" name="club_day" id="fri" value="금" class="hide">
+					<label for="fri">금</label> <input type="radio" name="club_day"
+						id="sat" value="토" class="hide"> <label for="sat">토</label>
+					<input type="radio" name="club_day" id="sun" value="일" class="hide">
+					<label for="sun">일</label>
+				</p>
+				<p class="explain">* 보드게임클럽이 진행되는 요일을 선택해주세요.</p>
+			</div>
+
+			<div class="contentWrap">
+				<p class="item">시간</p>
+				<p class="inPut">
+					⏰ <input type="time" name="club_time" min="09:00" max="18:00"
+						required>
+				</p>
+
+				<p class="explain">* 보드게임이 진행되는 시간을 입력해주세요.</p>
+			</div>
+
+			<div class="contentWrap">
+				<p class="item">장소</p>
+
+				<ul class="onOff clearfix">
+					<li class="choice">오프라인</li>
+					<li>온라인</li>
+				</ul>
+
+				<div class="place choice">
+					<div class="postWrap clearfix">
+						<div class="btnPostWrap">
+							<input type="text" id="postcode" placeholder="우편번호"
+								style="display: none"> <input type="button" id="btnPost"
+								onclick="execDaumPostcode()" value="우편번호 찾기">
+						</div>
+
+						<div class="addrWrap">
+							<input type="text" id="roadAddress" placeholder="도로명주소">
+							<br> <input type="text" id="jibunAddress" placeholder="지번주소"
+								style="display: none"> <span id="guide"
+								style="color: #999; display: none"></span> <input type="text"
+								id="detailAddress" placeholder="상세주소를 입력해주세요"> <input
+								type="text" id="extraAddress" placeholder="참고항목" class="hide">
+						</div>
+					</div>
+				</div>
+
+				<div class="place">
+					<p>가나다라</p>
+				</div>
+
+
+				<p class="explain">* 보드게임 클럽 행사를 진행하는 장소를 등록해주세요.</p>
+			</div>
+
+			<div class="contentWrap">
+				<p class="item">참여 인원 & 회비</p>
+				<p class="inPut">
+					<input type="number" name="start_date">
+				</p>
+				
+				<p class="explain">* 보드게임클럽 참석 수용인원과 회비를 입력해주세요.</p>
+			</div>
+		</form>
+
+	</section>
+
+</body>
+
+</html>
