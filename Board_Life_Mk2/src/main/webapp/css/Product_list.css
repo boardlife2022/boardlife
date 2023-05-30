@@ -209,8 +209,11 @@ section {
 
 }
 .product-view-all{
-	border:1px solid lightgray;
+	border:2px solid #76cc1e;
 	padding:5px 5px;
+	color: #76cc1e;
+	background-color: white;
+	font-family: NanumBarunGothic, "Noto Sans KR", "Nanum Gothic", NanumGothic, 나눔고딕, Helvetica, "Apple SD Gothic Neo", Dotum, 돋움, sans-serif;
 }
 
 .product-text{

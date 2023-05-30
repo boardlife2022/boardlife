@@ -10,6 +10,20 @@ request.setCharacterEncoding("utf-8");
 
 <jsp:include page="header.jsp" />
 
+<%
+String login = (String)session.getAttribute("LOGIN"); 
+ boolean member = false;
+ String id = "";
+ String name = "";
+
+ if(login != null){
+	 id = (String) session.getAttribute("ID");
+	 name = (String) session.getAttribute("NAME");
+	 member = true;
+ }
+%>
+
+
 <link rel="stylesheet" type="text/css" href="css/Product_view.css">
 
 <script>
@@ -147,22 +161,22 @@ String product_detail = pd.getProduct_detail();
 					</div>
 					<div class="spec-box">
 						<div class="img-spec">
-							<img src="img/mother-and-son.png"><span><%=p_age%></span>
+							<img src="img/shop_p_age.png"><span><%=p_age%></span>
 						</div>
 						<div class="img-spec">
-							<img src="img/clock (1).png"><span><%=p_level%></span>
+							<img src="img/shop_p_level.png"><span><%=p_level%></span>
 						</div>
 						<div class="img-spec">
-							<img src="img/board-meeting (1).png"><span><%=p_num%></span>
+							<img src="img/shop_p_num.png"><span><%=p_num%></span>
 						</div>
 						<div class="img-spec">
 							<img src="img/shop_p_runtime.png"><span><%=p_runtime%></span>
 						</div>
 					</div>
 				</div>
-
+			<form action="Product_basket_input.jsp" id="form1" method="post">
 				<div class="prod-info-r">
-					<b><%=product_pub%></b> <b><%=product_name%></b>
+					<b><%=product_name%></b> <b><%=product_pub%></b>
 					<p class="font_12"><%=product_summary%></p>
 					<b><%=product_price%>&nbsp;원</b>
 					<div
@@ -177,7 +191,7 @@ String product_detail = pd.getProduct_detail();
 						<td><%=product_lang%></td>
 					</table>
 					<div
-						style="padding: 0 0 0 5px; border-bottom: 1px solid lightgray;"></div>
+						style="padding: 10px 0 10px 5px; border-bottom: 1px solid lightgray;"></div>
 
 					<table width=100%>
 						<tr>
@@ -198,19 +212,19 @@ String product_detail = pd.getProduct_detail();
 						</tr>
 					</table>
 					<div
-						style="padding: 0 0 0 5px; border-bottom: 1px solid lightgray;"></div>
+						style="padding: 10px 0 0 5px; border-bottom: 1px solid lightgray;"></div>
 					<div class="order-box">
 
 						<div class="pay-box">
 
-							<form id="form1" method="post" action="#">
+
 
 								<div class="pay-ea">
 									<span>주문수량</span>
 									<div class="pay-amount">
 										<a href="#" onclick="decreaseQuantity(event)"><img
 											src="img/shop_pay_left.gif"></a> <input class="inputstyle"
-											type="text" value="1" size="1" id="amount" name="amount">
+											type="text" value="1" size="1" id="amount" name="basket_amount">
 										<a href="#" onclick="increaseQuantity(event)"><img
 											src="img/shop_pay_right.gif"></a>
 									</div>
@@ -226,20 +240,19 @@ String product_detail = pd.getProduct_detail();
 						</div>
 
 					</div>
-					<input type="submit" onclick="Product_basket.jsp">
 					<div class="btn-box">
-						<a href="#"><div class="btn1">
+						<a href="#">
+							<div class="btn1">
 								<p>즉시구매</p>
-							</div></a> <a href="Product_basket.jsp"><div class="btn2">
-								<p>장바구니</p>
-							</div></a>
+							</div>
+						</a> 
+<%-- 					<a href="Product_basket_input.jsp?basket_num=<%=amount%>"> --%>
+							<input type= "submit" class="btn2" value="장바구니">
+<!-- 					</a> -->
 					</div>
-
-					</form>
-
 				</div>
-
-			</div>
+			</form>
+		</div>
 
 			<jsp:useBean id="userr" class="board.Product_cont">
 				<%

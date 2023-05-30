@@ -11,6 +11,8 @@ request.setCharacterEncoding("utf-8");
 <script type="text/javascript" src="js/product_list.js"></script>
 <jsp:include page="header.jsp"/>
 
+
+
 <section>
 
 <div>
