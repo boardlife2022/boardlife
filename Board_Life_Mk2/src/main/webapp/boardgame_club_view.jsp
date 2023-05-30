@@ -40,6 +40,11 @@ boolean member = false;
 String id = "";
 String name = "";
 
+// api key
+String Kapi = "b8d8601a660b9187e634f6eb2c5bacac";
+String RestApi = "'c3eca0415f7d0b5f798eac3b1777a7e1'";
+String BAapi = "'9tAOM3VTn8'";
+
 if (login != null) {
 	id = (String) session.getAttribute("ID");
 	name = (String) session.getAttribute("NAME");
@@ -56,9 +61,7 @@ if (login != null) {
 
 <!--  Kakao Map  -->
 <script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b8d8601a660b9187e634f6eb2c5bacac"></script>
-
-
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=<%=Kapi%>&libraries=services"></script>
 
 
 <script>
@@ -71,41 +74,82 @@ if (login != null) {
 		var xPoint;
 		var yPoint;
 		
-		var params = {query: "수청로 220"};
-		url.search = new URLSearchParams(params);
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = {
+	        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+	        level: 3 // 지도의 확대 레벨
+	    };  
 
-		fetch(url, {
-		    method: 'GET',
-		    headers: {
-		        'Authorization': 'KakaoAK ' + 'c3eca0415f7d0b5f798eac3b1777a7e1'  // 실제 REST API 키로 대체
-		    }
-		})
-		
-		.then(response => response.json())
-		.then(data => {
-		 xPoint = data.documents[0].x;
-    	 yPoint = data.documents[0].y;
-    	 // console.log("x : " + xPoint, "y : " + yPoint);  // 이곳에서 x와 y 값을 사용할 수 있습니다.
-    	 // console.log(data); // data 작성
-    	 
-    	// 지도표시			  
-			var container = document.getElementById('map');
-			var options = {
-				center : new kakao.maps.LatLng(yPoint, xPoint), // 위도(y)가 먼저 경도(x)가 나중에 나온다
-				level : 3
-			};
+	// 지도를 생성합니다    
+	var map = new kakao.maps.Map(mapContainer, mapOption); 
 
-			var map = new kakao.maps.Map(container, options);
-    	 
-		})
-		
-		.catch(error => console.error('Error:', error));
-		
-			  
+	// 주소-좌표 변환 객체를 생성합니다
+	var geocoder = new kakao.maps.services.Geocoder();
+
+	// 주소로 좌표를 검색합니다
+	var addr = "'<%=club.getClub_place()%>'";
+	geocoder.addressSearch(addr, function(result, status) {
+
+	    // 정상적으로 검색이 완료됐으면 
+	     if (status === kakao.maps.services.Status.OK) {
+	    	 
+	    	 yPoint = result[0].y;
+	    	 xPoint = result[0].x;
+	    	 
+	    	 console.log(yPoint);
+	    	 console.log(xPoint);
+
+	        var coords = new kakao.maps.LatLng(yPoint, xPoint);
+
+	        // 결과값으로 받은 위치를 마커로 표시합니다
+	        var marker = new kakao.maps.Marker({
+	            map: map,
+	            position: coords
+	        });
+
+	        // 인포윈도우로 장소에 대한 설명을 표시합니다
+	        var clubTitle = "<%=club.getClub_title()%>";
+	        var infowindow = new kakao.maps.InfoWindow({
+	            content: '<div style="width:200px;text-align:center;padding:6px 0;">' + clubTitle + '</div>'
+	        });
+	        infowindow.open(map, marker);
+
+	        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+	        map.setCenter(coords);
+	    } 
+	});    
 			
 			  
-			}; // onload
+			
+			
+			const BAapi = <%=BAapi%>;
+			const MinPlayers = <%=club.getCapacity()%>;
+			const url2 = 'https://api.boardgameatlas.com/api/search?client_id=' + BAapi + '&min_players=' + MinPlayers;
+			
+			fetch(url2)
+			  .then(response => response.json())
+			  .then(data => {
+			    const boardGameDiv = document.querySelector('.innerRecommend');
+			    
+			    console.log(data.games.length);
+			    console.log(data.games[0]);
+			    var Str = "";
+			    
+			    for(var n = 0; n < 3; n++){
+			    Str += "<div class='rGames'>";
+			    Str += "<img alt='" + data.games[n].name + "' src='" + data.games[n].images.medium + "'>";
+			    Str += "<p class = 'bTitle''>" + data.games[n].name;
+			    Str += " (" + data.games[n].year_published + ")" + "</p>";
+			    Str += "<div class = 'bDescription'>" + data.games[n].description;
+			    Str += "<p class = 'bPlayers''>" + "players : " + data.games[n].players + "</p>" + "</div>";
+			    Str += "</div>";
+			    boardGameDiv.innerHTML = Str;
+			    }
+			  })
+			  .catch(error => console.error('Error:', error));
 
+
+		}; // onload
 	
 </script>
 
@@ -176,6 +220,10 @@ if (login != null) {
 
 				<p class="detail">
 					<span class="item">시간</span> <span class="info"><%=club.getClub_time()%>시</span>
+				</p>
+
+				<p class="detail">
+					<span class="item">클럽 멤버</span> <span class="info"><%=club.getCapacity()%>명</span>
 				</p>
 
 				<p class="club_fee"><%=clubFee%></p>
@@ -376,6 +424,16 @@ if (login != null) {
 		</div>
 
 	</div>
+
+</section>
+
+<section id="recommendGames">
+
+	<h3>
+		🎲 <span><%=club.getCapacity()%></span>명의 사람들과 함께하기 좋은 게임 🎲
+	</h3>
+
+	<div class="innerRecommend"></div>
 
 </section>
 
