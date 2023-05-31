@@ -2,7 +2,7 @@ package vo;
 
 import java.sql.Date;
 
-import javax.websocket.Decoder.Text;
+
 
 public class User_trade {
 	int trpost_num;

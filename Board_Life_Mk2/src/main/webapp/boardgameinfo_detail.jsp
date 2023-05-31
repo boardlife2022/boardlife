@@ -45,14 +45,19 @@
 						한글판
 					</div><br/>
 					<div style="color: white;" class="hash">
+					
 						<span>#<%=articleList.getFirst_proceed()
 						%><br/>
+						<%if(articleList.getSecond_proceed().equals(articleList.getFirst_proceed())){ %>
 						<span>#<%=articleList.getSecond_proceed()
 						%><br/>
+						<%//}else if(articleList.getThird_proceed() == articleList.getSecond_proceed()){ %>
 						<span>#<%=articleList.getThird_proceed()
 						%><br/>
+						<%//}else if(articleList.getFourth_proceed() == null){ %>
 						<span>#<%=articleList.getFourth_proceed()
 						%><br/>
+						<%}%>
 					</div>
 				</div>
 				<div class="detail_gameright">
@@ -168,7 +173,7 @@
 							재미있습니다.
 						</div>
 					</div>
-			<%} %>
+			<%}%>
 				</div>
 				
 			</div>

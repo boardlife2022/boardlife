@@ -7,6 +7,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Board Life</title>
+	
+	 <!--favicon-->
+    <!--pc용/ico-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!--안드로이드/png-->
+    <link rel="shortcut icon" href="img/favicon-16x16.png">
+
+    <!--아이폰/png, jpg-->
+    <link rel="apple-touch-icon" href="img/favicon-16x16.png">
+
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/header_gameinfo2.css?ver=4" type="text/css">
@@ -15,7 +26,7 @@
     <!-- javascript and jQuery ajax -->
     <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/header.js"></script>
+    <script src="js/infoheader.js"></script>
 
     <!--구글웹폰트-->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
@@ -51,7 +62,7 @@
                     <ul class="util clearfix">
                     
                     <% if(member){  %>
-                    	<li><%= name %>님 환영합니다!</li>
+                    	<li id><%= name %>님 환영합니다!</li>
                         <li><a href="logout.jsp">log out</a></li>  
                     <% }else{ %>
                     	<li><a href="login_page.jsp">login</a></li>  
@@ -70,7 +81,7 @@
                         <li class="home_btn" id="home"><a href="index.jsp">HOME</a></li>
                         <li id="bd_info"><a href="boardgameinfo_main.jsp">Board Game Info</a></li>
                         <li id="bd_club"><a href="boardgameclub_main.jsp">Board Game Club</a></li>
-                        <li id="bd_shop"><a href="#">Board Game Shop</a></li>
+                        <li id="bd_shop"><a href="Product_list.jsp">Board Game Shop</a></li>
                         <li id="bd_comm"><a href="community_list.jsp">Community</a></li>
                     </ul>
                 </div>
@@ -87,7 +98,7 @@
                     <ul class="bd_info none">
                         <li class="menu_title">보드게임 정보</li>
                         <li><a href="best50.in">BEST 50</a></li>
-                        <li><a href="#">게임 테마</a></li>
+                        <li><a href="boardgameinfo_theme.jsp">게임 테마</a></li>
                         <li><a href="boardgameinfo_custom.in">커스텀</a></li>
                     </ul>
 

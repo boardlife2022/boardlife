@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/notice.css">
 <link rel="stylesheet" type="text/css" href="css/freeboard.css">
 	<jsp:include page="header.jsp"/>
-	<section id='wrapper' style="height: 75.2%;">
+	<section id='wrapper'>
         <h2>자유게시판 <span>FREEBOARD</span></h2>
         <% 
         String login = (String)session.getAttribute("LOGIN");

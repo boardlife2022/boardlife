@@ -12,6 +12,7 @@
  <style type="text/css">
  </style>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+ <script src="js/boardgameinfo_main.js"></script>
 <body>
  <div id="all">
     <header>
@@ -22,20 +23,83 @@
             <nav class="mainfont">
                 회원님께 추천하는 보드게임</nav>
             <article id="moviearticle">       
-         <div id="slider">
-            <div>
-                <video muted autoplay loop class="slide">
-                    <source src="img/ELDEN_RING_Board_Game.mp4" type="video/mp4">
-                    <strong>
-                        Your browser does not support the video tag.
-                    </strong>
-                </video>
-               <div class="slide-copy">
-                  <h2>&nbsp;</h2>
-                  <p>&nbsp;</p>
-               </div>
-               <div class="img1"></div>
-            </div>
+         <div id="gameinfomain_slider">
+            <div id="infomain_slider">
+            <!--
+  <a href="#" class="control_next">></a>
+  <a href="#" class="control_prev"><</a>
+    -->
+  <ul>
+    <li>
+      <div class="slide_one slide">
+        <div>
+          <video muted autoplay loop class="slide">
+            <source src="img/ELDEN_RING_Board_Game.mp4" type="video/mp4">
+              <strong>
+                Your browser does not support the video tag.
+              </strong>
+          </video>
+          <div class="slide-copy">
+            <h2>&nbsp;</h2>
+            <p>&nbsp;</p>
+          </div>
+        </div>
+      </div>
+    </li>
+<!--
+    <li>
+      <div class="slide_two slide">
+        <div>
+          <video muted autoplay loop class="slide">
+            <source src="img/Catan Trailer.mp4" type="video/mp4">
+              <strong>
+                Your browser does not support the video tag.
+              </strong>
+          </video>
+          <div class="slide-copy">
+            <h2>&nbsp;</h2>
+            <p>&nbsp;</p>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="slide_three slide">
+        <div>
+          <video muted autoplay loop class="slide">
+            <source src="img/Runar_-_The_Boardgame.mp4" type="video/mp4">
+              <strong>
+                Your browser does not support the video tag.
+              </strong>
+          </video>
+          <div class="slide-copy">
+            <h2>&nbsp;</h2>
+            <p>&nbsp;</p>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="slide_two slide">
+        <div>
+          <video muted autoplay loop class="slide">
+            <source src="img/Catan Trailer.mp4" type="video/mp4">
+              <strong>
+                Your browser does not support the video tag.
+              </strong>
+          </video>
+          <div class="slide-copy">
+            <h2>&nbsp;</h2>
+            <p>&nbsp;</p>
+          </div>
+        </div>
+      </div>
+     </li>--> 
+
+  </ul>  
+</div>
       </div>
             </article>
             <article id="moviearticleside">

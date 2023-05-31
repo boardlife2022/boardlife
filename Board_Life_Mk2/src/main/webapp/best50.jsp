@@ -14,7 +14,7 @@
 
 %>
 
-<jsp:include page="header.jsp"/>
+<jsp:include page="header_gameinfo2.jsp"/>
 
 <!DOCTYPE html>
 <html>
@@ -26,7 +26,7 @@
 
 <body>
 
-	<section style="width: 1280px; padding-top: 120px; margin: 0 auto;">
+	<section style="width: 1280px; margin: 0 auto;">
 		<h2><a href="boardgame_input2.jsp">보드게임입력</a></h2>
 <table class="boardgamelist">
 	<colgroup>
@@ -62,7 +62,7 @@
    		(<%=articleList.get(i).getYearof()%>)</a></td>
    		<td class="hashtag">
    		<p class="best_theme">
-   		<span><a href="boardgameinfo_theme.jsp"> <%=articleList.get(i).getB_theme()%></a></span>
+   		<a href="boardgameinfo_theme.jsp"> <%=articleList.get(i).getB_theme()%></a>
    		</p><br/>
    		<p class="best_proceed">
    		<span>#<%=articleList.get(i).getFirst_proceed()%></span>
@@ -75,7 +75,7 @@
    		<%} %>
    		</p>
    		</td>
-		<td class="best_rating"><a href="boardgameinfo_detail.in?bid=<%=articleList.get(i).getB_id()%>&page=<%=nowPage%>">0</a></td>
+		<td class="best_rating"><a href="boardgameinfo_detail.in?bid=<%=articleList.get(i).getB_id()%>&page=<%=nowPage%>">-</a></td>
 		
 		</tr>
 		<%} %>

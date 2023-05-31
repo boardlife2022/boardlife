@@ -53,7 +53,7 @@
                     <div>
                     	<span>보드게임선택</span>
                     	<select name="post_bgcategory" required>
-                    	<option disabled selected value=0>보드게임 선택</option>
+                    	<option disabled value="0">보드게임 선택</option>
                     	<% for(int i=0;i<bga.size();i++){%>
                     	<%= bga.get(i).getB_title_kor() %>
                     	<option value="<%= bga.get(i).getB_id()%>"><%= bga.get(i).getB_title_kor()%></option>

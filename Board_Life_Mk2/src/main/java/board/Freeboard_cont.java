@@ -446,7 +446,7 @@ public Boardgames2 bgselectone2(int g){
 		
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc	`:mysql://15.165.215.248:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
+			connect = DriverManager.getConnection("jdbc:mysql://15.165.215.248:3306/boardgame?useUnicode=true&characterEncoding=utf8", "boardlife", "0518");
 			save = connect.createStatement();
 			System.out.println("-----------Databases1(select_post) 클래스 실행-----------");
 			String data = "select * from community where post_id >" + i + " ORDER BY post_id ASC LIMIT 1;"; 

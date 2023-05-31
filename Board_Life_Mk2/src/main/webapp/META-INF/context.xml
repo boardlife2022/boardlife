@@ -9,4 +9,5 @@
 		factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
 		url="jdbc:mysql://15.165.215.248:3306/boardgame?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8"
 		maxActive="500"/>
+	<Resources cachingAllowed="true" cacheMaxSize="100000" />
 </Context>
