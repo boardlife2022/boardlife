@@ -40,7 +40,7 @@ public class Info_InsertAction implements Action {
 		boardgame.setPnum(multi.getParameter("pnum"));
 		boardgame.setRunning_time(multi.getParameter("running_time"));
 		boardgame.setAge(multi.getParameter("age"));
-//		boardgame.double(setGame_level(multi.getParameter("game_level")));
+		boardgame.setGame_level(Double.parseDouble(multi.getParameter("game_level")));
 		boardgame.setSub_lang(multi.getParameter("sub_lang"));
 		boardgame.setB_detail(multi.getParameter("b_detail"));
 		

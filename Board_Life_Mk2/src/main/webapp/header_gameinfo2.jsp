@@ -105,7 +105,8 @@
                     <ul class="bd_club none">
                         <li class="menu_title">보드게임 클럽</li>
                         <li><a href="Club_boardList.cl">전체 클럽</a></li>
-                        <li><a href="#">보드게임 카페</a></li>
+                        <li><a href="Club_boardList.cl?index=offline&page=1">오프라인 클럽</a></li>
+                        <li><a href="Club_boardList.cl?index=online&page=1">온라인 클럽</a></li>
                     </ul>
 
                     <ul class="bd_shop none">

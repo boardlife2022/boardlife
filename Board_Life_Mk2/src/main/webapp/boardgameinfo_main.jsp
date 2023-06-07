@@ -1,3 +1,6 @@
+<%@page import="vo.Club_PageInfo"%>
+<%@page import="vo.Boardgames2"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE HTML>
@@ -14,6 +17,7 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
  <script src="js/boardgameinfo_main.js"></script>
 <body>
+
  <div id="all">
     <header>
         <jsp:include page="header_gameinfo2.jsp"/>
@@ -456,6 +460,9 @@ function barOver(e) {
    price.innerHTML = gameDetails[arrRef].price;
    tags.innerHTML = "<span>Tags: </span>" + gameDetails[arrRef].tags.join(', ');
 }
+for(int i = 0;i<5;i++){
+	
+
 const gameDetails = [
    {
       title: 'Hollow Knight',

@@ -249,3 +249,7 @@
 .boardgame_detail_rating{
 	width: 1100px;
 }
+.boardgame_list img{
+	width:200 ; 
+	height:200 ;
+}

@@ -186,4 +186,49 @@ public class Info_Function_DAO {
 	}
 		return articleList;
 	}
+	
+	public int insertArticle(Boardgames2 article){
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int num =0;
+		String sql="";
+		int insertCount=0;
+
+		try{
+			pstmt=con.prepareStatement("select max(b_id) from board");
+			rs = pstmt.executeQuery();
+
+			if(rs.next())
+				num =rs.getInt(1)+1;
+			else
+				num=1;
+
+			sql="insert into board (BOARD_NUM,BOARD_NAME,BOARD_PASS,BOARD_SUBJECT,";
+			sql+="BOARD_CONTENT, BOARD_FILE, BOARD_RE_REF,"+
+					"BOARD_RE_LEV,BOARD_RE_SEQ,BOARD_READCOUNT,"+
+					"BOARD_DATE) values(?,?,?,?,?,?,?,?,?,?,now())";
+			System.out.println("dfsdf");
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, article.getB_img());
+			pstmt.setString(2, article.getB_id());
+			pstmt.setString(3, article.getB_title_kor());
+			pstmt.setString(4, article.getB_title_eng());
+//			pstmt.setString(5, article.getBOARD_CONTENT());
+//			pstmt.setString(6, article.getBOARD_FILE());
+			pstmt.setInt(7, num);
+			pstmt.setInt(8, 0);
+			pstmt.setInt(9, 0);
+			pstmt.setInt(10, 0);
+
+			insertCount=pstmt.executeUpdate();
+
+		}catch(Exception ex){
+		}finally{
+			close(rs);
+			close(pstmt);
+		}
+
+		return insertCount;
+
+	}
 }

@@ -11,7 +11,6 @@
 	int maxPage = pageInfo.getMaxPage();
 	int startPage = pageInfo.getStartPage();
 	int endPage = pageInfo.getMaxPage();
-
 %>
 
 <jsp:include page="header_gameinfo2.jsp"/>
@@ -35,7 +34,7 @@
         <col width="400px"><!--제목(한글)-->
         <col width="20%"><!--출시년도-->
 	 	<col width="40%"><!--유저 평점-->
-        <col width="10%"><!---->
+        <col width="10%"><!-- -->
 	</colgroup>
 
     <thead>

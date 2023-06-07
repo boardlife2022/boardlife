@@ -74,17 +74,17 @@ public class Info_BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 			
 		}
-	} // doProcess
+	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		doProcess(request,response);
-	}  	// doGet method
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		doProcess(request,response);
-	}   // doPost method
+	}
 	
-} // class BoardFrontController
+}
 	

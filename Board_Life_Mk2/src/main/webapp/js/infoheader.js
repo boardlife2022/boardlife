@@ -14,9 +14,6 @@ $(function () {
 
         //        console.log(menu);
 
-        $(this).css("backgroundColor", "");
-        $(this).children().css("color", "");
-
         $("." + menu).removeClass("none");
 
         if (menu != "home") {
