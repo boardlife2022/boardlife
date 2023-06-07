@@ -460,8 +460,6 @@ function barOver(e) {
    price.innerHTML = gameDetails[arrRef].price;
    tags.innerHTML = "<span>Tags: </span>" + gameDetails[arrRef].tags.join(', ');
 }
-for(int i = 0;i<5;i++){
-	
 
 const gameDetails = [
    {
