@@ -27,7 +27,7 @@ section {
 	width: 1280px;
 	max-width:1280px;
 	height:20px;
-	border:1px solid lightgray;	
+/* 	border:1px solid lightgray;	 */
 	display:flex;
 	justify-content: space-between;
  	padding:5 0 5 5px;
@@ -40,4 +40,47 @@ section {
 	display:flex;
 	flex-direction: column;
 	margin-bottom:100px;
+}
+img{
+	width:100px;
+	height:100px;
+}
+.process{
+	display:flex;
+	align-items: flex-end;
+}
+
+h2{
+	color:#76cc1e;	
+}
+
+td{
+	text-align: center;
+	border-bottom: 1px solid lightgray;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+tr td input{
+	width:20px;
+	height:20px;
+}
+.btn-box{
+	display:flex;
+	justify-content: flex-end;
+	margin:10px 10px 0 0;
+}
+
+.btn1 {
+	width:215px;
+	height:50px;
+	border:3px solid;
+	margin-right:2px;
+	background-color:#76cc1e;
+	color:white;
+	border-color:#76cc1e;
+	
+	display:flex;
+	justify-content: center;
+	align-items: center;
 }

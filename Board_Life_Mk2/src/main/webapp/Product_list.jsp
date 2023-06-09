@@ -11,7 +11,9 @@ request.setCharacterEncoding("utf-8");
 <script type="text/javascript" src="js/product_list.js"></script>
 <jsp:include page="header.jsp"/>
 
-
+<%
+String id = (String) session.getAttribute("ID");
+%>
 
 <section>
 
@@ -53,7 +55,7 @@ request.setCharacterEncoding("utf-8");
 
 		<div class="moving">	
 			<div class="enter"><a href="Product_post.jsp"><p>입점신청</p><img src="img/shop_enter1.png"></a></div>
-			<div class="basket"><a href=""><p>장바구니</p><img src="img/shop_basket.png"></a></div>		
+			<div class="basket"><a href="Product_basket.jsp?id=<%=id%>"><p>장바구니</p><img src="img/shop_basket.png"></a></div>		
 		</div>
 		
 		<div class="top-menu-line">

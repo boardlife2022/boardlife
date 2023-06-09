@@ -22,10 +22,18 @@ request.setCharacterEncoding("utf-8");
 </center>
 <jsp:useBean id="user" class="board.Basket_cont">
 	<%
-	Basket ca = new Basket();
-			
+		Basket ca = new Basket();
+
+		String aaa = request.getParameter("product_img");
+
+		
+//		String aa = request.getParameter("user_id"); 생활화하자
+//		ca.setUser_id(aa);
+	
 		ca.setUser_id(request.getParameter("user_id"));
+		
 		ca.setProduct_num(request.getParameter("product_num"));
+		
 		int basket_amount  =Integer.parseInt(request.getParameter("basket_amount"));
 		
 		ca.setBasket_amount(basket_amount);

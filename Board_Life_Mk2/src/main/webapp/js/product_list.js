@@ -1,6 +1,6 @@
 // prodeuct_list
 
-$(document).ready(function () { 
+
 	
 	 // event auto slide animation
     var b_page = 0;
@@ -37,4 +37,3 @@ $(document).ready(function () {
 
     var auto_event_flow = setInterval(banner_slide, 5000);
 	
-}); // code block

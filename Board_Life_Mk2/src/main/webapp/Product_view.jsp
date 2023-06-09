@@ -12,15 +12,10 @@ request.setCharacterEncoding("utf-8");
 
 <%
 String login = (String)session.getAttribute("LOGIN"); 
- boolean member = false;
- String id = "";
- String name = "";
+String id = (String) session.getAttribute("ID");
+String name = (String) session.getAttribute("NAME");
+boolean member = false;
 
- if(login != null){
-	 id = (String) session.getAttribute("ID");
-	 name = (String) session.getAttribute("NAME");
-	 member = true;
- }
 %>
 
 
@@ -139,9 +134,14 @@ String product_detail = pd.getProduct_detail();
 
 <section>
 
+
+
+
 	<div class="main-layout-wrapper">
 		<div class="top-menu">홈 > 보드게임 > 한글판 게임</div>
 		<div class="main-layout">
+		
+		
 
 			<table style="width: 100%; position: relative;" cellspacing="0"
 				cellpadding="0">
@@ -175,6 +175,11 @@ String product_detail = pd.getProduct_detail();
 					</div>
 				</div>
 			<form action="Product_basket_input.jsp" id="form1" method="post">
+			
+			<input type="hidden" name="user_id" value="<%=id %>" >
+			<input type="hidden" name="product_num" value="<%=product_num %>" >
+			<input type="hidden" name="product_img" value="<%=product_img%>">
+		
 				<div class="prod-info-r">
 					<b><%=product_name%></b> <b><%=product_pub%></b>
 					<p class="font_12"><%=product_summary%></p>
@@ -247,8 +252,13 @@ String product_detail = pd.getProduct_detail();
 							</div>
 						</a> 
 <%-- 					<a href="Product_basket_input.jsp?basket_num=<%=amount%>"> --%>
-							<input type= "submit" class="btn2" value="장바구니">
-<!-- 					</a> -->
+							<% if(login != null){%>
+								<input type= "submit" class="btn2" value="장바구니">
+							<% }%>
+							
+							
+							
+							<!-- 					</a> -->
 					</div>
 				</div>
 			</form>
@@ -286,8 +296,11 @@ String product_detail = pd.getProduct_detail();
 		</div>
 
 		<div class="sub-layout">
-			<img src="img/<%=product_detail%>">
+			<img src="img/<%=product_detail%>">			
 		</div>
+		
+		<a href="" class="back-to-top">맨위로</a>
+		
 
 	</div>
 </section>

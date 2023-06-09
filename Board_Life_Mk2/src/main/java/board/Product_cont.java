@@ -118,7 +118,7 @@ public class Product_cont {
 			}
 		} return arr;
 	}	
-	
+
 	
 	
 	public Product as1(String a) { //개별출력을 위한 메서드 , product_num 이라는 변수를  a로 받겠다.
