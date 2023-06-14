@@ -433,7 +433,7 @@ if (login != null) {
 		🎲 <span><%=club.getCapacity()%></span>명의 사람들과 함께하기 좋은 게임 🎲
 	</h3>
 
-	<div class="innerRecommend"></div>
+	<div class="innerRecommend clearfix"></div>
 
 </section>
 

@@ -490,13 +490,15 @@ body {
 }
 
 #recommendGames .innerRecommend .rGames {
-	margin-bottom: 60px;
+	float: left;
+	width: 410px;
 }
 
 #recommendGames .innerRecommend .rGames img {
-	display: block; width : 350px;
-	margin: 0 auto;
+	display: block;
 	width: 350px;
+	height: 350px;
+	margin: 0 auto;
 }
 
 #recommendGames .innerRecommend .rGames .bTitle {
