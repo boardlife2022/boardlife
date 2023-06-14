@@ -12,6 +12,9 @@
 %>
 
 <link rel="stylesheet" type="text/css" href="css/boardgameinfo_detail.css">
+<link rel="stylesheet" type="text/css" href="reset.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="js/boardgameinfo_detail.js"></script>
 
 <style>
 
@@ -30,7 +33,7 @@
 
 <jsp:include page="header.jsp"/>
 		
-        <section style="width: 100%; height: 1200px; padding-top: 120px;">
+        <section style="width: 100%; padding-top: 120px;">
         
         <jsp:useBean id="user" class="board.Freeboard_cont" />
         <div class="detail_backgroundimg">
@@ -141,39 +144,72 @@
 			</div><br/>
 			<section class="boardgame_detail0" >
 				<div>
-					<div class="detail_bottom_title">
-						<span>게임평</span><span>커뮤니티</span>
-					</div>
+					<ul class="tab_tit">
+					    <li class="on" data-tab="tab1">게임평</li>
+					    <li data-tab="tab2">커뮤니티</li>
+					  </ul>
 					<a href="<%=articleList.getGeeklink() %>">
 						<div class="boardgame_geeklink">
 							<img alt="linkimg" src="img/link2.png"> BoardGameGeek
 						</div></a>
 				</div>
 			
-			
-			
-			<div class="detail_bottom_layout">
-			<% for(int i =0;i < 5;i++) { %>
+			<div class="container">
+  
+  <div id="tab1" class="cnt on">
+    <div class="detail_bottom_layout">
+			<% for(int i =0;i < 1;i++) { %>
 				<div class="boardgame_detail_rating">
 					<div class="detail_rating1">
 							7.6
 					</div>
 					<div class="detail_bottomrating">
 						<div>
-							아이디
+							준열
 						</div>
 						<div>
-							날짜
+							2023-06-12
 						</div><br/><br/>
 						<div>
-							재미있습니다.
+							재미
 						</div>
 					</div>
 			<%}%>
 				</div>
 				
-			</div>
-			
+	</div>
+  </div>
+  <div id="tab2" class="cnt">
+    <div class="detail_bottom_layout">
+			<% for(int i =0;i < 1;i++) { %>
+				<div class="boardgame_detail_rating">
+					<div class="detail_rating2">
+							9.0
+					</div>
+					<div class="detail_bottomrating">
+						<div>
+							광의
+						</div>
+						<div>
+							2023-06-13
+						</div><br/><br/>
+						<div>
+							있습니다.
+						</div>
+					</div>
+			<%}%>
+				</div>
+				
+	</div>
+  </div>
+  <div id="tab3" class="cnt">
+    <h2>제목3</h2>
+    <ul>
+      <li>3</li>
+      <li>3</li>
+    </ul>
+  </div>  
+</div>
 			</section>
         </section>
 <jsp:include page="footer.jsp"/>

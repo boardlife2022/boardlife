@@ -103,7 +103,7 @@ String login = (String)session.getAttribute("LOGIN");
    								int se1 = Integer.parseInt(stt.get(i).getB_id());
    								bg = userd.bgselectone2(se1);
    								%>
-   								<td><img src="img/<%= bg.getB_img() %>"></td>
+   								<td><a href="boardgameinfo_detail.in?bid=102680"><img src="img/<%= bg.getB_img() %>"></a></td>
    							</tr>
    							
    					<% }%>

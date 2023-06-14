@@ -18,7 +18,7 @@
   			ArrayList<Boardgames2> bga = new ArrayList<Boardgames2>();
   			bga = userd.bgselect2();
 	%>
-	<section>
+	<section style="padding-top: 120px;">
         <h2>자유게시판 <span>FREEBOARD</span></h2>
 
         <form name="inputfrm" method="post" action="community_insert.jsp">
@@ -54,8 +54,10 @@
                     	<span>보드게임선택</span>
                     	<select name="post_bgcategory" required>
                     	<option value="1">보드게임 선택</option>
-                    	<% for(int i=0;i<bga.size();i++){%>
+                    	<option value="0"><%=bga.get(0).getB_title_kor()%></option>
+                    	<% for(int i=2;i<bga.size();i++){%>
                     	<%= bga.get(i).getB_title_kor() %>
+                    	
                     	<option value="<%= bga.get(i).getB_id()%>"><%= bga.get(i).getB_title_kor()%></option>
                     	<%} %>
 						</select>

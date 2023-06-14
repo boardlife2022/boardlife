@@ -234,6 +234,21 @@
     margin-right: 15px;
     color: white;
 }
+.detail_rating2{
+	width: 46px;
+    height: 46px;
+    border-radius: 100px;
+    font-family: 'nanumgothic';
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    background-color: green;
+    font-size: 20px;
+    float: left;
+    margin-right: 15px;
+    color: white;
+}
 .detail_bottomrating{
 	margin-top: 50px;
 	font-size: 10pt;
@@ -252,4 +267,42 @@
 .boardgame_list img{
 	width:200 ; 
 	height:200 ;
+}
+
+/*--------------------TAB---------------------------*/
+.container{
+	margin:0 auto; width:80%;
+}
+.tab_tit{
+	padding-top:20px; border-bottom:1px solid #777; width: 1180px;
+}
+.tab_tit::after{
+	content:''; display:block; clear:both;
+}
+.tab_tit li{
+	float: left;width: 150px;height: 32px;text-align: center;line-height: 32px; cursor:pointer
+}
+.tab_tit li::after{
+	content:''; display:none; clear:both; width:100%; height:3px; background:#48474e;
+}
+.tab_tit li.on::after{
+	display:block;
+}
+
+.cnt{
+	display:none; padding:40px 10px;
+}
+.cnt.on{
+	display:block; padding:40px 10px;
+}
+.cnt h2{
+	font-size:20px; font-weight:800;}
+.cnt ul{
+	padding:20px 0px;
+}
+.cnt ul li{
+	line-height:22px;
+}
+.cnt ul li::before{
+	content: '';display: inline-block;margin-top: 9px;margin-right: 9px;width: 5px;height: 5px;background: #2f4394;border-radius: 50%;vertical-align: top;
 }

@@ -114,6 +114,7 @@ a {
 #mainshelter{
 	width: 100%;
 	max-height: 400px;
+	max-width: 1903px;
 	margin-top: 300px;
 }
 #mainshelter img{
@@ -159,7 +160,7 @@ a {
 #gamesection{
 	width: 1200px;
 	height: 760px;
-	margin: 20px auto;
+	margin: 45xp auto;
 }
 #bestgamesection{
 	position: absolute;
@@ -1205,4 +1206,11 @@ a.control_next {
 }
 
 /*--------------------------------슬라이더 끝-----------------------------------------*/
+}
+
+.container{
+	margin-top: 4.5vh;	
+}
+.gmargin a{
+	z-index: 10
 }

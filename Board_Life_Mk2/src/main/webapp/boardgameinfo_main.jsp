@@ -3,6 +3,19 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
+
+    <!--pc용/ico-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!--안드로이드/png-->
+    <link rel="shortcut icon" href="img/favicon-16x16.png">
+
+    <!--아이폰/png, jpg-->
+    <link rel="apple-touch-icon" href="img/favicon-16x16.png">
+    
+    <!--구글웹폰트-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+    
 <!DOCTYPE HTML>
 <html>
  <head>
@@ -10,18 +23,16 @@
     <title>게임정보페이지</title>
     <link rel="stylesheet" type="text/css" href="css/shop_mainn.css">
     <link rel="stylesheet" type="text/css" href="css/gameinfo_main.css">
-    <link rel="stylesheet" type="text/css" href="css/header_gameinfo2.css">
  </head>
  <style type="text/css">
  </style>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
  <script src="js/boardgameinfo_main.js"></script>
+ 
 <body>
 
  <div id="all">
-    <header>
         <jsp:include page="header_gameinfo2.jsp"/>
-    </header>
     <div class="gameinfo_main">
         <section class="wrap clearfix">
             <nav class="mainfont">
@@ -224,18 +235,16 @@
             </article>
         </section>
     </div>
-    <section id="mainshelter"><img src="img/shelterimg3.png">
-        <!--<article id="mainshelterimg"></article>
-        <article id="mainsheltertext"> </article>
-        <article></article>-->
+    <section id="mainshelter">
+    	<img src="img/shelterimg3.png">
     </section>
     <div class="gameinfo_main">
         <div id="gamediv">
             <nav id="bestnav">
                 <ul id="gamenav">
-                    <li class="gmargin"><a href="#">인기게임</a></li>
-                    <li class="gmargin"><a href="#">신규게임</a></li>
-                    <li class="gmargin"><a href="#">모임베스트6</a></li>
+                    <li class="gmargin"><a href="#">인기 보드게임</a></li>
+                    <li class="gmargin"><a href="#">신규 보드게임</a></li>
+                    <li class="gmargin"><a href="#">모임 베스트6</a></li>
                 </ul>
             </nav>
             <section id="gamesection">
@@ -243,49 +252,49 @@
     <div class="container">
        <div class="bars">
           <div class="bar bar-over" data-value='0'>
-             <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg?t=1625363925" alt="">
+             <img src="img/Marvel_Champions_The_Card_Game.jpg" alt="">
              <div class="details">
-                <h3 class="details-title">Hollow Knight</h3>
+                <h3 class="details-title">마블 챔피언스: 카드 게임</h3>
                 <p>Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects.   </p>
           </div>
        </div>
        
        <div class="bar" data-value='1'>
-          <img src="https://rocketleague.media.zestyio.com/rl_keyart_victory_crate_1920.jpg" alt="">
+          <img src="img/Mansions_of_Madness_Second_Edition.jpg" alt="">
           <div class="details">
-             <h3 class="details-title">Rocket League</h3>
+             <h3 class="details-title">광기의 저택</h3>
              <p>Soccer meets driving once again in the long-awaited, physics-based multiplayer-focused sequel to Supersonic Acrobatic Rocket-Powered Battle-Cars! </p>
           </div>
        </div>
           
        <div class="bar" data-value='2'>
-          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/239030/header.jpg?t=1592317543" alt="">
+          <img src="img/Wingspan.png" alt="">
           <div class="details">
-             <h3 class="details-title">Papers Please</h3>
+             <h3 class="details-title">윙스팬</h3>
              <p>Papers, Please has the player take the role of a border crossing immigration officer in the fictional dystopian Eastern Bloc-like country of Arstotzka, which has been and continues to be at political... </p>
           </div>
        </div>  
 
           <div class="bar" data-value='3'>
-             <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg?t=1625363925" alt="">
+             <img src="img/Viticulture_Essential_Edition.jpg" alt="">
              <div class="details">
-                <h3 class="details-title">Hollow Knight</h3>
+                <h3 class="details-title">비티컬처 에센셜 에디션</h3>
                 <p>Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects.   </p>
           </div>
        </div>
           
         <div class="bar" data-value='4'>
-          <img src="https://rocketleague.media.zestyio.com/rl_keyart_victory_crate_1920.jpg" alt="">
+          <img src="img/Splendor.png" alt="">
           <div class="details">
-             <h3 class="details-title">Rocket League</h3>
+             <h3 class="details-title">스플렌더</h3>
              <p>Soccer meets driving once again in the long-awaited, physics-based multiplayer-focused sequel to Supersonic Acrobatic Rocket-Powered Battle-Cars! </p>
           </div>
        </div>
         
         <div class="bar" data-value='5'>
-          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/239030/header.jpg?t=1592317543" alt="">
+          <img src="img/Star_Wars_Rebellion.png" alt="">
           <div class="details">
-             <h3 class="details-title">Papers Please</h3>
+             <h3 class="details-title">스타 워즈 : 카드 게임</h3>
              <p>Papers, Please has the player take the role of a border crossing immigration officer in the fictional dystopian Eastern Bloc-like country of Arstotzka, which has been and continues to be at political... </p>
           </div>
        </div>   
@@ -307,7 +316,7 @@
     <section id="mainshelter2">
                 <article>
                 <div class="wrapper">
-     <h2><strong>All Games<span>( 5 )</span></strong></h2>
+     <h2><strong>All Games<span>( 70 )</span></strong></h2>
      <div class="cards">
         <figure class="card">
             <img src="img/pic6293412.png" />
@@ -463,51 +472,51 @@ function barOver(e) {
 
 const gameDetails = [
    {
-      title: 'Hollow Knight',
+      title: '마블 챔피언스: 카드 게임',
       pub: 'Publisher: Team Cherry',
-      des: 'Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D style.',
-      rating: '평점: ★★★★☆',
-      price: '€20',
-      tags: ['Difficult', 'Puzzle', '2D']
+      des: '전략적으로 적을 패는 재미와 마블 히어로의 능력을 잘 살린 게임으로 몰입감이 좋다. 또한 카드를 조합하여 만들어 하는 재미. 1인으로 해도 손색없는 1인 게임의 높은 점수를 준다.',
+      rating: '난이도: ★★★☆☆',
+      price: '₩89,000',
+      tags: ['핸드 관리', '플레이어별 특수능력', '협력 게임']
    },
    {
-      title: 'Rocket League',
-      pub: 'Publisher: Psyonix',
-      des: 'Soccer meets driving once again in the long-awaited, physics-based multiplayer-focused sequel to Supersonic Acrobatic Rocket-Powered Battle-Cars! Choose a variety of high-flying vehicles equipped with huge rocket boosters to score amazing aerial goals and pull-off incredible game-changing saves!',
-      rating: '평점: ★★★☆☆',
-      price: '€15',
+      title: '광기의 저택',
+      pub: 'Publisher: ADC Blackfire Entertainment',
+      des: '보드게임의 혁명이 나타났다!!!! 룰이 엄청쉽고 전자기기를 이용해서 어려운 보드게임을 쉽게 즐길수 있게 만들어놓은 게임!!! 시나리오가 조금 적은게 단점인데 확장도 나왔으면 좋겠어요!!!!! 너무 재밌어요!!! 2행동하고 앱만 따라가면 금방금방 적응할수도있고...!!!',
+      rating: '난이도: ★★★☆☆',
+      price: '₩120,000',
+      tags: ['핸드관리', '주사위 굴림', '플레이어별 특수능력']
+   },
+   {
+      title: '윙스팬',
+      pub: 'Publisher: 999 Games',
+      des: '평화로운 노래 하나 틀어놓고 윙스팬을 즐겨보자. 귀여운 새들을 하나둘 씩 들여놓고 알을 낳다보면 어느새 "인간이 미안해"를 외치는 자신을 만나게 된다',
+      rating: '난이도: ★★☆☆☆',
+      price: '₩30,000',
+      tags: ['핸드 관리', '주사위 굴림', '셋 컬렉션']
+   },
+   {
+      title: '비티컬처 에센셜 에디션',
+      pub: 'Publisher: Maldito Games',
+      des: '와인 농장 테마의 정수 다양한 방문객으로 리플레이성 및 재미 보장 카빨망겜 - 입문 전략으로써 매우 좋은 포지션 선턴이 너무 유리함. 기상차트 2번 칸의 녹색카드 얻기가 왜 1원얻기보다 위에 있는지 의문. ->이는 투스카니에서 패치가 되어 두개의 위치가 바뀌고, 선턴의 강점을 막아주는 요소 증가. 투스카니가 없다면 중반 이후부터 기상차트에서 무조건 선턴을 잡고 보는 광경을 볼 수 있음 - 기상차트의 의미 퇴색 참고 비티컬쳐는 와이너리로 방문객들을 끌어들이는 테마 비뉴스는 와인을 만들어 품평회를 통해 명성을 떨치는 테마',
+      rating: '난이도: ★★★☆☆',
+      price: '₩39,000',
+      tags: ['핸드관리', '일꾼 놓기', '솔로/솔로테어 게임']
+   },
+   {
+      title: '스플렌더',
+      pub: 'Publisher: Brain Games',
+      des: ' 아이들과 가장 많이 돌리는 게임 룰이 간단하고, 구성품도 간단하고, 확장판도 재미있고. 2년전 유치원다니는 아들도 이길수 있었던 누구나 즐길수 있는 최고의 가족게임.',
+      rating: '난이도: ★★☆☆☆',
+      price: '₩49,000원',
       tags: ['Multiplayer', 'Competitive', 'Football']
    },
    {
-      title: 'Papers Please',
-      pub: 'Publisher: Lucas Pope',
-      des: 'Congratulations. The October labor lottery is complete. Your name was pulled. For immediate placement, report to the Ministry of Admission at Grestin Border Checkpoint. An apartment will be provided for you and your family in East Grestin. Expect a Class-8 dwelling.',
-      rating: '평점: ★☆☆☆☆',
-      price: '€10',
-      tags: ['Indie', 'Pixal', 'Sim']
-   },
-   {
-      title: 'Hollow Knight',
-      pub: 'Publisher: Team Cherry',
-      des: 'Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D style.',
-      rating: '평점: ★★★★☆',
-      price: '€20',
-      tags: ['Difficult', 'Puzzle', '2D']
-   },
-   {
-      title: 'Rocket League',
-      pub: 'Publisher: Psyonix',
-      des: 'Soccer meets driving once again in the long-awaited, physics-based multiplayer-focused sequel to Supersonic Acrobatic Rocket-Powered Battle-Cars! Choose a variety of high-flying vehicles equipped with huge rocket boosters to score amazing aerial goals and pull-off incredible game-changing saves!',
-      rating: '평점: ★★★★☆',
-      price: '€15',
-      tags: ['Multiplayer', 'Competitive', 'Football']
-   },
-   {
-      title: 'Papers Please',
-      pub: 'Publisher: Lucas Pope',
-      des: 'Congratulations. The October labor lottery is complete. Your name was pulled. For immediate placement, report to the Ministry of Admission at Grestin Border Checkpoint. An apartment will be provided for you and your family in East Grestin. Expect a Class-8 dwelling.',
-      rating: '평점: ★★★★☆',
-      price: '€10',
+      title: '스타 워즈 : 카드 게임',
+      pub: 'Publisher: Edge Entertainment',
+      des: '시스템 상으로 절묘하게 돌아가는 구석이 없는 바는 아니나, 뭔가 좀 아쉬운 맛이 자꾸 느껴지는 게임입니다. 기본판만으로는 다양성이 확보되지 않는 느낌이 워해머 인베이젼보다 좀 강하고, 속도가 약간 더디게 느껴지는 편입니다. 그러나 다크사이드와 라이트사이드의 미묘한 대결구도를 테마성으로 느끼기는 좋은 듯합니다. 적어도 기본판만으로는 그렇습니다.',
+      rating: '난이도: ★★★☆☆',
+      price: '₩89,000',
       tags: ['Indie', 'Pixal', 'Sim']
    },
 ]
